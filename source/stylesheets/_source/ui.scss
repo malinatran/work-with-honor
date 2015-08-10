@@ -1,0 +1,108 @@
+/**
+ * Button
+ */
+button {
+  @include appearance(none);
+  background: $yellow-tint;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  text-transform: uppercase;
+  font-family: $font-alt;
+  font-size: 15px;
+  line-height: 48px;
+  height: 40px;
+  padding: 0 18px;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+  box-sizing: border-box;
+}
+
+/**
+ * Form controls
+ */
+form {
+
+  // input field
+  .field {
+    label {
+      display: block;
+      margin: 0;
+      padding: 0;
+      text-align: left;
+      font-family: $font-alt;
+      font-size: 9px;
+      text-transform: uppercase;
+      padding: 0 0 6px 0;
+    }
+  }
+
+}
+
+/**
+ * Input
+ */
+input {
+  height: 40px;
+  border: none;
+  border-radius: 3px;
+  line-height: 40px;
+  padding: 0 20px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/**
+ * Grid
+ */
+.grid {
+  @include clearfix;
+  @for $i from 1 through 12 {
+    .col-#{$i} {
+      float: left;
+      width: percentage($i / 12);
+      box-sizing: border-box;
+    }
+  }
+  &.padded {
+    $padding: 20px;
+    margin: 0 (-$padding);
+    $selector: '';
+    @for $i from 1 through 12 {
+      $selector: '.col-#{$i}, #{$selector}';
+    }
+    #{$selector} {
+      padding: 0 20px;
+    }
+  }
+}
+
+/**
+ * Slider
+ */
+.slider {
+
+  .pagination {
+    padding-top: 30px;
+    text-align: center;
+    a {
+      background: white;
+      border: 2px solid #CBC5AB;
+      border-radius: 100%;
+      width: 16px;
+      height: 16px;
+      display: inline-block;
+      box-sizing: border-box;
+      color: transparent;
+      text-indent: -9999px;
+      margin-right: 13px;
+      &:last-child {
+        margin-right: 0;
+      }
+      &.active,
+      &:hover {
+        background: #CBC5AB;
+      }
+    }
+  }
+
+}

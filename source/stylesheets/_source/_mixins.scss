@@ -1,0 +1,15 @@
+// image
+@mixin image($image, $opts) {
+  background: url(image_path($image)) $opts;
+}
+
+// headers wrapper
+@mixin headings($from: 1, $to: 6) {
+  $selector: '';
+  @for $i from $from through $to {
+    $selector: 'h#{$i}, #{$selector}';
+  }
+  #{$selector} {
+    @content
+  }
+}

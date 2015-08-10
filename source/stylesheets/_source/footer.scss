@@ -1,0 +1,147 @@
+/**
+ * Footer
+ */
+footer {
+
+  // section variables
+  $footer-tint: #6E7377;
+
+  color: white;
+
+  // newsletter signup
+  .newsletter {
+    @include clearfix;
+    background: $blue-tint;
+    text-align: center;
+    padding: 26px 0 30px 0;
+
+    .container {
+      width: 1125px;
+    }
+
+    // section title
+    b {
+      text-transform: uppercase;
+      font-family: $font-alt;
+      font-size: 15px;
+      font-weight: normal;
+      display: block;
+      padding-bottom: 6px;
+    }
+
+    form {
+      display: inline-block;
+      text-align: left;
+    }
+
+    .field {
+      display: inline-block;
+      margin-right: 15px;
+      &.name {
+        width: 170px;
+      }
+      &.lastname {
+        width: 220px;
+      }
+      &.email {
+        width: 320px;
+      }
+
+      label {
+        color: $footer-tint;
+      }
+
+      input {
+        border: 1px solid #2C353F;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+      }
+    }
+
+    button {
+      display: inline-block;
+      vertical-align: bottom;
+      margin-right: 15px;
+    }
+
+    .social {
+      height: 40px;
+      display: inline-block;
+      vertical-align: bottom;
+      a {
+        @include transition(all 70ms linear);
+        display: inline-block;
+        color: $footer-tint;
+        border: 1px solid #6F7478;
+        height: 40px;
+        width: 40px;
+        margin-right: 4px;
+        vertical-align: top;
+        font-size: 18px;
+        line-height: 51px;
+        box-sizing: border-box;
+        &:hover {
+          border-color: white;
+          color: white;
+        }
+      }
+    }
+
+  }
+
+  // legend
+  .legend {
+    background: $blue-tint-dark;
+    height: 55px;
+    padding-top: 11px;
+    color: #65686A;
+    font-family: $font-alt;
+    text-align: center;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    .logo {
+      @include image('logo_small.png', no-repeat top left);
+      background-size: 31px 32px;
+      width: 31px;
+      height: 32px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 15px;
+    }
+  }
+
+  // menu
+  nav {
+    background: $blue-tint;
+    border-bottom: 1px solid $footer-tint;
+    text-align: center;
+    font-size: 18px;
+    font-family: $font-alt;
+    text-transform: uppercase;
+    padding: 24px 0 12px 0;
+    a {
+      margin-right: 24px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  // contact banner
+  .banner {
+    @include image('crest_large.png', no-repeat center bottom);
+    background-color: #DB4827;
+    height: 168px;
+    line-height: 182px;
+    font-family: $font-alt;
+    font-size: 48px;
+    text-align: center;
+    .icon {
+      width: 0;
+      font-size: 70px;
+      position: relative;
+      left: -20px;
+      top: 9px;
+    }
+  }
+
+}

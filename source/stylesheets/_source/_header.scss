@@ -1,0 +1,46 @@
+header {
+
+  #logo {
+    @include image('logo.png', no-repeat left top);
+    background-size: 167px 32px;
+    display: inline-block;
+    width: 167px;
+    height: 32px;
+  }
+
+  .nav {
+    width: 925px;
+    margin: 0 auto;
+    padding-top: 40px;
+  }
+
+  nav {
+    display: inline-block;
+    float: right;
+    a {
+      color: white;
+      font-family: $font-alt;
+      font-size: 18px;
+      text-transform: uppercase;
+      .icon {
+        font-size: 24px;
+      }
+    }
+  }
+
+  h1 {
+    color: white;
+    text-align: center;
+    text-shadow: 4px 5px 3px #BA3F1E;
+    font-size: 72px;
+  }
+
+  h2 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-transform: none;
+    font-family: $font-main;
+  }
+
+}

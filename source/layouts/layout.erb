@@ -9,7 +9,22 @@
   </head>
 
   <body class="<%= page_classes %>">
+
+    <section id="<%= current_page.data.section %>">
+
+    <header>
+      <div class="container">
+        <%= partial "navigation" %>
+        <%= yield_content :header %>
+      </div>
+    </header>
+
     <%= yield %>
+
+    <%= partial "footer" %>
+
+    </section>
+
   </body>
 
 </html>

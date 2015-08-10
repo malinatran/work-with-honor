@@ -1,4 +1,11 @@
 {
   "default_title": "Honor Roll | A Creative Agency",
-  "title": "Honor Roll"
+  "title": "Honor Roll",
+  "pages": [
+    "Home",
+    "Work",
+    "Studio",
+    "Blog",
+    "Contact"
+  ]
 }
