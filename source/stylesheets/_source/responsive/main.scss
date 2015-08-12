@@ -1,0 +1,37 @@
+/**
+ * Main structure
+ */
+@media all and (max-width: 925px) {
+
+  $padding: 20px;
+
+  // structure main blocks
+  body {
+    min-width: initial;
+  }
+  .container {
+    width: auto !important;
+    padding-right: $padding;
+    padding-left: $padding;
+  }
+
+  // header
+  header {
+    height: auto !important;
+    .container {
+      height: auto !important;
+    }
+    .nav {
+      width: auto;
+      height: auto !important;
+    }
+  }
+
+  section#home header h1 {
+    margin: 10px;
+  }
+
+  @import './home.scss';
+
+
+}

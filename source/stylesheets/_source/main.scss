@@ -52,11 +52,13 @@ i {
 }
 
 @include headings() {
+  display: block;
   font-family: 'BrandonGrotesque-Bold';
   text-transform: uppercase;
   font-weight: normal;
   margin: 0;
   padding: 0;
+  letter-spacing: -1px;
   -webkit-font-smoothing: subpixel-antialiased;
   font-smoothing: subpixel-antialiased;
 }

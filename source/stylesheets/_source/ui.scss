@@ -12,8 +12,8 @@ button {
   font-size: 15px;
   line-height: 48px;
   height: 40px;
-  padding: 0 18px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+  padding: 0 16px;
+  box-shadow: inset 0 2px 1px $yellow-tint-light, 0 1px 1px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
 }
 
@@ -56,6 +56,8 @@ input {
  */
 .grid {
   @include clearfix;
+
+  // generate 12 column grid
   @for $i from 1 through 12 {
     .col-#{$i} {
       float: left;
@@ -63,15 +65,24 @@ input {
       box-sizing: border-box;
     }
   }
-  &.padded {
+
+  // generate padding 10, 20, and 30
+  @for $i from 0 through 3 {
+    $selector: '&.padded';
     $padding: 20px;
-    margin: 0 (-$padding);
-    $selector: '';
-    @for $i from 1 through 12 {
-      $selector: '.col-#{$i}, #{$selector}';
+    @if($i > 0) {
+      $padding: 10px * $i;
+      $selector: '&.padded-#{$i * 10}';
     }
     #{$selector} {
-      padding: 0 20px;
+      margin: 0 (-$padding);
+      $col-selector: '';
+      @for $i from 1 through 12 {
+        $col-selector: '.col-#{$i}, #{$col-selector}';
+      }
+      #{$col-selector} {
+        padding: 0 $padding;
+      }
     }
   }
 }
@@ -102,6 +113,43 @@ input {
       &:hover {
         background: #CBC5AB;
       }
+    }
+  }
+
+}
+
+/**
+ * Card
+ */
+.card {
+  position: relative;
+
+  &:hover {
+    .description {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  // inner info
+  .description {
+    background: rgba(0, 0, 0, 0.65);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    @include transition(all 120ms ease-in);
+    > span {
+      display: block;
+      text-align: center;
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      @include transform(translateY(-50%));
     }
   }
 

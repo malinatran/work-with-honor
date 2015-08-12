@@ -9,7 +9,7 @@ header {
   }
 
   .nav {
-    width: 925px;
+    width: $container-alt-width;
     margin: 0 auto;
     padding-top: 40px;
   }
@@ -17,6 +17,7 @@ header {
   nav {
     display: inline-block;
     float: right;
+    padding-top: 10px;
     a {
       color: white;
       font-family: $font-alt;
@@ -41,6 +42,7 @@ header {
     font-size: 30px;
     text-transform: none;
     font-family: $font-main;
+    letter-spacing: 0;
   }
 
 }

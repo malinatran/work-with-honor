@@ -38,10 +38,10 @@ section: home
 
 <div class="section work">
   <div class="container">
-    <h4>Work He've Done</h4>
+    <h4>Work We've Done</h4>
     <div class="grid">
       <div class="col-12">
-        <div class="entry">
+        <div class="entry card">
           <%= image_tag 'assets/img_1.png' %>
           <div class="description">
             <span>
@@ -52,7 +52,7 @@ section: home
         </div>
       </div>
       <div class="col-5">
-        <div class="entry">
+        <div class="entry card">
           <%= image_tag 'assets/img_4.png' %>
           <div class="description">
             <span>
@@ -61,7 +61,7 @@ section: home
             </span>
           </div>
         </div>
-        <div class="entry">
+        <div class="entry card">
           <%= image_tag 'assets/img_3.png' %>
           <div class="description">
             <span>
@@ -72,7 +72,7 @@ section: home
         </div>
       </div>
       <div class="col-7">
-        <div class="entry">
+        <div class="entry card">
           <%= image_tag 'assets/img_5.png' %>
           <div class="description">
             <span>
@@ -81,7 +81,7 @@ section: home
             </span>
           </div>
         </div>
-        <div class="entry">
+        <div class="entry card">
           <%= image_tag 'assets/img_2.png' %>
           <div class="description">
             <span>
@@ -104,30 +104,59 @@ section: home
 <div class="section blog">
   <div class="container alt">
     <h4>Stories From The Blog</h4>
-    <div class="grid padded">
+    <div class="grid padded-10">
+
       <div class="col-4">
-        <%= image_tag 'assets/thumb_1.png' %>
+        <div class="card">
+          <%= image_tag 'assets/thumb_1.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
         <span class="category">Branding</span>
         <h5>Immersive Website for the Supersized Shows</h5>
         <p>An open source library for cache invalidation of different resources</p>
-        <span>Louse Dreier / June 17, 2015</span>
+        <span class="date">Louse Dreier / June 17, 2015</span>
       </div>
+
       <div class="col-4">
-        <%= image_tag 'assets/thumb_1.png' %>
+        <div class="card">
+          <%= image_tag 'assets/thumb_2.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
         <span class="category">Branding</span>
         <h5>Immersive Website for the Supersized Shows</h5>
         <p>An open source library for cache invalidation of different resources</p>
-        <span>Louse Dreier / June 17, 2015</span>
+        <span class="date">Louse Dreier / June 17, 2015</span>
       </div>
+
       <div class="col-4">
-        <%= image_tag 'assets/thumb_1.png' %>
+        <div class="card">
+          <%= image_tag 'assets/thumb_3.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
         <span class="category">Branding</span>
         <h5>Immersive Website for the Supersized Shows</h5>
         <p>An open source library for cache invalidation of different resources</p>
-        <span>Louse Dreier / June 17, 2015</span>
+        <span class="date">Louse Dreier / June 17, 2015</span>
       </div>
+
     </div>
   </div>
+
   <div class="banner">
     <a href="<%= url_for('/blog') %>">
       View More Stories
