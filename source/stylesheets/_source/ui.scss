@@ -15,6 +15,11 @@ button {
   padding: 0 16px;
   box-shadow: inset 0 2px 1px $yellow-tint-light, 0 1px 1px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
+  &:hover,
+  &.active {
+    background-color: $yellow-tint-dark;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
+  }
 }
 
 /**
@@ -58,13 +63,7 @@ input {
   @include clearfix;
 
   // generate 12 column grid
-  @for $i from 1 through 12 {
-    .col-#{$i} {
-      float: left;
-      width: percentage($i / 12);
-      box-sizing: border-box;
-    }
-  }
+  @include grid();
 
   // generate padding 10, 20, and 30
   @for $i from 0 through 3 {

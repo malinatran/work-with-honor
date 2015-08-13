@@ -6,12 +6,42 @@ section#home {
   header {
 
     h1 {
-      margin: 20px 0 20px 0;
+      margin: 25px 0;
       font-size: 60px;
     }
 
     h2 {
-      padding-bottom: 20px;
+      padding-bottom: 25px;
+    }
+
+  }
+
+  .section {
+
+    .container {
+      padding: 35px $global-padding 50px $global-padding;
+    }
+
+    // work section
+    &.work {
+      img {
+        width: 100%;
+      }
+    }
+
+    // blog entries
+    &.blog {
+      .card {
+        display: inline-block;
+      }
+      .category {
+        padding: 6px 0;
+      }
+      .grid {
+        > * {
+          padding-bottom: 20px;
+        }
+      }
     }
 
   }

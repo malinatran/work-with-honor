@@ -1,9 +1,12 @@
+@import "./../_shared";
+@import "./../_mixins";
+
 /**
  * Main structure
  */
-@media all and (max-width: 925px) {
+@media all and (max-width: $container-width) {
 
-  $padding: 20px;
+  $global-padding: 20px;
 
   // structure main blocks
   body {
@@ -11,8 +14,8 @@
   }
   .container {
     width: auto !important;
-    padding-right: $padding;
-    padding-left: $padding;
+    padding-right: $global-padding;
+    padding-left: $global-padding;
   }
 
   // header
@@ -27,8 +30,77 @@
     }
   }
 
-  section#home header h1 {
-    margin: 10px;
+  // grid systems
+  .grid {
+    @include grid() {
+      float: none;
+      width: auto;
+      display: block;
+    };
+    &.padded-10,
+    &.padded-20,
+    &.padded-30 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+
+  // footer
+  footer {
+
+    nav {
+      display: none;
+    }
+
+    .banner {
+      padding-top: 5px;
+      height: auto;
+      font-size: 24px;
+      line-height: initial;
+      .icon {
+        top: 5px;
+        left: -10px;
+        font-size: 42px;
+      }
+      @media all and (max-width: 390px) {
+        padding: 16px $global-padding 0 $global-padding;
+      }
+    }
+
+    .newsletter {
+
+      b {
+        padding-bottom: 20px;
+      }
+
+      form {
+        text-align: right;
+        .field {
+          width: 100% !important;
+          padding: 0 0 12px 0;
+          margin-right: 0;
+        }
+        button {
+          margin-right: 0;
+        }
+
+      }
+
+      .social {
+        margin-top: 30px;
+      }
+
+    }
+
+    .legend {
+      padding: 11px 0;
+      height: auto;
+      .logo {
+        display: block;
+        margin: 5px auto 10px auto;
+      }
+    }
+
   }
 
   @import './home.scss';
