@@ -1,0 +1,171 @@
+---
+section: studio
+---
+
+<% content_for :header do %>
+  <b>Branding + Design + Strategy</b>
+  <h1>Investing in the future by creating brands that improve the quality of life for all.</h1>
+  <h2>We partner with forward-thinking, brands, tastemakers, visionares and entrepreneurs struggling to find an identity that connects with their audience and stands out in a crowded market.</h2>
+<% end %>
+
+<% content_for :header_logo do %>
+  <span>Studio</span>
+<% end %>
+
+<div class="section blue-tint">
+  <div class="container alt">
+    <h3>We Are Honor Roll</h3>
+    <p>Honor Roll is a creative agency dedicated to helping forward-thinking clients jumpstart their brand’s presence and solve real business problems while addressing the needs of people, planet and profit.</p>
+    <button>See How We Can Help You</button>
+  </div>
+</div>
+
+<div class="section showcase">
+  <div class="container">
+    <h4>Problems We've Solved</h4>
+    <div class="slider">
+      <div class="slide">
+        <i>Who should our next million customers be?</i>
+        <b>Customer Appreciation Strategy</b>
+        <%= image_tag 'assets/img_logo_2.png' %>
+      </div>
+      <div class="pagination">
+        <a>1</a>
+        <a>2</a>
+        <a class="active">3</a>
+        <a>4</a>
+        <a>5</a>
+      </div>
+    </div>
+    <button>See How We Can Help You</button>
+  </div>
+</div>
+
+<div class="section work">
+  <div class="container">
+    <h4>Work We've Done</h4>
+    <div class="grid">
+      <div class="col-12">
+        <div class="entry card">
+          <%= image_tag 'assets/img_1.png' %>
+          <div class="description">
+            <span>
+              <%= image_tag 'assets/img_logo.png' %>
+              Branding, Design, Advertising
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-5">
+        <div class="entry card">
+          <%= image_tag 'assets/img_4.png' %>
+          <div class="description">
+            <span>
+              <%= image_tag 'assets/img_logo.png' %>
+              Branding, Design, Advertising
+            </span>
+          </div>
+        </div>
+        <div class="entry card">
+          <%= image_tag 'assets/img_3.png' %>
+          <div class="description">
+            <span>
+              <%= image_tag 'assets/img_logo.png' %>
+              Branding, Design, Advertising
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="col-7">
+        <div class="entry card">
+          <%= image_tag 'assets/img_5.png' %>
+          <div class="description">
+            <span>
+              <%= image_tag 'assets/img_logo.png' %>
+              Branding, Design, Advertising
+            </span>
+          </div>
+        </div>
+        <div class="entry card">
+          <%= image_tag 'assets/img_2.png' %>
+          <div class="description">
+            <span>
+              <%= image_tag 'assets/img_logo.png' %>
+              Branding, Design, Advertising
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner">
+    <a href="<%= url_for('/work') %>">
+      View More Work
+      <span class="icon chevron-small-right"></span>
+    </a>
+  </div>
+</div>
+
+<div class="section blog">
+  <div class="container alt">
+    <h4>Stories From The Blog</h4>
+    <div class="grid padded-10">
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_1.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_2.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_3.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="banner">
+    <a href="<%= url_for('/blog') %>">
+      View More Stories
+      <span class="icon chevron-small-right"></span>
+    </a>
+  </div>
+</div>
