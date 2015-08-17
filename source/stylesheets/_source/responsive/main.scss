@@ -37,6 +37,7 @@
       width: auto;
       display: block;
     };
+    &.padded-5,
     &.padded-10,
     &.padded-20,
     &.padded-30 {
@@ -58,8 +59,6 @@
       font-size: 24px;
       line-height: initial;
       .icon {
-        top: 5px;
-        left: -10px;
         font-size: 42px;
       }
       @media all and (max-width: 390px) {
@@ -103,7 +102,8 @@
 
   }
 
-  @import './home.scss';
+  @import './home';
+  @import './studio';
 
 
 }

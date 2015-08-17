@@ -1,0 +1,318 @@
+---
+section: contact
+contact_banner: false
+---
+
+<% content_for :header_logo do %>
+  <span>Contact</span>
+<% end %>
+
+<% content_for :header do %>
+  <h1>Ready to Work, Ready to Help</h1>
+
+  <div class="grid padded-10">
+
+    <!--Social Links-->
+    <div class="col-3">
+      <b>Connect</b>
+      <%= partial('social', :locals => { :linkedin_alt => true, :faecbook_alt => true }) %>
+    </div>
+
+    <!--Contact-->
+    <div class="col-6">
+      <b>General Inquiries</b>
+      <span>All general inquiries, pleasantries, <br/> cat pics and complients, send this way.</span>
+      <a href="mailto:<%= data.site.email %>"><%= data.site.email %></a>
+    </div>
+
+    <!--Phone-->
+    <div class="col-3">
+      <b>Phone</b>
+      <span>Talk to us the old fashion way. Give us a ring.</span>
+      <a>(862) 216-6506</a>
+    </div>
+
+  </div>
+<% end %>
+
+<!--Project Planner-->
+<div class="planner">
+
+  <!--Section banner-->
+  <div class="banner">
+    <div class="container">
+      <h2>Project Planner</h2>
+      <p>We’re now accepting awesome new clients. Filling out the information below will help us <br/> determine your needs. We look forward to hearing from you. ets get started.</p>
+    </div>
+  </div>
+
+  <!--Form-->
+  <form>
+
+    <div class="container">
+
+      <!--Step 1-->
+      <h4>Step 1 of 3: About You</h4>
+      <span class="desc">Tell us about yourself and your company.</span>
+
+      <div class="grid padded-10">
+
+        <!--Name field-->
+        <div class="field name required col-6">
+          <label>Name</label>
+          <input name="name" type="text" required>
+        </div>
+
+        <!--Email field-->
+        <div class="field email required col-6">
+          <label>Email</label>
+          <input name="email" type="email" required>
+        </div>
+
+      </div>
+
+      <!--Company name-->
+      <div class="field companyname">
+        <label>Company Name</label>
+        <input name="companyname" type="text">
+      </div>
+
+      <div class="grid padded-10">
+
+        <!--Phone-->
+        <div class="field phone required col-6">
+          <label>Phone</label>
+          <input name="phone" type="text" required>
+        </div>
+
+        <!--Website-->
+        <div class="field website required col-6">
+          <label>Website</label>
+          <input name="website" type="text" required>
+        </div>
+
+      </div>
+
+      <!--Contact-->
+      <div class="field contact checkbox">
+        <input type="checkbox" name="contact" id="contact_check">
+        <label for="contact_check">I Am the Main Point of Contact for This Project.</label>
+      </div>
+
+      <!--Step 2-->
+      <h4>Step 2 of 3: Project Description</h4>
+      <span class="desc">Why have you come to us? What are you currently working on?</span>
+
+      <!--Project type-->
+      <div class="field type options required">
+        <label>Select Product Type</label>
+        <input name="type" type="radio">
+
+        <div class="grid">
+
+          <!--Option 1-->
+          <div class="col-6" data-name="type" data-value="rebuild">
+            <span class="option">Rebuild of an Exsiting Project</span>
+          </div>
+
+          <!--Option 2-->
+          <div class="col-6" data-name="type" data-value="rebuild">
+            <span class="option">Brand New Project</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Project services-->
+      <div class="field services options required">
+        <label>Select Category Of Services</label>
+        <input name="services" type="radio">
+        <div class="grid padded-5">
+
+          <!--Option-->
+          <div class="col-3" data-name="services" data-value="identity">
+            <div class="option">
+              <h3>Brand Identity</h3>
+              <ul>
+                <li>Brand Collateral</li>
+                <li>Brand Creation</li>
+                <li>Logo Development</li>
+                <li>Identity System</li>
+                <li>Naming & Taglines</li>
+                <li>Brand Guidelines</li>
+              </ul>
+            </div>
+          </div>
+
+
+          <!--Option-->
+          <div class="col-3" data-name="services" data-value="print">
+            <div class="option">
+              <h3>Brand Strategy</h3>
+              <ul>
+                <li>Mission & Visioning</li>
+                <li>Brand Analysis</li>
+                <li>Brand Messaging</li>
+                <li>Brand Positioning</li>
+                <li>Competitive Analysis</li>
+                <li>Brand Conslutation</li>
+              </ul>
+            </div>
+          </div>
+
+          <!--Option-->
+          <div class="col-3" data-name="services" data-value="marketing">
+            <div class="option">
+              <h3>Print & Packaging</h3>
+              <ul>
+                <li>Art Direction</li>
+                <li>Product & Packaging Design</li>
+                <li>Signage & Billboard Design</li>
+                <li>Brochure & Menu Design</li>
+                <li>Poster Design</li>
+                <li>Brand Environment Design</li>
+                <li>Stationery Design</li>
+              </ul>
+            </div>
+          </div>
+
+          <!--Option-->
+          <div class="col-3" data-name="services" data-value="strategy">
+            <div class="option marketing">
+              <h3>Digital Marketing <br/> & Design</h3>
+              <ul>
+                <li>Information Architecture</li>
+                <li>User Experience Design</li>
+                <li>Website Design & Development</li>
+                <li>E-commerce Design & Development</li>
+                <li>Email Marketing & Development</li>
+                <li>Social Media Strategy</li>
+                <li>Content Strategy</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="field description required">
+        <label>Project Details, Goals and Objectives</label>
+        <textarea name="description"></textarea>
+      </div>
+
+      <!--Step 3-->
+      <h4>Step 3 of 3: Logistics</h4>
+      <span class="desc">What are the technical details of your project?</span>
+
+      <div class="grid padded-10">
+
+        <!--Start date field-->
+        <div class="field date start required col-6">
+          <label>Project End Date</label>
+          <div class="select year">
+            <select name="start_year">
+              <option selected>2015</option>
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+            </select>
+            <span class="value">Year</span>
+            <span class="icon chevron-small-down"></span>
+          </div>
+          <div class="select">
+            <select name="start_month">
+              <option selected>August</option>
+              <option>September</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <span class="value">Month</span>
+            <span class="icon chevron-small-down"></span>
+          </div>
+        </div>
+
+        <!--End date field-->
+        <div class="field date end required col-6">
+          <label>Project End Date</label>
+          <div class="select year">
+            <select name="end_year">
+              <option selected>2015</option>
+              <option>2016</option>
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+            </select>
+            <span class="value">Year</span>
+            <span class="icon chevron-small-down"></span>
+          </div>
+          <div class="select">
+            <select name="end_month">
+              <option selected>August</option>
+              <option>September</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+            <span class="value">Month</span>
+            <span class="icon chevron-small-down"></span>
+          </div>
+        </div>
+
+      </div>
+
+      <!--Budget-->
+      <div class="field options budget required">
+        <label>Budget</label>
+        <input name="budget" type="radio" required>
+
+        <div class="grid padded-10">
+
+          <!--Option 1-->
+          <div class="col-3" data-name="budget" data-value="2500-5000">
+            <span class="option">$2,500 - $5,000</span>
+          </div>
+
+          <!--Option 2-->
+          <div class="col-3" data-name="budget" data-value="5000-10000">
+            <span class="option">$5,000 - $10,000</span>
+          </div>
+
+          <!--Option 3-->
+          <div class="col-3" data-name="budget" data-value="10000-15000">
+            <span class="option">$10,000 -  $15,000</span>
+          </div>
+
+          <!--Option 4-->
+          <div class="col-3" data-name="budget" data-value="20000">
+            <span class="option">$20,000+</span>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!--Comments-->
+      <div class="field comments">
+        <label>Questions, Comments or Concerns (Optional)</label>
+        <textarea name="comments"></textarea>
+      </div>
+
+      <!--Subscribe-->
+      <div class="field subscribe checkbox">
+        <input type="checkbox" name="subscribe" id="subscribe_check">
+        <label for="subscribe_check">Yes, I’d Love to Receive Tips on Growing My Brand and Business. (Optional)</label>
+      </div>
+
+      <button type="submit">
+        Submit Your Project
+        <span class="icon chevron-small-right"></span>
+      </button>
+
+    </div>
+
+  </form>
+
+</div>

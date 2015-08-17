@@ -1,0 +1,224 @@
+/**
+ * Contact page
+ */
+section#contact {
+
+  // container width
+  $container-width: 780px;
+
+  // header
+  header {
+    background-color: $blue-tint;
+
+    .container {
+      @include image('crest.png', no-repeat center center);
+      background-size: cover;
+      padding: 0 0 65px 0;
+      .content {
+        width: 780px;
+        margin: 0 auto;
+      }
+    }
+
+    h1 {
+      text-transform: none;
+      font-size: 60px;
+      padding: 40px 0 30px 0;
+    }
+
+    .grid {
+      text-align: center;
+      color: white;
+      span {
+        font-size: 12px;
+        display: block;
+        padding: 10px 0 20px 0;
+      }
+      b {
+        font-size: 18px;
+        display: block;
+        text-transform: uppercase;
+      }
+      a {
+        font-size: 20px;
+      }
+      .social {
+        padding: 10px 0 0 0;
+        a {
+          font-size: 30px;
+          color: #F4F0E6;
+          margin-right: 3px;
+          display: inline-block;
+          vertical-align: middle;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.linkedin_alt,
+          &.dribbble {
+            font-size: 28px;
+          }
+          &.medium {
+            font-size: 32px;
+          }
+        }
+      }
+    }
+
+  }
+
+  // planner
+  .planner {
+
+    .container {
+      width: 780px;
+    }
+
+    .banner {
+      padding: 45px 0 35px 0;
+      font-size: 16px;
+      border-bottom: 1px solid $clear-border;
+      h2 {
+        font-size: 48px;
+        line-height: 50px;
+        text-transform: none;
+      }
+      p {
+        line-height: 1.75em;
+      }
+    }
+
+    form {
+      background: $clear-tint;
+      padding: 50px 0;
+
+      h4 {
+        font-size: 24px;
+        text-transform: none;
+      }
+
+      // input fields
+      .field {
+        padding-bottom: 18px;
+        input,
+        textarea {
+          border: 1px solid $clear-border;
+          border-radius: 0;
+          height: 57px;
+          box-shadow: none;
+        }
+        label {
+          font-size: 12px;
+          padding-bottom: 11px;
+        }
+      }
+
+      // contact field
+      .field.contact {
+        padding-bottom: 35px;
+      }
+
+      // budget field
+      .field.budget {
+        padding-bottom: 50px;
+      }
+
+      // project type field
+      .field.type {
+        padding-bottom: 50px;
+        .option {
+          font-size: 15px;
+          height: 58px;
+          line-height: 62px;
+          text-transform: uppercase;
+        }
+        .col-6:first-of-type .option {
+          border-right: 0;
+        }
+      }
+
+      // services field
+      .field.services {
+        text-align: center;
+        padding-bottom: 30px;
+        h3 {
+          height: 60px;
+          line-height: 70px;
+          font-size: 15px;
+          border-bottom: 1px solid $clear-border;
+          box-sizing: border-box;
+        }
+        .option {
+          min-height: 277px;
+          height: auto;
+          line-height: initial;
+          &.marketing {
+            h3 {
+              line-height: 18px;
+              padding-top: 15px;
+            }
+          }
+        }
+        ul {
+          padding: 20px 0px 0 0;
+          margin: 0;
+          list-style: none;
+          li {
+            padding-bottom: 14px;
+            text-transform: uppercase;
+            font-family: $font-alt;
+            font-size: 9px;
+            &:last-child {
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .field.description {
+        padding-bottom: 40px;
+      }
+
+      // date fields
+      .field.date {
+        padding-bottom: 50px;
+        @include clearfix;
+        .select {
+          float: left;
+          width: 65%;
+          &.year {
+            width: 30%;
+            margin-right: 5%;
+          }
+        }
+      }
+
+      // step description
+      .desc {
+        display: block;
+        font-size: 16px;
+        padding-bottom: 33px;
+      }
+
+      button {
+        width: 100%;
+        height: 96px;
+        line-height: 105px;
+        font-size: 24px;
+        box-shadow: none;
+        border-radius: 0;
+        margin: 40px 0 25px 0;
+        .icon {
+          font-size: 38px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          left: -5px;
+          top: -4px;
+        }
+      }
+
+    }
+
+  }
+
+}

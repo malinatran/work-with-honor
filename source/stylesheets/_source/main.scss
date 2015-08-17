@@ -40,12 +40,34 @@ i {
   font-style: normal;
 }
 
+blockquote {
+  margin: 0;
+  padding: 0;
+  p {
+    font-family: $font-main-italic;
+    font-size: 40px;
+    line-height: 1.25em;
+  }
+  cite {
+    text-transform: uppercase;
+    display: block;
+    font-family: $font-alt;
+    font-style: normal;
+    font-size: 20px;
+    padding: 0 0 5px 0;
+  }
+  span {
+    font-size: 17px;
+  }
+}
+
 /**
  * Structure
  */
 .container {
   margin: 0 auto;
   width: 1075px;
+  box-sizing: border-box;
   &.alt {
     width: 925px;
   }
@@ -74,5 +96,7 @@ h4 {
 // pages
 @import 'header';
 @import 'footer';
+@import 'sections';
 @import 'home';
 @import 'studio';
+@import 'contact';

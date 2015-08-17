@@ -1,5 +1,6 @@
 <footer>
 
+  <% if !defined?(contact_banner) %>
   <!--Contact banner-->
   <div class="banner">
     <a href="<%= url_for('/contact') %>">
@@ -7,6 +8,7 @@
       <span class="icon chevron-small-right"></span>
     </a>
   </div>
+  <% end %>
 
   <!--Menu-->
   <nav>
@@ -48,13 +50,8 @@
 
       </form>
 
-      <div class="social">
-        <a class="facebook icon"></a>
-        <a class="twitter icon"></a>
-        <a class="medium icon"></a>
-        <a class="linkedin icon"></a>
-        <a class="dribbble icon"></a>
-      </div>
+      <!--Social Links-->
+      <%= partial 'social' %>
 
     </div>
 

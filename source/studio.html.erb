@@ -12,22 +12,14 @@ section: studio
   <span>Studio</span>
 <% end %>
 
-<div class="section blue-tint">
+<div class="section brand">
   <div class="container alt">
-    <h3>We Are Honor Roll</h3>
-    <p>Honor Roll is a creative agency dedicated to helping forward-thinking clients jumpstart their brand’s presence and solve real business problems while addressing the needs of people, planet and profit.</p>
-    <button>See How We Can Help You</button>
-  </div>
-</div>
-
-<div class="section showcase">
-  <div class="container">
-    <h4>Problems We've Solved</h4>
+    <h4>How We Support your Brand</h4>
     <div class="slider">
       <div class="slide">
-        <i>Who should our next million customers be?</i>
-        <b>Customer Appreciation Strategy</b>
-        <%= image_tag 'assets/img_logo_2.png' %>
+        <p>With our help, clients jumpstart their brand's presence <br/>and solve real business problems while addressing the needs <br/>of people planet and profit. </p>
+        <h3>Lets Make Great Work</h3>
+        <button>Contact Us Now</button>
       </div>
       <div class="pagination">
         <a>1</a>
@@ -37,135 +29,105 @@ section: studio
         <a>5</a>
       </div>
     </div>
-    <button>See How We Can Help You</button>
   </div>
 </div>
 
-<div class="section work">
+<div class="section capabilities">
   <div class="container">
-    <h4>Work We've Done</h4>
+    <h4>Our Capabilities</h4>
     <div class="grid">
-      <div class="col-12">
-        <div class="entry card">
-          <%= image_tag 'assets/img_1.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
+      <div class="col-3">
+        <span class="icon eye"></span>
+        <h3>Brand Identity</h3>
+        <ul>
+          <li>Brand Collateral</li>
+          <li>Brand Creation</li>
+          <li>Logo Development</li>
+          <li>Identity System</li>
+          <li>Naming & Taglines</li>
+          <li>Brand Guidelines</li>
+        </ul>
       </div>
-      <div class="col-5">
-        <div class="entry card">
-          <%= image_tag 'assets/img_4.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-        <div class="entry card">
-          <%= image_tag 'assets/img_3.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
+      <div class="col-4">
+        <span class="icon computer"></span>
+        <h3>Digital Marketing & Design</h3>
+        <ul>
+          <li>Information Architecture</li>
+          <li>User Experience Design</li>
+          <li>Website Design & Development</li>
+          <li>E-commerce Design & Development</li>
+          <li>Email Marketing, Design & Development</li>
+          <li>Social Media Strategy</li>
+          <li>Content Strategy</li>
+        </ul>
       </div>
-      <div class="col-7">
-        <div class="entry card">
-          <%= image_tag 'assets/img_5.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-        <div class="entry card">
-          <%= image_tag 'assets/img_2.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
+      <div class="col-3">
+        <span class="icon tower"></span>
+        <h3>Brand Strategy</h3>
+        <ul>
+          <li>Mission & Visioning</li>
+          <li>Brand Analysis</li>
+          <li>Brand Messaging</li>
+          <li>Brand Positioning</li>
+          <li>Competitive Analysis</li>
+          <li>Brand Conslutation</li>
+        </ul>
+      </div>
+      <div class="col-3">
+        <span class="icon package"></span>
+        <h3>Print & Packaging</h3>
+        <ul>
+          <li>Art Direction</li>
+          <li>Product & Packaging Design</li>
+          <li>Signage & Billboard Design</li>
+          <li>Brochure & Menu Design</li>
+          <li>Poster Design</li>
+          <li>Brand Environment Design</li>
+          <li>Stationery Design</li>
+        </ul>
       </div>
     </div>
-  </div>
-  <div class="banner">
-    <a href="<%= url_for('/work') %>">
-      View More Work
-      <span class="icon chevron-small-right"></span>
-    </a>
   </div>
 </div>
 
-<div class="section blog">
-  <div class="container alt">
-    <h4>Stories From The Blog</h4>
-    <div class="grid padded-10">
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_1.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
+<div class="section testimonials">
+  <div class="container">
+    <h4>Testimonials</h4>
+    <div class="slider white">
+      <div class="slide">
+        <blockquote>
+          <p>"Honor Roll was an ideal collaborator to help <br/> us develop a framework for an editorially-<br/>driven, content-rich digital experience."</p>
+          <cite>David Rockwell</cite>
+          <span>Founder and President of Rockwell Group</span>
+        </blockquote>
       </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_2.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
+      <div class="pagination">
+        <a>1</a>
+        <a>2</a>
+        <a class="active">3</a>
+        <a>4</a>
+        <a>5</a>
       </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
     </div>
   </div>
+</div>
 
-  <div class="banner">
-    <a href="<%= url_for('/blog') %>">
-      View More Stories
-      <span class="icon chevron-small-right"></span>
-    </a>
+<div class="section contacts">
+  <div class="container">
+    <h4>A Team Dedicated To Your Success</h4>
+    <div class="grid padded-10">
+      <div class="col-6">
+        <%= image_tag 'james_pic.png' %>
+        <b>James Carter</b>
+        <span>Founder / Head Of Design</span>
+        <a href="https://twitter.com/jamescarterhr">@jamescarterhr</a>
+      </div>
+      <div class="col-6">
+        <%= image_tag 'denney_pic.png' %>
+        <b>Denney Pham</b>
+        <span>Lead Strategist</span>
+        <a href="https://twitter.com/Denney_theJets">@Denney_theJets</a>
+      </div>
+    </div>
   </div>
 </div>

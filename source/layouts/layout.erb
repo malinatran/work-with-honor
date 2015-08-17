@@ -16,13 +16,15 @@
     <header>
       <div class="container">
         <%= partial "navigation" %>
-        <%= yield_content :header %>
+        <div class="content">
+          <%= yield_content :header %>
+        </div>
       </div>
     </header>
 
     <%= yield %>
 
-    <%= partial "footer" %>
+    <%= partial('footer', :locals => current_page.data) %>
 
     </section>
 

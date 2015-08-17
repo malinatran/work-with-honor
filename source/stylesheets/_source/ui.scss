@@ -29,6 +29,12 @@ form {
 
   // input field
   .field {
+    &.required {
+      label:after {
+        content: "*";
+        color: $red-tint;
+      }
+    }
     label {
       display: block;
       margin: 0;
@@ -57,6 +63,132 @@ input {
 }
 
 /**
+ * Textarea
+ */
+textarea {
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 130px;
+  padding: 10px 20px;
+  line-height: 2em;
+}
+
+/**
+ * Checkbox
+ */
+.field.checkbox {
+  position: relative;
+  &:hover {
+    label:before {
+      background: white;
+    }
+  }
+  label {
+    display: inline-block;
+    cursor: pointer;
+    padding: 0 !important;
+    &:before {
+      @extend .icon;
+      content: "";
+      background: white;
+      border: 1px solid #C5B989;
+      width: 17px;
+      height: 17px;
+      display: inline-block;
+      vertical-align: middle;
+      text-align: center;
+      line-height: 19px;
+      margin-right: 8px;
+      position: relative;
+      top: -3px;
+      font-size: 0;
+      @include transition(all 80ms ease-in);
+    }
+  }
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 1px !important;
+    height: 1px !important;
+  }
+  input:checked + label:before {
+    @extend .icon.check:before;
+    font-size: 12px;
+  }
+}
+
+/**
+ * Radio
+ */
+.field.options {
+  position: relative;
+  input {
+    position: absolute;
+    opacity: 0;
+    width: 1px !important;
+    height: 1px !important;
+  }
+  .option {
+    display: block;
+    border: 1px solid $clear-border;
+    height: 64px;
+    line-height: 70px;
+    text-align: center;
+    font-size: 18px;
+    font-family: $font-alt;
+    box-sizing: border-box;
+    cursor: pointer;
+    @include transition(all 80ms ease-in);
+    &.active,
+    &:hover {
+      background: white;
+    }
+  }
+}
+
+/**
+ * Select
+ */
+.select {
+  background: white;
+  height: 49px;
+  border: 1px solid $clear-border;
+  position: relative;
+  box-sizing: border-box;
+  select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: none;
+    width: 100%;
+    z-index: 2;
+    opacity: 0.01;
+  }
+  .icon {
+    position: absolute;
+    font-size: 34px;
+    color: $clear-border;
+    top: 50%;
+    margin-top: -15px;
+    right: 7px;
+    z-index: 1;
+  }
+  .value {
+    @include ellipsis;
+    display: block;
+    font-size: 18px;
+    font-family: $font-alt;
+    text-transform: uppercase;
+    line-height: 56px;
+    padding: 0 45px 0 20px;
+  }
+}
+
+/**
  * Grid
  */
 .grid {
@@ -66,21 +198,23 @@ input {
   @include grid();
 
   // generate padding 10, 20, and 30
-  @for $i from 0 through 3 {
-    $selector: '&.padded';
-    $padding: 20px;
-    @if($i > 0) {
-      $padding: 10px * $i;
-      $selector: '&.padded-#{$i * 10}';
-    }
+  $paddings: 5 10 20 30;
+  @for $i from 1 through length($paddings) {
+    // $selector: '&.padded';
+    $padding: nth($paddings, $i);
+    // @if($i > 0) {
+    //   $padding: 10px * $i;
+    $selector: '&.padded-#{$padding}';
+    // }
     #{$selector} {
-      margin: 0 (-$padding);
+      z-index: $padding;
+      margin: 0 (-$padding) * 1px;
       $col-selector: '';
-      @for $i from 1 through 12 {
-        $col-selector: '.col-#{$i}, #{$col-selector}';
+      @for $j from 1 through 12 {
+        $col-selector: '.col-#{$j}, #{$col-selector}';
       }
       #{$col-selector} {
-        padding: 0 $padding;
+        padding: 0 ($padding * 1px);
       }
     }
   }
@@ -91,12 +225,25 @@ input {
  */
 .slider {
 
+  // white tinted
+  &.white {
+    .pagination {
+      a {
+        border-color: white;
+        &.active,
+        &:hover {
+          background: white;
+        }
+      }
+    }
+  }
+
   .pagination {
     padding-top: 30px;
     text-align: center;
     a {
-      background: white;
-      border: 2px solid #CBC5AB;
+      background: none;
+      border: 2px solid $clear-border;
       border-radius: 100%;
       width: 16px;
       height: 16px;
@@ -110,7 +257,7 @@ input {
       }
       &.active,
       &:hover {
-        background: #CBC5AB;
+        background: $clear-border;
       }
     }
   }
