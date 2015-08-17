@@ -6,12 +6,19 @@ section#studio {
   header {
 
     h1 {
-      margin: 25px 0;
-      font-size: 60px;
+      margin: 10px 0 25px 0;
+      font-size: 42px;
+      padding: 0;
     }
 
     h2 {
-      padding-bottom: 25px;
+      padding: 0 0 25px 0;
+      font-size: 18px;
+    }
+
+    b {
+      font-size: 14px;
+      padding-bottom: 0;
     }
 
   }
@@ -21,6 +28,23 @@ section#studio {
     .col-4,
     .col-3 {
       width: auto;
+    }
+  }
+
+  // contact section
+  .section.contacts {
+    .container .grid {
+      > * {
+        text-align: center;
+        padding-bottom: 20px;
+        &:last-of-type {
+          padding-bottom: 0;
+        }
+      }
+    }
+    img {
+      width: 60%;
+      margin: 0 auto;
     }
   }
 

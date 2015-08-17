@@ -11,12 +11,12 @@ section#contact {
     background-color: $blue-tint;
 
     .container {
-      @include image('crest.png', no-repeat center center);
+      @include image('crest.png', no-repeat center bottom);
       background-size: cover;
-      padding: 0 0 65px 0;
       .content {
         width: 780px;
         margin: 0 auto;
+        padding-bottom: 65px;
       }
     }
 

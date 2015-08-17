@@ -1,0 +1,86 @@
+/**
+ * Home page
+ */
+section#contact {
+
+  header {
+    .container {
+      .content {
+        width: auto;
+        padding-bottom: 10px;
+        h1 {
+          font-size: 50px;
+        }
+        // grid sections
+        .grid {
+          > * {
+            padding-bottom: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  // planner
+  .planner {
+
+    form {
+      padding-bottom: 0;
+
+      // type select
+      .field.type {
+        .col-6:first-of-type {
+          .option {
+            border-right: 1px solid $clear-border;
+          }
+        }
+      }
+
+      // services
+      .field.services {
+        .option {
+          min-height: initial;
+          ul {
+            padding-bottom: 20px;
+          }
+        }
+
+      }
+
+      // options select
+      .options {
+        .option {
+          border-bottom: 0;
+        }
+        .grid {
+          > * {
+            &:last-of-type {
+              .option {
+                border-bottom: 1px solid $clear-border;
+              }
+            }
+          }
+        }
+      }
+
+      // date fields
+      .field.date {
+        .select {
+          width: 50%;
+          &.year {
+            width: 47%;
+            margin-right: 3%;
+          }
+        }
+      }
+
+      button {
+        font-size: 18px;
+        margin: 25px 0 50px 0;
+      }
+
+    }
+
+  }
+
+}

@@ -14,8 +14,14 @@
   }
   .container {
     width: auto !important;
-    padding-right: $global-padding;
-    padding-left: $global-padding;
+    padding-right: $global-padding !important;
+    padding-left: $global-padding !important;
+  }
+
+  // section containers
+  .section .container {
+    padding-right: $global-padding !important;
+    padding-left: $global-padding !important;
   }
 
   // header
@@ -28,6 +34,15 @@
       width: auto;
       height: auto !important;
     }
+
+    @media all and (max-width: 390px) {
+      #logo {
+        + span {
+          display: none;
+        }
+      }
+    }
+
   }
 
   // grid systems
@@ -43,6 +58,10 @@
     &.padded-30 {
       margin-left: 0;
       margin-right: 0;
+    }
+    > * {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
     }
   }
 
@@ -104,6 +123,6 @@
 
   @import './home';
   @import './studio';
-
+  @import './contact';
 
 }
