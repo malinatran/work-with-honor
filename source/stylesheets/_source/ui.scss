@@ -1,8 +1,10 @@
 /**
  * Button
  */
-button {
+button,
+.button {
   @include appearance(none);
+  display: inline-block;
   background: $yellow-tint;
   border: none;
   border-radius: 3px;
@@ -15,6 +17,7 @@ button {
   padding: 0 16px;
   box-shadow: inset 0 2px 1px $yellow-tint-light, 0 1px 1px rgba(0, 0, 0, 0.17);
   box-sizing: border-box;
+  outline: none;
   &:hover,
   &.active {
     background-color: $yellow-tint-dark;
@@ -224,7 +227,9 @@ textarea {
  * Slider
  */
 .slider {
-
+  margin: 0 auto;
+  width: 100%;
+  padding-bottom: 45px;
   // white tinted
   &.white {
     .pagination {
@@ -238,26 +243,44 @@ textarea {
     }
   }
 
-  .pagination {
-    padding-top: 30px;
-    text-align: center;
-    a {
-      background: none;
-      border: 2px solid $clear-border;
-      border-radius: 100%;
-      width: 16px;
-      height: 16px;
+  .slide {
+    width: 100%;
+  }
+
+  // vendor styling
+  aside[id*="-breadcrumbs"] {
+    padding: 0;
+    left: 0;
+    bottom: -5px;
+    width: 100%;
+    ul {
       display: inline-block;
-      box-sizing: border-box;
-      color: transparent;
-      text-indent: -9999px;
-      margin-right: 13px;
+      padding: 0 13px 0 0;
       &:last-child {
-        margin-right: 0;
+        padding: 0;
       }
-      &.active,
-      &:hover {
-        background: $clear-border;
+      li,
+      li.normal {
+        background: none;
+        border: 2px solid $clear-border;
+        border-radius: 100%;
+        width: 16px;
+        height: 16px;
+        margin: 0;
+        display: inline-block;
+        box-sizing: border-box;
+        color: transparent;
+        text-indent: -9999px;
+        margin-right: 13px;
+        &:last-child {
+          margin-right: 0;
+        }
+        &.active,
+        &:hover {
+          width: 16px;
+          height: 16px;
+          background: $clear-border;
+        }
       }
     }
   }
