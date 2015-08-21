@@ -35,6 +35,14 @@
       height: auto !important;
     }
 
+    .modal {
+      .links {
+        a {
+          font-size: 32px;
+        }
+      }
+    }
+
     @media all and (max-width: 390px) {
       #logo {
         + span {

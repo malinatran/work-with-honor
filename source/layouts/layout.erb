@@ -20,6 +20,25 @@
           <%= yield_content :header %>
         </div>
       </div>
+
+      <!--Menu modal-->
+      <div id="modal-menu" class="modal">
+        <div class="container">
+          <a href="<%= url_for('/') %>" id="logo"></a>
+          <nav>
+            <a class="menu close">
+              Menu
+              <span class="icon cross"></span>
+            </a>
+          </nav>
+          <div class="links">
+            <% data.site.pages.each do |page| %>
+            <%= link_to(page, "/#{page.downcase}") %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
     </header>
 
     <%= yield %>

@@ -19,7 +19,9 @@ button,
   box-sizing: border-box;
   outline: none;
   &:hover,
+  &:focus,
   &.active {
+    outline: none;
     background-color: $yellow-tint-dark;
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
   }
@@ -230,14 +232,18 @@ textarea {
   margin: 0 auto;
   width: 100%;
   padding-bottom: 45px;
+
   // white tinted
   &.white {
-    .pagination {
-      a {
-        border-color: white;
-        &.active,
-        &:hover {
-          background: white;
+    aside[id*="-breadcrumbs"] {
+      ul {
+        li,
+        li.normal {
+          border-color: white;
+          &.active,
+          &:hover {
+            background: white;
+          }
         }
       }
     }
@@ -322,4 +328,27 @@ textarea {
     }
   }
 
+}
+
+/**
+ * Modal
+ */
+.modal {
+  background: rgba(23, 32, 40, 0.99);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @include transition(all 120ms ease-in);
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+  }
 }

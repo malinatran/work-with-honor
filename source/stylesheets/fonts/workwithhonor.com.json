@@ -1,12 +1,24 @@
 {
 	"metadata": {
 		"name": "workwithhonor.com",
-		"lastOpened": 1439743519611,
-		"created": 1439743510607
+		"lastOpened": 1440139413766,
+		"created": 1440139412578
 	},
 	"iconSets": [
 		{
 			"icons": [
+				{
+					"id": 19,
+					"paths": [
+						"M734.618 760.269c-24.013 24.013-62.925 24.013-86.886 0l-135.731-155.136-135.731 155.085c-24.013 24.013-62.925 24.013-86.886 0-24.013-24.013-24.013-62.925 0-86.886l141.21-161.28-141.261-161.382c-24.013-24.013-24.013-62.874 0-86.886s62.874-24.013 86.886 0l135.782 155.187 135.731-155.187c24.013-24.013 62.874-24.013 86.886 0s24.013 62.925 0 86.886l-141.21 161.382 141.21 161.28c24.013 24.013 24.013 62.925 0 86.938z"
+					],
+					"attrs": [],
+					"isMulticolor": false,
+					"grid": 32,
+					"tags": [
+						"cross"
+					]
+				},
 				{
 					"id": 16,
 					"paths": [
@@ -282,12 +294,20 @@
 			},
 			"selection": [
 				{
+					"order": 22,
+					"id": 18,
+					"prevSize": 32,
+					"code": 58897,
+					"name": "cross",
+					"tempChar": ""
+				},
+				{
 					"order": 18,
 					"id": 15,
 					"prevSize": 32,
 					"code": 58895,
 					"name": "facebook_alt",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 16,
@@ -295,7 +315,7 @@
 					"prevSize": 32,
 					"code": 58894,
 					"name": "linkedin_alt",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 1,
@@ -303,7 +323,7 @@
 					"prevSize": 32,
 					"code": 58880,
 					"name": "computer",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 2,
@@ -311,7 +331,7 @@
 					"prevSize": 32,
 					"code": 58881,
 					"name": "eye",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 3,
@@ -319,7 +339,7 @@
 					"prevSize": 32,
 					"code": 58882,
 					"name": "package",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 4,
@@ -327,7 +347,7 @@
 					"prevSize": 32,
 					"code": 58883,
 					"name": "tower",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 5,
@@ -335,7 +355,7 @@
 					"prevSize": 32,
 					"code": 58884,
 					"name": "menu",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 15,
@@ -343,7 +363,7 @@
 					"prevSize": 32,
 					"code": 58885,
 					"name": "chevron-small-left",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 7,
@@ -351,7 +371,7 @@
 					"prevSize": 32,
 					"code": 58886,
 					"name": "chevron-small-right",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 8,
@@ -359,39 +379,39 @@
 					"prevSize": 32,
 					"code": 58887,
 					"name": "chevron-small-up",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
-					"order": 21,
+					"order": 23,
 					"id": 17,
 					"prevSize": 32,
 					"code": 58888,
 					"name": "chevron-small-down",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
-					"order": 19,
+					"order": 24,
 					"id": 16,
 					"prevSize": 32,
 					"code": 58896,
 					"name": "check",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
-					"order": 10,
+					"order": 25,
 					"id": 4,
 					"prevSize": 32,
 					"code": 58889,
 					"name": "dribbble",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
-					"order": 11,
+					"order": 26,
 					"id": 3,
 					"prevSize": 32,
 					"code": 58890,
 					"name": "linkedin",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 12,
@@ -399,7 +419,7 @@
 					"prevSize": 32,
 					"code": 58891,
 					"name": "twitter",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 13,
@@ -407,7 +427,7 @@
 					"prevSize": 32,
 					"code": 58892,
 					"name": "medium",
-					"tempChar": ""
+					"tempChar": ""
 				},
 				{
 					"order": 14,
@@ -415,7 +435,7 @@
 					"prevSize": 32,
 					"code": 58893,
 					"name": "facebook",
-					"tempChar": ""
+					"tempChar": ""
 				}
 			],
 			"prevSize": 32,
