@@ -17,5 +17,14 @@
     "pinterest": "https://www.pinterest.com/workwithonor",
     "facebook": "https://www.facebook.com/workwithhonor",
     "medium": "https://medium.com/@workwithhonor"
-  }
+  },
+  "categories": [
+    "All",
+    "Art Direction",
+    "Brand Identity",
+    "Digital + Interactive",
+    "Integrated Marketing",
+    "Packaging",
+    "Strategy"
+  ]
 }

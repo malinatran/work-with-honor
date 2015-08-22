@@ -1,0 +1,28 @@
+/**
+ * Work page
+ */
+section#work {
+
+  // header
+  header {
+    @include image('header_work.png', no-repeat);
+    background-size: cover;
+    min-height: 335px;
+    h1 {
+      font-size: 60px;
+      text-transform: none;
+      padding-top: 40px;
+    }
+  }
+
+  // work section
+  .section.work {
+    padding-bottom: 90px;
+    .grid {
+      > * {
+        outline: 1px solid $yellow-border
+      }
+    }
+  }
+
+}

@@ -138,7 +138,35 @@
             display: block;
             margin: 0 auto 30px auto;
             max-width: 55%;
+            height: auto;
           }
+        }
+      }
+    }
+
+    // filter categories
+    .categories {
+      padding-bottom: 32px;
+      display: flex;
+      a {
+        display: inline-block;
+        border: 1px solid $clear-border;
+        border-right: none;
+        padding: 20px 14px 14px 14px;
+        font-size: 12px;
+        font-family: $font-alt;
+        text-transform: uppercase;
+        box-sizing: border-box;
+        flex-grow: 1;
+        flex-wrap: wrap;
+        &:last-child {
+          border-right: 1px solid $clear-border;
+        }
+        &.active,
+        &:hover {
+          background: $yellow-tint;
+          color: white;
+          border-color: $yellow-tint;
         }
       }
     }
