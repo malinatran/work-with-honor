@@ -157,6 +157,7 @@ textarea {
     &.active,
     &:hover {
       color: white;
+      border-color: $yellow-border-dark;
       background: $yellow-tint;
     }
   }
@@ -364,5 +365,30 @@ textarea {
   &.visible {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+/**
+ * Menu categories
+ */
+.categories {
+  display: flex;
+  a {
+    display: inline-block;
+    border: 1px solid $clear-border;
+    margin-right: -1px;
+    padding: 20px 14px 14px 14px;
+    font-size: 12px;
+    font-family: $font-alt;
+    text-transform: uppercase;
+    box-sizing: border-box;
+    flex-grow: 1;
+    flex-wrap: wrap;
+    &.active,
+    &:hover {
+      background: $yellow-tint;
+      color: white;
+      border-color: $yellow-tint;
+    }
   }
 }

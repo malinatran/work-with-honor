@@ -148,20 +148,31 @@ section#contact {
           box-sizing: border-box;
         }
         .option {
-          min-height: 277px;
           height: auto;
           line-height: initial;
+          padding-bottom: 0;
           &.marketing {
             h3 {
               line-height: 18px;
               padding-top: 15px;
             }
           }
+          &:hover,
+          &.active {
+            ul {
+              background: white;
+              li {
+                color: $font-color;
+              }
+            }
+          }
         }
         ul {
-          padding: 20px 0px 0 0;
+          padding: 20px 0;
           margin: 0;
           list-style: none;
+          min-height: 175px;
+          @include transition(all 80ms ease-in);
           li {
             padding-bottom: 14px;
             text-transform: uppercase;

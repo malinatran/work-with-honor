@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'workwithhonor';
-  src:url('fonts/workwithhonor.eot?g3qsh');
-  src:url('fonts/workwithhonor.eot?#iefixg3qsh') format('embedded-opentype'),
-    url('fonts/workwithhonor.ttf?g3qsh') format('truetype'),
-    url('fonts/workwithhonor.woff?g3qsh') format('woff'),
-    url('fonts/workwithhonor.svg?g3qsh#workwithhonor') format('svg');
+  src:url('fonts/workwithhonor.eot?-s2jzqf');
+  src:url('fonts/workwithhonor.eot?#iefix-s2jzqf') format('embedded-opentype'),
+    url('fonts/workwithhonor.ttf?-s2jzqf') format('truetype'),
+    url('fonts/workwithhonor.woff?-s2jzqf') format('woff'),
+    url('fonts/workwithhonor.svg?-s2jzqf#workwithhonor') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -23,7 +23,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon.cross:before {
+.icon.grid:before {
   content: "\e611";
 }
 .icon.facebook_alt:before {

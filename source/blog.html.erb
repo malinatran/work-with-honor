@@ -1,0 +1,144 @@
+---
+section: blog
+---
+
+<% content_for :header_logo do %>
+  <span>Blog</span>
+<% end %>
+
+<% content_for :header do %>
+  <b class="category">Inspiration</b>
+  <h1>A New Founder Q&A with <br/>Breather Founder Jake Figerman.</h1>
+  <h2>The founder of Breather shares his thoughts and ideas in our latest Q&A series.</h2>
+  <div class="author">
+    <%= image_tag 'assets/img_author.png' %>
+    Louse Dreier / June 17, 2015
+  </div>
+<% end %>
+
+<div class="section blog featured">
+
+  <div class="container alt">
+
+    <div class="categories">
+      <% data.site.blog_categories.each_with_index do |category, index| %><a href="#" class="<%= index == 0 ? 'active' : ''%>"><%= category %></a><% end %>
+    </div>
+
+    <h4>Featured Articles</h4>
+    <div class="grid padded-10">
+
+      <div class="col-6">
+        <div class="card">
+          <%= image_tag 'assets/thumb_big_1.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>A Guide to Content Strategy for Twitter</h5>
+        <p>The in and outs for providing the right strategy for your audience of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-6">
+        <div class="card">
+          <%= image_tag 'assets/thumb_big_2.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Riding in Cars with New Technology</h5>
+        <p>Exploring how dirivers interact with digital car interfaces.</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section blog">
+  <div class="container alt">
+    <h4>Latest Articles</h4>
+    <div class="grid padded-10">
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_1.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_2.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_3.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+      <div class="col-4">
+        <div class="card">
+          <%= image_tag 'assets/thumb_3.png' %>
+          <div class="description">
+            <span>
+              Read Article
+              <span class="icon chevron-small-right"></span>
+            </span>
+          </div>
+        </div>
+        <span class="category">Branding</span>
+        <h5>Immersive Website for the Supersized Shows</h5>
+        <p>An open source library for cache invalidation of different resources</p>
+        <span class="date">Louse Dreier / June 17, 2015</span>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="banner">
+    <a href="<%= url_for('/blog') %>">
+      <span class="icon grid"></span>
+      View More Articles
+    </a>
+  </div>
+</div>

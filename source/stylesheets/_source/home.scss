@@ -20,4 +20,13 @@ section#home {
     }
   }
 
+  // blog entries
+  .section.blog {
+    .grid {
+      > * {
+        margin-bottom: 0;
+      }
+    }
+  }
+
 }
