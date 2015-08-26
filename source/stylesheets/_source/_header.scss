@@ -94,15 +94,15 @@ header {
     background: white !important;
     min-height: auto;
     padding-bottom: 20px;
-    #logo {
+    .nav > #logo {
       @include image('logo_black.png', no-repeat left top);
       background-size: 167px 32px;
       + span {
         color: $font-color;
       }
     }
-    nav {
-      a {
+    .nav > nav {
+      > a {
         color: $font-color;
       }
     }
