@@ -73,6 +73,23 @@
     }
   }
 
+  // work section
+  .section.work {
+    .grid {
+      @include grid() {
+        img {
+          width: 100%;
+          height: auto;
+        }
+      };
+      @media all and (max-width: 400px) {
+        @include grid() {
+          width: 100%;
+        };
+      }
+    }
+  }
+
   // footer
   footer {
 
@@ -114,6 +131,7 @@
 
       .social {
         margin-top: 30px;
+        display: block;
       }
 
     }
@@ -132,5 +150,6 @@
   @import './home';
   @import './studio';
   @import './contact';
+  @import './work';
 
 }

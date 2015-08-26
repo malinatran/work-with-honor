@@ -1,0 +1,15 @@
+/**
+ * Work page
+ */
+section#work {
+
+  // work section
+  .section.work {
+    .grid {
+      > * {
+        outline: none;
+      }
+    }
+  }
+
+}

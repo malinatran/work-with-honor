@@ -197,6 +197,9 @@
         .date,
         .category {
           display: block;
+          a {
+            color: $yellow-tint;
+          }
           text-transform: uppercase;
         }
 
@@ -297,6 +300,225 @@
     line-height: 2.15em;
     a {
       color: $yellow-tint;
+    }
+  }
+}
+
+/**
+ * Post section
+ */
+.section.post {
+
+  // blog info
+  .container.info {
+    padding: 45px 0;
+    .category {
+      color: $yellow-tint;
+      font-size: 18px;
+      font-family: $font-alt;
+      text-transform: uppercase;
+      padding-bottom: 12px;
+      display: block;
+    }
+    h1 {
+      font-size: 56px;
+      text-transform: none;
+      border: none;
+      padding-bottom: 5px;
+    }
+    h2 {
+      font-size: 30px;
+      border: none;
+      text-transform: none;
+      font-family: $font-main;
+    }
+    .author {
+      font-size: 18px;
+      font-family: $font-alt;
+      text-transform: uppercase;
+      padding: 18px 0 50px 0;
+      img {
+        display: inline-block;
+        width: auto;
+        max-height: 40px;
+        vertical-align: middle;
+        position: relative;
+        top: -4px;
+        margin-right: 5px;
+      }
+      span {
+        color: $yellow-tint;
+      }
+    }
+    .footer {
+      .sharebar {
+        display: inline-block;
+        border-right: 1px solid $clear-border;
+        padding-right: 20px;
+      }
+      .comments {
+        display: inline-block;
+        padding-left: 20px;
+        color: $yellow-tint;
+        font-family: $font-alt;
+        text-transform: uppercase;
+        font-size: 12px;
+      }
+    }
+  }
+
+  // post body
+  .container.body {
+    padding: 60px 0;
+    width: $container-blogs-post;
+    p {
+      text-align: left;
+      font-size: 20px;
+      line-height: 1.80em;
+      margin: 0 0 35px 0;
+      b {
+        font-family: $font-main;
+        font-size: 18px;
+        color: darken($font-color, 30%);
+      }
+    }
+    @include headings {
+      display: block;
+      font-size: 30px;
+      border: none;
+      padding: 0;
+      text-align: left;
+      text-transform: none;
+      padding-bottom: 15px;
+    };
+    i {
+      display: block;
+      font-size: 40px;
+      font-family: $font-main-italic;
+      padding-bottom: 45px;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      margin-bottom: 55px;
+      &.right {
+        width: auto;
+        float: right;
+        margin: 20px;
+        margin: 10px 0 20px 15px;
+      }
+    }
+    cite {
+      text-align: left;
+      display: block;
+      border-left: 1px solid $red-tint;
+      padding: 0 37px 0 37px;
+      margin-bottom: 45px;
+      font-size: 18px;
+      font-family: $font-main-italic;
+      position: relative;
+      line-height: 1.8em;
+      &:before {
+        background: white;
+        font-family: $font-alt;
+        color: $red-tint;
+        font-style: normal;
+        font-size: 60px;
+        content: '\201C';
+        line-height: 1;
+        height: 35px;
+        position: absolute;
+        left: -10px;
+        padding-top: 8px;
+      }
+    }
+    .footer {
+      border-top: 1px solid $clear-border;
+      text-align: left;
+      padding-top: 27px;
+      .sharebar {
+        display: inline-block;
+        border-right: 1px solid $clear-border;
+        padding-right: 10px;
+        margin-right: 10px;
+      }
+      .tags {
+        font-family: $font-alt;
+        text-transform: uppercase;
+        display: inline-block;
+        a {
+          color: $yellow-tint;
+          &:after {
+            content: ",";
+          }
+          &:last-child {
+            &:after {
+              content: "";
+            }
+          }
+        }
+      }
+      .author {
+        margin-top: 27px;
+        padding: 40px 0;
+        border-top: 1px solid $clear-border;
+        border-bottom: 1px solid $clear-border;
+        img {
+          float: left;
+          width: 138px;
+          height: 138px;
+        }
+        h4 {
+          display: block;
+          font-size: 18px;
+          padding: 0;
+          margin: 0 0 3px 160px;
+          text-transform: uppercase;
+        }
+        p {
+          display: block;
+          font-size: 16px;
+          margin: 0 0 0 160px;
+          line-height: 2em;
+        }
+        a {
+          display: inline-block;
+          color: $yellow-tint;
+        }
+        .viewmore {
+          font-family: $font-alt;
+          text-transform: uppercase;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+}
+
+/**
+ * Sharebar
+ */
+.sharebar {
+  font-family: $font-alt;
+  font-size: 12px;
+  text-transform: uppercase;
+  a {
+    background: $font-color;
+    display: inline-block;
+    color: white;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 5px;
+    border-radius: 100%;
+    vertical-align: bottom;
+    @include transition(all 80ms ease-in);
+    &:hover {
+      background: $yellow-tint;
+      color: white;
     }
   }
 }

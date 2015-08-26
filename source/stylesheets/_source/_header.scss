@@ -89,4 +89,23 @@ header {
     }
   }
 
+  // white/dark header
+  &.dark {
+    background: white !important;
+    min-height: auto;
+    padding-bottom: 20px;
+    #logo {
+      @include image('logo_black.png', no-repeat left top);
+      background-size: 167px 32px;
+      + span {
+        color: $font-color;
+      }
+    }
+    nav {
+      a {
+        color: $font-color;
+      }
+    }
+  }
+
 }

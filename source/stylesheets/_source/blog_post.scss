@@ -1,0 +1,37 @@
+/**
+ * Post page
+ */
+section#post {
+
+  header {
+    @include image('header_blog_post.png', no-repeat);
+    background-size: cover;
+    min-height: 508px;
+    &.dark {
+      min-height: initial;
+    }
+  }
+
+  // featured posts
+  .section.featured {
+    padding-top: 0;
+    h4 {
+      font-size: 24px;
+    }
+    .container {
+      padding-top: 0;
+      border-bottom: none;
+    }
+    .col-6:first-of-type {
+      border-right: 1px solid $clear-border;
+    }
+    .banner {
+      font-size: 18px;
+      .icon {
+        font-size: 27px;
+        left: 0;
+      }
+    }
+  }
+
+}
