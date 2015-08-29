@@ -33,7 +33,7 @@ $(function() {
     slidesCycle.push(slidesCycle[0]);
     slidr.create(id, {
       before: onSliderBefore,
-      controls: 'none',
+      controls: $slider.data('controls') || 'none',
       breadcrumbs: true,
       direction: 'horizontal',
       fade: false,

@@ -5,7 +5,7 @@ section#work {
 
   // header
   header {
-    @include image('header_work.png', no-repeat);
+    @include image('header_work.png', no-repeat center);
     background-size: cover;
     min-height: 335px;
     h1 {

@@ -1,0 +1,47 @@
+/**
+ * Post section
+ */
+.section.post {
+
+  // body elements
+  .container.body {
+
+    // images
+    img {
+
+      // floated images
+      &.right,
+      &.left {
+        max-width: 100%;
+        margin: 0 auto 45px auto;
+        float: none;
+      }
+
+      // full images
+      &.full {
+        max-width: 100%;
+        left: 0;
+        @include transform(none);
+      }
+
+    }
+
+    // text elements
+    p {
+      &.padded {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+
+    // headers
+    @include headings {
+      &.padded {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    };
+
+  }
+
+}

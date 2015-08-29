@@ -91,9 +91,8 @@ header {
 
   // white/dark header
   &.dark {
-    background: white !important;
+    background: white;
     min-height: auto;
-    padding-bottom: 20px;
     .nav > #logo {
       @include image('logo_black.png', no-repeat left top);
       background-size: 167px 32px;

@@ -248,7 +248,8 @@ textarea {
 .slider {
   margin: 0 auto;
   width: 100%;
-  padding-bottom: 45px;
+  margin-bottom: 45px;
+  // padding-bottom: 45px;
 
   // white tinted
   &.white {
@@ -274,7 +275,7 @@ textarea {
   aside[id*="-breadcrumbs"] {
     padding: 0;
     left: 0;
-    bottom: -5px;
+    bottom: -50px;
     width: 100%;
     ul {
       display: inline-block;
@@ -308,12 +309,42 @@ textarea {
     }
   }
 
+  // arrow controls
+  aside[id*="-control"].border .slidr-control {
+    @extend .icon;
+    color: $yellow-border;
+    height: 56px;
+    font-size: 56px;
+    &.left,
+    &.right {
+      width: auto;
+      height: 56px;
+      top: 50%;
+      margin-top: -28px;
+      &:after {
+        display: none;
+      }
+    }
+    &.disabled {
+      display: none;
+    }
+    &.left {
+      left: -70px;
+      @extend .icon.chevron-small-left;
+    }
+    &.right {
+      right: -70px;
+      @extend .icon.chevron-small-right;
+    }
+  }
+
 }
 
 /**
  * Card
  */
 .card {
+  display: block;
   position: relative;
 
   &:hover {

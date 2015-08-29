@@ -1,0 +1,52 @@
+/**
+ * Work post page
+ */
+section#work-post {
+
+  header {
+    @include image('header_work_post.png', no-repeat center);
+    background-size: cover;
+    height: 753px;
+    &.dark {
+    }
+  }
+
+  // general section
+  .section {
+    @include headings {
+      border-bottom-width: 1px;
+    };
+  }
+
+  // testimonials
+  .section.testimonials {
+    background: $aqua-tint;
+  }
+
+  // featured work
+  .section.featured {
+    .container {
+      width: $container-blogs-width;
+      padding-bottom: 75px;
+    }
+    .grid > * {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  // recognition
+  .section.recognition {
+    padding-bottom: 0;
+  }
+
+  // post section
+  .section.post {
+    .container {
+      padding-bottom: 0;
+    }
+  }
+
+}
