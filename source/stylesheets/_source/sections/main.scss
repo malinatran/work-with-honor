@@ -1,0 +1,155 @@
+/**
+ * Page sections
+ */
+.section {
+  text-align: center;
+
+  // main containers
+  .container {
+    padding: 56px 0 90px 0;
+  }
+
+  // headings
+  @include headings() {
+    display: inline-block;
+    padding-bottom: 13px;
+    border-bottom: 2px solid $yellow-border;
+  }
+  h4 {
+    margin-bottom: 35px;
+  }
+  p {
+    font-size: 30px;
+    line-height: 45px;
+    margin: 52px auto 45px auto;
+  }
+
+  blockquote {
+    p {
+      font-size: 40px;
+      margin: 25px auto;
+    }
+  }
+
+  // dark background section
+  &.blue-tint {
+    color: white;
+    background: $blue-tint;
+    .container {
+      padding-top: 60px;
+    }
+    @include headings() {
+      border-width: 1px;
+      padding-bottom: 20px;
+    }
+    p {
+      max-width: 97%;
+    }
+  }
+
+  // bottom section banners
+  .banner {
+    background: $yellow-tint;
+    height: 80px;
+    line-height: 90px;
+    font-size: 24px;
+    font-family: $font-alt;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: white;
+    a {
+      display: block;
+      @include transition(all 50ms ease-in);
+    }
+    &:hover {
+      a {
+        @include transform(scale(1.05));
+      }
+    }
+    .icon {
+      font-size: 42px;
+      display: inline-block;
+      vertical-align: middle;
+      position: relative;
+      left: -10px;
+      top: -3px;
+    }
+    &.small {
+      font-size: 18px;
+      .icon {
+        font-size: 27px;
+        left: 0;
+      }
+    }
+  }
+
+}
+
+/**
+ * Author section
+ */
+.section.author {
+  text-align: left;
+  @include clearfix;
+  img {
+    width: 220px;
+    height: 220px;
+    float: left;
+    border: 1px solid $yellow-border;
+    border-radius: 100%;
+    display: block;
+  }
+  h1 {
+    font-size: 60px;
+    font-family: $font-alt;
+    text-transform: none;
+    border: none;
+    display: block;
+    margin: 0 0 0 240px;
+    padding: 25px 0 0 0;
+    color: white;
+  }
+  p {
+    display: block;
+    margin: 5px 0 0 240px;
+    font-size: 16px;
+    line-height: 2.15em;
+    a {
+      color: $yellow-tint;
+    }
+  }
+}
+
+/**
+ * Sharebar
+ */
+.sharebar {
+  font-family: $font-alt;
+  font-size: 12px;
+  text-transform: uppercase;
+  a {
+    background: $font-color;
+    display: inline-block;
+    color: white;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    font-size: 13px;
+    margin-left: 5px;
+    border-radius: 100%;
+    vertical-align: bottom;
+    @include transition(all 80ms ease-in);
+    &:hover {
+      background: $yellow-tint;
+      color: white;
+    }
+  }
+}
+
+// individual sections
+@import 'showcase';
+@import 'work';
+@import 'blog';
+@import 'post';
+@import 'testimonials';

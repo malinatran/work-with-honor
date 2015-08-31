@@ -1,7 +1,7 @@
 header {
   background-color: $orange-tint;
 
-  #logo {
+  .logo {
     @include image('logo.png', no-repeat left top);
     background-size: 167px 32px;
     display: inline-block;
@@ -93,17 +93,47 @@ header {
   &.dark {
     background: white;
     min-height: auto;
-    .nav > #logo {
-      @include image('logo_black.png', no-repeat left top);
-      background-size: 167px 32px;
-      + span {
-        color: $font-color;
+    .container {
+      > .nav {
+        > .logo {
+          @include image('logo_black.png', no-repeat left top);
+          background-size: 167px 32px;
+          + span {
+            color: $font-color;
+          }
+        }
+        > nav {
+          > a {
+            color: $font-color;
+          }
+        }
       }
     }
-    .nav > nav {
-      > a {
-        color: $font-color;
+  }
+
+  // float menu
+  #floatmenu {
+    background: rgba($orange-tint, 0.9);
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    opacity: 0;
+    @include transition(all 80ms ease-in);
+    .nav {
+      padding: 20px;
+      .logo + span {
+        display: none;
       }
+    }
+  }
+
+  &.sticky {
+    #floatmenu {
+      visibility: visible;
+      opacity: 1;
     }
   }
 

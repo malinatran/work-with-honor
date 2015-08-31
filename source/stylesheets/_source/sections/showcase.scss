@@ -1,0 +1,28 @@
+/**
+ * Showcase section
+ */
+.section.showcase {
+  .container {
+    padding-bottom: 60px;
+  }
+  .slide {
+    > * {
+      display: block;
+    }
+    i {
+      font-size: 50px;
+      margin-bottom: 18px;
+    }
+    b {
+      font-size: 15px;
+      text-transform: uppercase;
+    }
+    img {
+      display: table;
+      margin: 30px auto 0 auto;
+    }
+  }
+  button {
+    margin-top: 45px;
+  }
+}
