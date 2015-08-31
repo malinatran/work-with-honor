@@ -38,6 +38,7 @@ form {
 
   // input field
   .field {
+    position: relative;
     &.required {
       label:after {
         content: "*";
@@ -54,13 +55,37 @@ form {
       text-transform: uppercase;
       padding: 0 0 6px 0;
     }
-    .error {
+
+    input.filled:focus + label.error {
+      // bottom: 1px;
+    }
+
+    input.empty + label.error {
+      bottom: 24px;
+    }
+
+    label.error {
       color: $red-tint;
       font-size: 9px;
       text-transform: uppercase;
       display: block;
       font-family: $font-alt;
+      position: absolute;
+      left: 30px;
+      bottom: 10px;
+      @include transition(all 80ms ease-in);
     }
+
+    // select field
+    .select {
+      label.error {
+        left: 0;
+        bottom: -23px;
+        display: none;
+        padding: 0 !important;
+      }
+    }
+
   }
 
 }
@@ -78,6 +103,7 @@ input {
   font-family: $font-alt;
   font-size: 18px;
   box-sizing: border-box;
+  @include appearance(none);
 }
 
 /**
@@ -168,6 +194,26 @@ textarea {
       background: $yellow-tint;
     }
   }
+  .error {
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+  }
+  label.error {
+    position: initial;
+  }
+}
+
+/**
+ * Textarea field
+ */
+.field.textarea {
+  label.error {
+    position: initial;
+    display: block;
+    text-align: center;
+    padding-top: 10px;
+  }
 }
 
 /**
@@ -179,6 +225,8 @@ textarea {
   border: 1px solid $clear-border;
   position: relative;
   box-sizing: border-box;
+  position: relative;
+  cursor: pointer;
   select {
     position: absolute;
     top: 0;
@@ -189,6 +237,11 @@ textarea {
     width: 100%;
     z-index: 2;
     opacity: 0.01;
+    cursor: pointer;
+    &.activated {
+      visibility: hidden;
+      // display: none;
+    }
   }
   .icon {
     position: absolute;
@@ -206,7 +259,42 @@ textarea {
     font-family: $font-alt;
     text-transform: uppercase;
     line-height: 56px;
+    height: 49px;
     padding: 0 45px 0 20px;
+  }
+  ul.dropdown {
+    background: white;
+    border: 1px solid $clear-border;
+    box-sizing: border-box;
+    padding: 10px 0 5px 0;
+    margin: 0;
+    list-style: none;
+    position: absolute;
+    left: -1px;
+    right: -1px;
+    top: 100%;
+    margin-top: 2px;
+    z-index: 99;
+    visibility: hidden;
+    opacity: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    max-height: 140px;
+    li {
+      font-family: $font-alt;
+      text-transform: uppercase;
+      padding: 10px 20px;
+      cursor: pointer;
+      &:hover {
+        color: $yellow-tint;
+      }
+    }
+  }
+  &.active {
+    ul.dropdown {
+      visibility: visible;
+      opacity: 1;
+    }
   }
 }
 

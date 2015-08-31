@@ -127,6 +127,11 @@
         button {
           margin-right: 0;
         }
+        label.error {
+          left: initial;
+          top: 0;
+          right: 0;
+        }
 
       }
 
@@ -146,6 +151,15 @@
       }
     }
 
+  }
+
+  // forms
+  form {
+    .field {
+      label.error {
+        left: 20px;
+      }
+    }
   }
 
   @import './sections';

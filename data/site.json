@@ -1,6 +1,7 @@
 {
   "default_title": "Honor Roll | A Creative Agency",
   "title": "Honor Roll",
+  "api": "http://localhost:8080",
   "pages": [
     "Home",
     "Work",

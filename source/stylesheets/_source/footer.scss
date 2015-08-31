@@ -32,6 +32,12 @@ footer {
     form {
       display: inline-block;
       text-align: left;
+      label.error {
+        color: $red-tint;
+        padding: 0;
+        left: 0;
+        bottom: -19px !important;
+      }
     }
 
     .field {

@@ -26,24 +26,24 @@
 
       <b>Subscribe and Receive the Latest in Business and Branding Advice</b>
 
-      <form>
+      <form action="<%= data.site.api %>/subscribe">
 
         <!--Name field-->
         <div class="field name">
           <label>First Name</label>
-          <input name="first_name" type="text">
+          <input id="first_name" name="first_name" type="text" required>
         </div>
 
         <!--Name field-->
         <div class="field lastname">
           <label>Last Name</label>
-          <input name="last_name" type="text">
+          <input id="last_name" name="last_name" type="text" required>
         </div>
 
         <!--Email field-->
         <div class="field email">
           <label>Email Address</label>
-          <input name="email" type="email">
+          <input id="subscription_email" name="email" type="email" required>
         </div>
 
         <button>Sign Up</button>

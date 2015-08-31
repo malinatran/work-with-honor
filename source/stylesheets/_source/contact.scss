@@ -110,6 +110,9 @@ section#contact {
           font-size: 12px;
           padding-bottom: 11px;
         }
+        label.error {
+          font-size: 9px;
+        }
       }
 
       // contact field
@@ -172,7 +175,7 @@ section#contact {
           margin: 0;
           list-style: none;
           min-height: 175px;
-          @include transition(all 80ms ease-in);
+          @include transition(background 80ms ease-in);
           li {
             padding-bottom: 14px;
             text-transform: uppercase;
@@ -228,6 +231,14 @@ section#contact {
         }
       }
 
+    }
+
+    // success message
+    .success {
+      display: block;
+      text-align: center;
+      font-size: 15px;
+      text-transform: uppercase;
     }
 
   }

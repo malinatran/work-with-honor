@@ -47,7 +47,7 @@ contact_banner: false
   </div>
 
   <!--Form-->
-  <form>
+  <form method="POST" action="<%= data.site.api %>/contact" data-button-message="Success! Your Project Has Been Submitted.">
 
     <div class="container">
 
@@ -60,13 +60,13 @@ contact_banner: false
         <!--Name field-->
         <div class="field name required col-6">
           <label>Name</label>
-          <input name="name" type="text" required>
+          <input id="name" name="name" type="text" required>
         </div>
 
         <!--Email field-->
         <div class="field email required col-6">
           <label>Email</label>
-          <input name="email" type="email" required>
+          <input id="email" name="email" type="email" required>
         </div>
 
       </div>
@@ -74,7 +74,7 @@ contact_banner: false
       <!--Company name-->
       <div class="field companyname">
         <label>Company Name</label>
-        <input name="companyname" type="text">
+        <input name="company_name" type="text">
       </div>
 
       <div class="grid padded-10">
@@ -105,34 +105,31 @@ contact_banner: false
 
       <!--Project type-->
       <div class="field type options required">
-        <label>Select Product Type</label>
-        <input name="type" type="radio">
-
+        <label>Select Project Type</label>
         <div class="grid">
 
           <!--Option 1-->
-          <div class="col-6" data-name="type" data-value="rebuild">
-            <span class="option">Rebuild of an Exsiting Project</span>
+          <div class="col-6" data-name="type">
+            <span class="option" data-value="rebuild">Rebuild of an Exsiting Project</span>
           </div>
 
           <!--Option 2-->
-          <div class="col-6" data-name="type" data-value="rebuild">
-            <span class="option">Brand New Project</span>
+          <div class="col-6" data-name="type">
+            <span class="option" data-value="new_project">Brand New Project</span>
           </div>
 
         </div>
-
+        <input name="project_type" required>
       </div>
 
       <!--Project services-->
       <div class="field services options required">
         <label>Select Category Of Services</label>
-        <input name="services" type="radio">
         <div class="grid padded-5">
 
           <!--Option-->
-          <div class="col-3" data-name="services" data-value="identity">
-            <div class="option">
+          <div class="col-3">
+            <div class="option" data-value="identity">
               <h3>Brand Identity</h3>
               <ul>
                 <li>Brand Collateral</li>
@@ -147,8 +144,8 @@ contact_banner: false
 
 
           <!--Option-->
-          <div class="col-3" data-name="services" data-value="print">
-            <div class="option">
+          <div class="col-3">
+            <div class="option" data-value="strategy">
               <h3>Brand Strategy</h3>
               <ul>
                 <li>Mission & Visioning</li>
@@ -162,8 +159,8 @@ contact_banner: false
           </div>
 
           <!--Option-->
-          <div class="col-3" data-name="services" data-value="marketing">
-            <div class="option">
+          <div class="col-3">
+            <div class="option" data-value="print">
               <h3>Print & Packaging</h3>
               <ul>
                 <li>Art Direction</li>
@@ -178,8 +175,8 @@ contact_banner: false
           </div>
 
           <!--Option-->
-          <div class="col-3" data-name="services" data-value="strategy">
-            <div class="option marketing">
+          <div class="col-3">
+            <div class="option marketing" data-value="marketing">
               <h3>Digital Marketing <br/> & Design</h3>
               <ul>
                 <li>Information Architecture</li>
@@ -193,12 +190,12 @@ contact_banner: false
             </div>
           </div>
         </div>
-
+        <input name="services" required>
       </div>
 
-      <div class="field description required">
+      <div class="field description required textarea">
         <label>Project Details, Goals and Objectives</label>
-        <textarea name="description"></textarea>
+        <textarea name="description" required></textarea>
       </div>
 
       <!--Step 3-->
@@ -209,22 +206,22 @@ contact_banner: false
 
         <!--Start date field-->
         <div class="field date start required col-6">
-          <label>Project End Date</label>
+          <label>Project Start Date</label>
           <div class="select year">
-            <select name="start_year">
-              <option selected>2015</option>
+            <select name="start_year" required>
+              <option value="">Year</option>
+              <option>2015</option>
               <option>2016</option>
               <option>2017</option>
               <option>2018</option>
-              <option>2019</option>
-              <option>2020</option>
             </select>
             <span class="value">Year</span>
             <span class="icon chevron-small-down"></span>
           </div>
           <div class="select">
-            <select name="start_month">
-              <option selected>August</option>
+            <select name="start_month" required>
+              <option value="">Month</option>
+              <option>August</option>
               <option>September</option>
               <option>November</option>
               <option>December</option>
@@ -238,20 +235,20 @@ contact_banner: false
         <div class="field date end required col-6">
           <label>Project End Date</label>
           <div class="select year">
-            <select name="end_year">
-              <option selected>2015</option>
+            <select name="end_year" required>
+              <option value="">Year</option>
+              <option>2015</option>
               <option>2016</option>
               <option>2017</option>
               <option>2018</option>
-              <option>2019</option>
-              <option>2020</option>
             </select>
             <span class="value">Year</span>
             <span class="icon chevron-small-down"></span>
           </div>
           <div class="select">
-            <select name="end_month">
-              <option selected>August</option>
+            <select name="end_month" required>
+              <option value="">Month</option>
+              <option>August</option>
               <option>September</option>
               <option>November</option>
               <option>December</option>
@@ -266,31 +263,32 @@ contact_banner: false
       <!--Budget-->
       <div class="field options budget required">
         <label>Budget</label>
-        <input name="budget" type="radio" required>
 
         <div class="grid padded-10">
 
           <!--Option 1-->
-          <div class="col-3" data-name="budget" data-value="2500-5000">
-            <span class="option">$2,500 - $5,000</span>
+          <div class="col-3" data-name="budget">
+            <span class="option" data-value="2500-5000">$2,500 - $5,000</span>
           </div>
 
           <!--Option 2-->
-          <div class="col-3" data-name="budget" data-value="5000-10000">
-            <span class="option">$5,000 - $10,000</span>
+          <div class="col-3" data-name="budget">
+            <span class="option" data-value="5000-10000">$5,000 - $10,000</span>
           </div>
 
           <!--Option 3-->
-          <div class="col-3" data-name="budget" data-value="10000-15000">
-            <span class="option">$10,000 -  $15,000</span>
+          <div class="col-3" data-name="budget">
+            <span class="option" data-value="10000-15000">$10,000 -  $15,000</span>
           </div>
 
           <!--Option 4-->
-          <div class="col-3" data-name="budget" data-value="20000">
-            <span class="option">$20,000+</span>
+          <div class="col-3">
+            <span class="option" data-value="20000+">$20,000+</span>
           </div>
 
         </div>
+
+        <input name="budget" required>
 
       </div>
 
@@ -310,6 +308,8 @@ contact_banner: false
         Submit Your Project
         <span class="icon chevron-small-right"></span>
       </button>
+
+      <b class="success hidden">Please Expect a Reply from Us Within 1-2 Business Days.</b>
 
     </div>
 
