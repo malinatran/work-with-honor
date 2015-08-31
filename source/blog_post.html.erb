@@ -1,6 +1,5 @@
 ---
 section: post
-header_class: dark
 ---
 
 <% content_for :header_logo do %>
@@ -12,11 +11,11 @@ header_class: dark
   <!--Post info-->
   <div class="container info">
     <span class="category">Branding</span>
-    <h1>A How-To Guide on Content Strategy for Twitter.</h1>
-    <h2>The in’s and outs for providing the right strategy for your audience </h2>
+    <%= post.fragments['title'].as_html(nil) %>
+    <%= post.fragments['subtitle'].as_html(nil) %>
     <div class="author">
-      <%= image_tag 'assets/img_author.png' %>
-      <span>Louse Dreier</span> / June 17, 2015
+      <%= image_tag(search_by_id(authors, 'VePyRSAAABNcdtkq').fragments['image'].main.url) %>
+      <span><%= search_by_id(authors, 'VePyRSAAABNcdtkq').fragments['name'].value %></span> / June 17, 2015
     </div>
     <div class="footer">
       <div class="sharebar">
@@ -32,44 +31,7 @@ header_class: dark
 
   <div class="container body">
 
-    <p>The question of who should be one of the first ones you answer when coming up with your Twitter strategy. You’ve got to determine who is in charge of your Twitter account, and who you’re trying to reach.
-    You may be a one-person social media shop, and so you’ll be tweeting on behalf of, well, yourself; or you might be part of a 12-person team representing a major brand. In either case, establish a clear ownership of your Twitter account, and identify other team members who might also participate in content creation, curation and engagement.
-    If you’re clear about who will be managing the Twitter account off the bat, you won’t run into as many roadblocks when you go to launch a specific.</p>
-
-    <%= image_tag 'assets/img_blog_post_0.png' %>
-
-    <h3>How to customize the module for other CDN infrastructures.</h3>
-    <p>HBO is known the world over for great storytelling. The network’s original programming has won acclaim and cult followings for shows ranging from Sex and the City and The Sopranos to Girls and Game of Thrones. Not to mention award winning original films like Game Change and Behind the Candelabra. HBO is also a company of firsts: the first cable channel to specialize in films; the first channel to be delivered via satellite.</p>
-    <%= image_tag 'assets/img_blog_post_1.png' %>
-
-    <p>HBO is known the world over for great storytelling. The network’s original programming has won acclaim and cult followings for shows ranging from Sex and the City and The Sopranos to Girls and Game of Thrones. Not to mention award winning original films like Game Change and Behind the Candelabra. HBO is also a company of firsts: the first cable channel to specialize in films; the first channel to be delivered via satellite.</p>
-    <i>InVision’s a great solution for quickly testing assumptions with users and documenting flows for engineers.</i>
-    <%= image_tag 'assets/img_blog_post_2.png' %>
-
-    <p>From the beginning, HBO wanted its subscribers to be able to access GO wherever they were, from Smart TVs to video game consoles. But replicating the success of the iOS and Android apps was not as easy as cutting and pasting: every platform is unique, with its own set of features and constraints.
-    The Samsung Smart TV interface, for example, has no back button, requiring the design of panels that users go deeper into the content, to the right of the screen, and then exit by going back left.</p>
-
-    <p>Many platforms, like Roku, employ specific design templates that must be adhered to. To ensure a seamless HBO GO experience, we had to hack these templates. For Roku, we found a way to create dividers between categories in a long list - between letters in an alphabetical list, for example.</p>
-
-    <cite>You are the most awesome of all the awesome sauces. I wanted to sleep on the designs and answer you tomorrow, but I have been looking at them all day, I have printed them out, my cat has laid on them, I have hung them up and I am sure about how I feel about them. I love the quirky astronaut kitty paired with the stars and the script font with the lower case “F”. That cat in the bubble helmet is the cutest.</cite>
-
-    <p>Other platforms, like the Xbox 360, used UI styles that were so new at the time we had to invent our own guidelines to move forward. Microsoft’s new Metro style for the Xbox was still in development while we were designing for it.</p>
-
-    <%= image_tag 'assets/img_blog_post_3.png' %>
-
-    <h3>How to customize the module for other CDN infrastructures.</h3>
-
-    <%= image_tag 'assets/img_blog_post_4.png', :class => 'right' %>
-
-    <p>From the beginning, HBO wanted its subscribers to be able to access GO wherever they were, from Smart TVs to video game consoles. But replicating the success of the iOS and Android apps was not as easy as cutting and pasting: every platform is unique, with its own set of features and constraints.</p>
-
-    <p>The Samsung Smart TV interface, for example, has no back button, requiring the design of panels that users go deeper into the content, to the right of the screen, and then exit by going back left between letters in an.</p>
-
-    <p>Many platforms, like Roku, employ specific design templates that must be adhered to. To ensure a seamless HBO GO experience, we had to hack these templates. For Roku, we found a way to create dividers between categories in a long list - between letters in an alphabetical list, for example.</p>
-
-    <p>Other platforms, like the Xbox 360, used UI styles that were so new at the time we had to invent our own guidelines to move forward. Microsoft’s new Metro style for the Xbox was still in development while we were designing for it.</p>
-
-    <p><b>I would love to hear your thoughts on this piece! And if you enjoyed, please scroll down and click the “enjoyed this” button.</b></p>
+    <%= post.fragments['body'].as_html(nil) %>
 
     <div class="footer">
       <div class="sharebar">
@@ -148,3 +110,4 @@ header_class: dark
     </a>
   </div>
 </div>
+

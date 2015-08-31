@@ -13,8 +13,10 @@
 
   <section id="<%= current_page.data.section %>">
 
+  <b><%= current_page.data.header_class %></b>
+
     <!--Header-->
-    <header class="<%= current_page.data.header_class %>">
+    <header class="<%= defined?(header_class) ? header_class : current_page.data.header_class %>">
       <div class="container">
         <%= partial "navigation" %>
         <div class="content">

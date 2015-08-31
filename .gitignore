@@ -18,3 +18,6 @@
 .DS_Store
 
 /vendor
+
+# data files
+/data/prismic_*

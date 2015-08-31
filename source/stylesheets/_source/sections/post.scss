@@ -72,6 +72,8 @@
     @include clearfix;
     padding: 60px 0;
     width: $container-blogs-post;
+
+    // standard text
     p {
       text-align: left;
       font-size: 20px;
@@ -81,12 +83,33 @@
         padding-left: 85px;
         padding-right: 85px;
       }
-      b {
+      b, strong {
         font-family: $font-main;
         font-size: 18px;
         color: darken($font-color, 30%);
       }
+
+      // image wrapper
+      &.block-img {
+        margin-bottom: 0;
+        line-height: initial;
+        font-size: initial;
+        img {
+          display: block;
+        }
+        // float right
+        &.right {
+          float: right;
+          display: inline-block;
+          margin: 10px 0 20px 15px;
+          img {
+            margin-bottom: 0;
+          }
+        }
+      }
+
     }
+
     @include headings {
       display: block;
       font-size: 30px;
@@ -103,12 +126,19 @@
     h2 {
       font-size: 48px;
     }
-    i {
+
+    // pull quote
+    i,
+    .pull-quote {
       display: block;
       font-size: 40px;
       font-family: $font-main-italic;
       padding-bottom: 45px;
+      text-align: center;
+      line-height: initial;
+      margin-bottom: 0;
     }
+
     img {
       max-width: 100%;
       height: auto;
@@ -136,6 +166,9 @@
         }
       }
     }
+
+    // cite
+    p.cite,
     cite {
       text-align: left;
       display: block;

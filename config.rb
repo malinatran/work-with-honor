@@ -28,6 +28,28 @@
 # proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
 #  :which_fake_page => "Rendering a fake page with a local variable" }
 
+activate :prismic do |f|
+  f.api_url = 'https://workwithhonor.prismic.io/api'
+  f.release = 'master'
+  f.link_resolver = ->(link) { binding.pry; "#{link.type.pluralize}/#{link.slug}"}
+  # f.custom_queries = { test: [Prismic::Predicates::at('document.type', 'post')] }
+end
+
+# generate blog posts pages
+Dir["data/prismic_posts"].each do |file|
+  data = YAML::load(File.read(file))
+  data.each do |index, post|
+    proxy("/blog/#{post.slugs[0]}.html",
+      '/blog_post.html',
+      :locals => {
+        :header_class => 'dark',
+        :post => post
+      },
+      :ignore => true
+    )
+  end
+end
+
 ###
 # Helpers
 ###
@@ -41,11 +63,11 @@ configure :development do
 end
 
 # Methods defined in the helpers block are available in templates
-# helpers do
-#   def some_helper
-#     "Helping"
-#   end
-# end
+helpers do
+  def search_by_id(collection, value)
+    collection.find {|item| item.id == value}
+  end
+end
 
 set :css_dir, 'stylesheets'
 
