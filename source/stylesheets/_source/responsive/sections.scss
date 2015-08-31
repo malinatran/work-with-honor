@@ -42,6 +42,13 @@
       }
     };
 
+    // slider
+    .slider {
+      aside[id*="-control"].border {
+        display: none;
+      }
+    }
+
   }
 
 }
