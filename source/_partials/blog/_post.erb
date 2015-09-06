@@ -1,0 +1,17 @@
+<a class="card" href="<%= post_link(post) %>">
+  <%= post_image(post) %>
+  <div class="description">
+    <span>
+      Read Article
+      <span class="icon chevron-small-right"></span>
+    </span>
+  </div>
+</a>
+
+<span class="category"><%= post.fragments['category'].value %></span>
+
+<h5><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h5>
+
+<%= post.fragments['excerpt'].as_html(nil) %>
+
+<span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>

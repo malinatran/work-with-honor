@@ -25,6 +25,9 @@ section#home {
     .grid {
       > * {
         margin-bottom: 0;
+        a {
+          color: $font-color;
+        }
       }
     }
   }

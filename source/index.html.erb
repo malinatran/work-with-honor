@@ -104,7 +104,21 @@ section: home
     <h4>Stories From The Blog</h4>
     <div class="grid padded-10">
 
-      <div class="col-4">
+
+      <!--Entry-->
+      <% latest_posts(data.posts, 3).each do |post| %>
+
+        <div class="col-4">
+
+        <%= partial('blog/post', :locals => { :post => post }) %>
+
+        </div>
+
+      <% end %>
+
+
+
+      <!-- <div class="col-4">
         <div class="card">
           <%= image_tag 'assets/thumb_1.png' %>
           <div class="description">
@@ -150,7 +164,7 @@ section: home
         <h5>Immersive Website for the Supersized Shows</h5>
         <p>An open source library for cache invalidation of different resources</p>
         <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
+      </div> -->
 
     </div>
   </div>
