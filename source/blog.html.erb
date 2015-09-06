@@ -27,37 +27,32 @@ section: blog
     <h4>Featured Articles</h4>
     <div class="grid padded-10">
 
-      <div class="col-6">
-        <div class="card">
-          <%= image_tag 'assets/thumb_big_1.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>A Guide to Content Strategy for Twitter</h5>
-        <p>The in and outs for providing the right strategy for your audience of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
+      <!--Entry-->
+      <% featured_posts().each do |post| %>
 
       <div class="col-6">
-        <div class="card">
-          <%= image_tag 'assets/thumb_big_2.png' %>
+
+        <a class="card" href="<%= post_link(post) %>">
+          <%= post_image(post) %>
           <div class="description">
             <span>
               Read Article
               <span class="icon chevron-small-right"></span>
             </span>
           </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Riding in Cars with New Technology</h5>
-        <p>Exploring how dirivers interact with digital car interfaces.</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
+        </a>
+
+        <span class="category"><%= post.fragments['category'].value %></span>
+
+        <h5><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h5>
+
+        <%= post.fragments['excerpt'].as_html(nil) %>
+
+        <span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>
+
       </div>
+
+      <% end %>
 
     </div>
   </div>
@@ -68,9 +63,11 @@ section: blog
     <h4>Latest Articles</h4>
     <div class="grid padded-10">
 
+      <!--Entry-->
+      <% data.posts.each do |id, post| %>
       <div class="col-4">
         <div class="card">
-          <%= image_tag 'assets/thumb_1.png' %>
+          <%= post_image(post) %>
           <div class="description">
             <span>
               Read Article
@@ -78,59 +75,12 @@ section: blog
             </span>
           </div>
         </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
+        <span class="category"><%= post.fragments['category'].value %></span>
+        <h5><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h5>
+        <%= post.fragments['excerpt'].as_html(nil) %>
+        <span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>
       </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_2.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
+      <% end %>
 
     </div>
   </div>

@@ -12,8 +12,8 @@ module BlogHelpers
     end
   end
 
-  def latest_posts(posts)
-    posts.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value }
+  def latest_posts(posts, count = 2)
+    (posts.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value }).slice(0, count)
   end
 
   def post_image(post)
@@ -26,6 +26,11 @@ module BlogHelpers
 
   def post_link(post)
     url_for("/blog/#{post.slugs[0]}.html")
+  end
+
+  def featured_posts(count = 2)
+    featured = data.posts.values.select { |post| post.fragments['featured'].nil? ? false : post.fragments['featured'].value == 'Yes'}
+    (featured.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value }).slice(0, count)
   end
 
 end
