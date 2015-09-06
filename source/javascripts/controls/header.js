@@ -27,6 +27,7 @@ $(function() {
     }
     else {
       isScrollBelowHeader = false;
+      $header.removeClass('sticky');
     }
   }
   $(document).on('scroll', onScroll);

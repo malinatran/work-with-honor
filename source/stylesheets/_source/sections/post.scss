@@ -193,6 +193,13 @@
         padding-top: 8px;
       }
     }
+
+    // embedded
+    div iframe {
+      max-width: 100%;
+      height: auto;
+    }
+
     .footer {
       border-top: 1px solid $clear-border;
       text-align: left;

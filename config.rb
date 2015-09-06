@@ -1,48 +1,23 @@
-###
-# Compass
-###
+# custom helpers
+require "lib/blog"
+helpers BlogHelpers
 
-# Change Compass configuration
-# compass_config do |config|
-#   config.output_style = :compact
-# end
-
-###
-# Page options, layouts, aliases and proxies
-###
-
-# Per-page layout changes:
-#
-# With no layout
-# page "/path/to/file.html", :layout => false
-#
-# With alternative layout
-# page "/path/to/file.html", :layout => :otherlayout
-#
-# A path which all have the same layout
-# with_layout :admin do
-#   page "/admin/*"
-# end
-
-# Proxy pages (https://middlemanapp.com/advanced/dynamic_pages/)
-# proxy "/this-page-has-no-template.html", "/template-file.html", :locals => {
-#  :which_fake_page => "Rendering a fake page with a local variable" }
-
+# prismic data fetching
 activate :prismic do |f|
+  f.path = 'data'
   f.api_url = 'https://workwithhonor.prismic.io/api'
   f.release = 'master'
   f.link_resolver = ->(link) { binding.pry; "#{link.type.pluralize}/#{link.slug}"}
-  # f.custom_queries = { test: [Prismic::Predicates::at('document.type', 'post')] }
 end
 
 # generate blog posts pages
-Dir["data/prismic_posts"].each do |file|
-  data = YAML::load(File.read(file))
-  data.each do |index, post|
+if data.posts
+  data.posts.each do |id, post|
     proxy("/blog/#{post.slugs[0]}.html",
       '/blog_post.html',
       :locals => {
-        :header_class => 'dark',
+        :header_class => post_header_type(post),
+        :author => post_author(post),
         :post => post
       },
       :ignore => true
@@ -64,8 +39,8 @@ end
 
 # Methods defined in the helpers block are available in templates
 helpers do
-  def search_by_id(collection, value)
-    collection.find {|item| item.id == value}
+  def pretty_date(date)
+    date.strftime('%B %d, %Y')
   end
 end
 
@@ -81,14 +56,15 @@ activate :directory_indexes
 
 # Build-specific configuration
 configure :build do
+
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
-  # activate :asset_hash
+  activate :asset_hash
 
   # Use relative URLs
   # activate :relative_assets

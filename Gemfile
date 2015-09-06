@@ -17,4 +17,4 @@ gem "tzinfo-data", platforms: [:mswin, :mingw, :jruby]
 gem 'thin'
 gem 'rack-contrib'
 gem 'bourbon'
-gem 'middleman-prismic'
+gem 'middleman-prismic', :path => './middleman-prismic'

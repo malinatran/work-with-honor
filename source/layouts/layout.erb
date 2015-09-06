@@ -13,10 +13,12 @@
 
   <section id="<%= current_page.data.section %>">
 
-  <b><%= current_page.data.header_class %></b>
-
     <!--Header-->
-    <header class="<%= defined?(header_class) ? header_class : current_page.data.header_class %>">
+    <%
+      header_class = defined?(header_class) ? header_class : current_page.data.header_class
+      header_background = defined?(post) ? post_background(post) : 'asdas'
+    %>
+    <header class="<%= header_class %>" style="<%= header_background %>">
       <div class="container">
         <%= partial "navigation" %>
         <div class="content">
@@ -48,6 +50,7 @@
       </div>
 
     </header>
+
 
     <!--Content-->
     <%= yield %>
