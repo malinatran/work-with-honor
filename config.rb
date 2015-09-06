@@ -2,6 +2,9 @@
 require "lib/blog"
 helpers BlogHelpers
 
+# ignore templates
+ignore "/blog_post.html"
+
 # prismic data fetching
 activate :prismic do |f|
   f.path = 'data'
@@ -11,7 +14,7 @@ activate :prismic do |f|
 end
 
 # generate blog posts pages
-if data.posts
+if data.has_key?('posts')
   data.posts.each do |id, post|
     proxy("/blog/#{post.slugs[0]}.html",
       '/blog_post.html',
