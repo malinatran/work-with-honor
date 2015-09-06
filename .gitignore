@@ -21,3 +21,4 @@
 
 # data files
 /data/prismic_*
+/data/**/*
