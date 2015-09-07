@@ -4,6 +4,8 @@ helpers BlogHelpers
 
 # ignore templates
 ignore "/blog_post.html"
+ignore "/writer_page.html"
+ignore "/work_post.html"
 
 # prismic data fetching
 activate :prismic do |f|
@@ -21,6 +23,33 @@ if data.has_key?('posts')
       :locals => {
         :header_class => post_header_type(post),
         :author => post_author(post),
+        :post => post
+      },
+      :ignore => true
+    )
+  end
+end
+
+# generate blog posts pages
+if data.has_key?('authors')
+  data.authors.each do |id, author|
+    proxy("/author/#{author.slugs[0]}.html",
+      '/writer_page.html',
+      :locals => {
+        :author => author,
+        :posts => author_posts(author)
+      },
+      :ignore => true
+    )
+  end
+end
+
+# generate blog posts pages
+if data.has_key?('works')
+  data.works.each do |id, post|
+    proxy("/work/#{post.slugs[0]}.html",
+      '/work_post.html',
+      :locals => {
         :post => post
       },
       :ignore => true

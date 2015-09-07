@@ -14,4 +14,8 @@
 
 <%= post.fragments['excerpt'].as_html(nil) %>
 
-<span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>
+<span class="date">
+  <a href="<%= author_link(post_author(post)) %>"><%= post_author(post).fragments['name'].value %></a>
+  /
+  <%= pretty_date(post.fragments['date'].value) %>
+</span>

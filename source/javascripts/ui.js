@@ -20,17 +20,9 @@ $(function() {
   }
 
   /**
-   * Initialize page sliders
+   * Start slider
    */
-  $('.slider').each(function(index, slider) {
-    var id = 'slider-' + index;
-    var $slider = $(slider);
-    $slider.attr('id', id);
-    var slidesCycle = [];
-    $slider.find('.slide').each(function(slideIndex) {
-      slidesCycle.push(slideIndex + 1 + '');
-    });
-    slidesCycle.push(slidesCycle[0]);
+  function startSlider(id, $slider, cycle) {
     slidr.create(id, {
       before: onSliderBefore,
       controls: $slider.data('controls') || 'none',
@@ -44,7 +36,44 @@ $(function() {
       timing: { 'cube': '0.5s ease-in' },
       touch: true,
       transition: 'fade'
-    }).add('h', slidesCycle).auto($slider.data('timer') || 5000);
+    }).add('h', cycle).auto($slider.data('timer') || 5000);
+  }
+
+  /**
+   * Initialize page sliders
+   */
+  $('.slider').each(function(index, slider) {
+    var id = 'slider-' + index;
+    var $slider = $(slider);
+    $slider.attr('id', id);
+    var slidesCycle = [];
+    $slider.find('.slide').each(function(slideIndex) {
+      slidesCycle.push(slideIndex + 1 + '');
+    });
+    slidesCycle.push(slidesCycle[0]);
+    startSlider(id, $slider, slidesCycle);
+  });
+
+  /**
+   * Initialize sliders slices
+   */
+  $('.slice[data-slicetype=slides]').each(function(index, slider) {
+    var id = 'slides-' + index;
+    var $slider = $(slider);
+    $slider.addClass('slider');
+    $slider.attr('id', id);
+    var slidesCycle = [];
+    $slider.find('section').each(function(slideIndex, slide) {
+      $(slide).addClass('slide');
+      $(slide).attr('data-slidr', slideIndex + 1);
+      slidesCycle.push(slideIndex + 1 + '');
+    });
+    // slice controls
+    if($slider.hasClass('controls')) {
+      $slider.data('controls', 'border');
+    }
+    slidesCycle.push(slidesCycle[0]);
+    startSlider(id, $slider, slidesCycle);
   });
 
   /**
@@ -106,6 +135,13 @@ $(function() {
     $this.addClass('active');
     $parent.find('input').val($this.data('value'));
     $parent.find('label.error').remove();
+  });
+
+  $('.section.work:not(.featured) .grid').isotope({
+    itemSelector: '.entry',
+    layoutMode: 'packery',
+    percentPosition: true,
+    isResizeBound: false
   });
 
 });

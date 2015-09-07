@@ -36,18 +36,16 @@
       height: auto !important;
     }
 
+    .logo {
+      + span {
+        display: none;
+      }
+    }
+
     .modal {
       .links {
         a {
           font-size: 32px;
-        }
-      }
-    }
-
-    @media all and (max-width: 390px) {
-      #logo {
-        + span {
-          display: none;
         }
       }
     }
@@ -79,13 +77,13 @@
     .grid {
       @include grid() {
         img {
-          width: 100%;
-          height: auto;
+          // width: 100%;
+          // height: auto;
         }
       };
       @media all and (max-width: 400px) {
         @include grid() {
-          width: 100%;
+          // width: 100%;
         };
       }
     }

@@ -11,17 +11,30 @@ header_class: dark
   <%= image_tag 'header_work_post.png' %>
 <% end %>
 
+<!--Work post-->
 <div class="section post work">
 
   <!--Post info-->
   <div class="container info">
-    <h1>“How do we transform the world through play?”</h1>
-    <h2>The new HBR.org provides users with a personalized <br/>reading experience & easier access.</h2>
-    <div class="category">Advertising, Branding Identity, Copywriting, Marketing Identity, Print Collateral</div>
+
+    <!--Title-->
+    <%= post.fragments['title'].as_html(nil) %>
+    <%= post.fragments['subtitle'].as_html(nil) %>
+
+    <!--Categories-->
+    <div class="category">
+      <% post.tags.each do |tag| %>
+      <a href=""><%= tag %></a>
+      <% end %>
+    </div>
+
+    <!--Client-->
     <div class="for">
       <span>for</span>
-      Doggyloot
+      <%= post.fragments['client'].value %>
     </div>
+
+    <!--Sharebar-->
     <div class="footer">
       <div class="sharebar">
         Share
@@ -31,54 +44,23 @@ header_class: dark
         <a href="" class="icon linkedin"></a>
       </div>
     </div>
+
   </div>
 
   <!--Body-->
   <div class="container body">
-    <p class="padded">When New York Media (New York Magazine’s parent company) acquired MenuPages, they asked Mucca to align the restaurant and menu site more closely with their own brand. We kept its longstanding format intact, but added a wit and relevance appealing to its city-dwelling users by commissioning playful illustrations by celebrated French illustrator Serge Bloch to accompany our interactive maps and design overhaul.</p>
-    <%= image_tag 'assets/img_work_post_1.png' %>
-    <h2 class="padded">Enable conveince and emphasize value.</h2>
-    <p class="padded">We developed a brand experience that conveys trustworthiness in both their products and customer experience, and is personal and highly relatable. With a fun, warm, and clean aesthetic, the brand visuals elicit a high-end, approachable vibe that appeals to their largely female customer base.</p>
-    <%= image_tag 'assets/img_work_post_2.png' %>
-    <%= image_tag 'assets/img_work_post_3.png', :class => 'right padded' %>
-    <h2>The Approach</h2>
-    <p>We developed a brand experience that conveys trustworthiness in both their products and customer experience, and is personal and highly relatable. With a fun, warm, and clean aesthetic, the brand visuals elicit a high-end, approachable vibe that appeals to their largely female customer base.</p>
-    <p>With a revamped website that better communicates its content, MenuPages was able to increase its advertising revenue, signing on major advertisers like JetBlue and American Express.</p>
-    <%= image_tag 'assets/img_work_post_4.png', :class => 'full' %>
-    <div class="slider" data-controls='border'>
-      <div class="slide" data-slidr="1">
-        <%= image_tag 'assets/img_work_post_1.png' %>
-      </div>
-      <div class="slide" data-slidr="2">
-        <%= image_tag 'assets/img_work_post_6.png' %>
-      </div>
-    </div>
-    <p>We developed a brand experience that conveys trustworthiness in both their products and customer experience, and is personal and highly relatable.</p>
-    <%= image_tag 'assets/img_work_post_5.png' %>
-    <%= image_tag 'assets/img_work_post_6.png' %>
-    <p>Butterfield’s rebranding has given them valuable exposure and allowed them to expand their business to new ventures, including a popular catering service, a new gourmet kitchen, a presence in Grand Central’s food court, as well as the ubiquitous Manhattan food cart.</p>
+    <%= post.fragments['body'].as_html(nil) %>
   </div>
 
-</div>
-
-<!--Testimonials-->
-<div class="section testimonials">
-  <div class="container">
-    <blockquote>
-      <p>"Honor Roll was an ideal collaborator to help <br/>us develop a framework for an editorially-<br/>driven, content-rich digital experience."</p>
-      <cite>David Rockwell</cite>
-      <span>Founder and President of Rockwell Group</span>
-    </blockquote>
-  </div>
 </div>
 
 <!--Recognition-->
-<div class="section recognition">
+<!-- <div class="section recognition">
   <div class="container">
     <h4>Recognition</h4>
     <p>HOW Magazine International Design Annual 2008 – Outstanding Achievement Award<br/>Print Business Graphics Annual 2008<br/>Print Regional Design Annual 2008</p>
   </div>
-</div>
+</div> -->
 
 
 <!--Featured works-->
@@ -91,30 +73,19 @@ header_class: dark
     <div class="grid padded-5">
 
       <!--Row 1-->
+      <% latest_works().each do |latest_post| %>
       <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_6.png' %>
+        <a class="card" href="<%= work_link(latest_post) %>">
+          <%= post_image(latest_post, 'thumbnail') %>
           <div class="description">
             <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
+              <%= post.fragments['card_image'].as_html(nil) %>
+              <%= post.fragments['card_text'].value %>
             </span>
           </div>
         </a>
       </div>
-
-      <!--Row 2-->
-      <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_9.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
+      <% end %>
 
     </div>
 

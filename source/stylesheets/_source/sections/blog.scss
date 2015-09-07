@@ -46,7 +46,7 @@
       .date,
       .category {
         display: block;
-        a {
+        a:hover {
           color: $yellow-tint;
         }
         text-transform: uppercase;

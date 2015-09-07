@@ -20,75 +20,56 @@ section: blog
 
   <div class="container alt">
 
+    <!--Categories-->
     <div class="categories">
       <% data.site.blog_categories.each_with_index do |category, index| %><a href="#" class="<%= index == 0 ? 'active' : ''%>"><%= category %></a><% end %>
     </div>
 
     <h4>Featured Articles</h4>
+
+    <!--Articles-->
     <div class="grid padded-10">
 
       <!--Entry-->
       <% featured_posts().each do |post| %>
-
       <div class="col-6">
-
-        <a class="card" href="<%= post_link(post) %>">
-          <%= post_image(post) %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </a>
-
-        <span class="category"><%= post.fragments['category'].value %></span>
-
-        <h5><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h5>
-
-        <%= post.fragments['excerpt'].as_html(nil) %>
-
-        <span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>
-
+        <%= partial('blog/post', :locals => { :post => post }) %>
       </div>
-
       <% end %>
 
     </div>
+
   </div>
+
 </div>
 
+<!--Blog-->
 <div class="section blog">
+
   <div class="container alt">
+
     <h4>Latest Articles</h4>
+
+    <!--Articles-->
     <div class="grid padded-10">
 
       <!--Entry-->
       <% data.posts.each do |id, post| %>
       <div class="col-4">
-        <div class="card">
-          <%= post_image(post) %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category"><%= post.fragments['category'].value %></span>
-        <h5><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h5>
-        <%= post.fragments['excerpt'].as_html(nil) %>
-        <span class="date"><a><%= post_author(post).fragments['name'].value %></a> / <%= pretty_date(post.fragments['date'].value) %></span>
+        <%= partial('blog/post', :locals => { :post => post }) %>
       </div>
       <% end %>
 
     </div>
+
   </div>
 
+  <!--More articles banner-->
   <div class="banner">
     <a href="<%= url_for('/blog') %>">
       <span class="icon grid"></span>
       View More Articles
     </a>
   </div>
+
 </div>

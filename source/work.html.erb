@@ -21,123 +21,19 @@ section: work
 
     <div class="grid">
 
-      <!--Row 1-->
-      <div class="entry col-12">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_1.png' %>
+      <% work_sorted().each do |post| %>
+      <div class="entry col-<%= post.fragments['column'].value %>">
+        <a class="card" href="<%= work_link(post) %>">
+          <%= post.fragments['image'].as_html(nil) %>
           <div class="description">
             <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
+              <%= post.fragments['card_image'].as_html(nil) %>
+              <%= post.fragments['card_text'].value %>
             </span>
           </div>
         </a>
       </div>
-
-      <!--Row 2-->
-      <div class="entry col-12">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_2.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-
-      <!--Row 3-->
-      <div class="entry col-4">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_3.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-      <div class="entry col-4">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_4.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-      <div class="entry col-4">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_5.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-
-      <!--Row 3-->
-      <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_6.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_7.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-      <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_8.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-
-      <!--Row 4-->
-      <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_9.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
-      <div class="entry col-6">
-        <a class="card" href="<%= url_for('/work_post') %>">
-          <%= image_tag 'assets/work_img_10.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </a>
-      </div>
+      <% end %>
 
     </div>
 

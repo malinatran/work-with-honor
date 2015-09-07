@@ -72,8 +72,8 @@
   // post body
   .container.body {
     @include clearfix;
+    width: auto;
     padding: 60px 0;
-    width: $container-blogs-post;
 
     // standard text
     p {
@@ -108,6 +108,16 @@
             margin-bottom: 0;
           }
         }
+        // full image
+        &.full {
+          img {
+            max-width: initial;
+            position: relative;
+            left: 50%;
+            @include transform(translateX(-50%));
+          }
+        }
+
       }
 
     }
@@ -202,6 +212,50 @@
       height: auto;
     }
 
+    // content slices
+    .slice {
+      width: $container-blogs-post;
+      margin: 0 auto;
+
+      // testimonial slice
+      &[data-slicetype=testimonial] {
+        background: $aqua-tint;
+        width: auto !important;
+        color: white;
+        padding: 60px 0 50px 0;
+        margin-bottom: 35px;
+        section {
+          width: $container-blogs-width;
+          margin: 0 auto;
+          p {
+            font-family: $font-main-italic;
+            font-size: 40px;
+            line-height: 1.25em;
+            text-align: center;
+            margin-bottom: 15px;
+          }
+          span {
+            font-size: 17px;
+          }
+        }
+        section[data-field=author] span {
+          text-transform: uppercase;
+          display: block;
+          font-family: $font-alt;
+          font-style: normal;
+          font-size: 20px;
+          padding: 0 0 5px 0;
+        }
+      }
+
+      // slider slice
+      &[data-slicetype=slides] {
+        margin-bottom: 75px;
+      }
+
+    }
+
+    // post footer
     .footer {
       border-top: 1px solid $clear-border;
       text-align: left;
@@ -272,9 +326,23 @@
 .section.post.work {
 
   .info {
+
+    // categories
     .category {
       padding: 25px 0 35px 0;
+      a {
+        &:after {
+          content: ",";
+        }
+        &:last-child {
+          &:after {
+            content: "";
+          }
+        }
+      }
     }
+
+    // client
     .for {
       font-family: $font-alt;
       font-size: 18px;
@@ -288,10 +356,15 @@
         padding-right: 5px;
       }
     }
+
   }
 
+  // post body
   .container.body {
-    width: $container-blogs-width;
+    width: auto;
+    .slice {
+      width: $container-blogs-width;
+    }
   }
 
 }

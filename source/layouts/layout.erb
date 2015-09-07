@@ -15,10 +15,10 @@
 
     <!--Header-->
     <%
-      header_class = defined?(header_class) ? header_class : current_page.data.header_class
-      header_background = defined?(post) ? post_background(post) : 'asdas'
+      header_class_final = defined?(header_class) ? header_class : current_page.data.header_class
+      header_background = defined?(post) ? post_background(post) : ''
     %>
-    <header class="<%= header_class %>" style="<%= header_background %>">
+    <header class="<%= header_class_final %>" style="<%= header_background %>">
       <div class="container">
         <%= partial "navigation" %>
         <div class="content">

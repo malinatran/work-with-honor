@@ -2,10 +2,8 @@
 section: post
 ---
 
-<% if post.fragments['smalltitle'] %>
-  <% content_for :header_logo do %>
-    <span>Blog / <%= post.fragments['smalltitle'].value %></span>
-  <% end %>
+<% content_for :header_logo do %>
+  <span>Blog / <%= post.fragments['smalltitle'].nil? ? '' : post.fragments['smalltitle'].value %></span>
 <% end %>
 
 <% if post.fragments['background'] %>
@@ -18,14 +16,26 @@ section: post
 
   <!--Post info-->
   <div class="container info">
+
     <span class="category"><%= post.fragments['category'].value %></span>
+
     <%= post.fragments['title'].as_html(nil) %>
     <%= post.fragments['subtitle'].as_html(nil) %>
+
+    <!--Author-->
     <div class="author">
-      <%= author.fragments['image'].as_html(nil) %>
-      <span><%= author.fragments['name'].value %></span> / <%= pretty_date(post.fragments['date'].value) %>
+      <a href="<%= author_link(author) %>">
+        <%= author.fragments['image'].as_html(nil) %>
+        <span><%= author.fragments['name'].value %></span>
+      </a>
+      /
+      <%= pretty_date(post.fragments['date'].value) %>
     </div>
+
+    <!--Info-->
     <div class="footer">
+
+      <!--Sharebar-->
       <div class="sharebar">
         Share
         <a href="" class="icon mail"></a>
@@ -33,14 +43,21 @@ section: post
         <a href="" class="icon twitter"></a>
         <a href="" class="icon linkedin"></a>
       </div>
+
     </div>
+
   </div>
 
+  <!--Post body-->
   <div class="container body">
 
+    <!--Content-->
     <%= post.fragments['body'].as_html(nil) %>
 
-    <div class="footer">
+    <!--Post footer-->
+    <div class="footer slice">
+
+      <!--Sharebar-->
       <div class="sharebar">
         Share
         <a href="" class="icon mail"></a>
@@ -48,58 +65,44 @@ section: post
         <a href="" class="icon twitter"></a>
         <a href="" class="icon linkedin"></a>
       </div>
+
+      <!--Tags-->
       <div class="tags">
         Tags:
         <% post.tags.each do |tag| %>
           <a href=""><%= tag %></a>
         <% end %>
       </div>
+
+      <!--Author-->
       <div class="author">
         <%= image_tag(author.fragments['image'].main.url) %>
-        <h4><a><%= author.fragments['name'].value %></a></h4>
+        <h4><a href="<%= author_link(author) %>"><%= author.fragments['name'].value %></a></h4>
         <%= author.fragments['description'].as_html(nil) %>
         <p><a class="viewmore">See More Articles By <%= author.fragments['name'].value %></a></p>
       </div>
+
     </div>
 
   </div>
 
 </div>
 
+<!--Latest Posts-->
 <div class="section blog featured">
 
   <div class="container alt">
 
-    <h4>Recent Stories</h4
-    >
+    <h4>Recent Stories</h4>
+
     <!--Featured posts-->
     <div class="grid padded-30">
 
-      <% latest_posts(data.posts).each do |latest_post| %>
-
       <!--Entry-->
+      <% latest_posts(data.posts).each do |latest_post| %>
       <div class="col-6">
-
-        <a class="card" href="<%= post_link(latest_post) %>">
-          <%= post_image(latest_post) %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </a>
-
-        <span class="category"><%= latest_post.fragments['category'].value %></span>
-
-        <h5><a href="<%= post_link(latest_post) %>"><%= latest_post.fragments['smalltitle'].value %></a></h5>
-
-        <%= latest_post.fragments['excerpt'].as_html(nil) %>
-
-        <span class="date"><a><%= post_author(latest_post).fragments['name'].value %></a> / <%= pretty_date(latest_post.fragments['date'].value) %></span>
-
+        <%= partial('blog/post', :locals => { :post => latest_post }) %>
       </div>
-
       <% end %>
 
     </div>
@@ -116,4 +119,4 @@ section: post
 </div>
 
 <!--Comments-->
-<div id="disqus_thread" class="container"></div>
+<div id="disqus_thread" class="container alt"></div>

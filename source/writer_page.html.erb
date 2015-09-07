@@ -8,88 +8,39 @@ section: writer
 
 <div class="section author">
   <div class="container alt">
-    <%= image_tag 'assets/img_author.png' %>
-    <h1>Andrew Winston</h1>
-    <p>Andrew Winston is the co-author of the best-seller <a>Green to Gold</a> and the author of <a>Green Recovery.</a> His new book, <a>The Big Pivot</a>, was released in April. He advises some of the world’s biggest companies on environmental strategy. Follow him on Twitter at <a>@AndrewWinston.</a></p>
+    <%= author.fragments['image'].as_html(nil) %>
+    <h1><%= author.fragments['name'].value %></h1>
+    <p><%= author.fragments['description'].as_html(nil) %></p>
   </div>
 </div>
 
 <div class="section blog">
+
   <div class="container alt">
-    <h4>12 Articles</h4>
+
+    <h4><%= posts.length %> Articles</h4>
+
+    <!--Articles-->
     <div class="grid padded-10">
 
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_1.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
+      <!--Entry-->
+      <% posts.each do |id, post| %>
+        <div class="col-4">
+          <%= partial('blog/post', :locals => { :post => post }) %>
         </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
+      <% end %>
 
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_2.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
 
     </div>
+
   </div>
 
+  <!--Back banner-->
   <div class="banner">
     <a href="<%= url_for('/blog') %>">
       <span class="icon grid"></span>
       Back to Blog
     </a>
   </div>
+
 </div>

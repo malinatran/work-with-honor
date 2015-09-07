@@ -37,58 +37,23 @@ section: home
 <div class="section work">
   <div class="container">
     <h4>Work We've Done</h4>
+
     <div class="grid">
-      <div class="col-12">
-        <div class="entry card">
-          <%= image_tag 'assets/img_1.png' %>
+
+      <% work_sorted().each do |post| %>
+      <div class="entry col-<%= post.fragments['column'].value %>">
+        <a class="card" href="<%= work_link(post) %>">
+          <%= post.fragments['image'].as_html(nil) %>
           <div class="description">
             <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
+              <%= post.fragments['card_image'].as_html(nil) %>
+              <%= post.fragments['card_text'].value %>
             </span>
           </div>
-        </div>
+        </a>
       </div>
-      <div class="col-5">
-        <div class="entry card">
-          <%= image_tag 'assets/img_4.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-        <div class="entry card">
-          <%= image_tag 'assets/img_3.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-      </div>
-      <div class="col-7">
-        <div class="entry card">
-          <%= image_tag 'assets/img_5.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-        <div class="entry card">
-          <%= image_tag 'assets/img_2.png' %>
-          <div class="description">
-            <span>
-              <%= image_tag 'assets/img_logo.png' %>
-              Branding, Design, Advertising
-            </span>
-          </div>
-        </div>
-      </div>
+      <% end %>
+
     </div>
   </div>
   <div class="banner">
@@ -99,80 +64,33 @@ section: home
   </div>
 </div>
 
+<!--Blog-->
 <div class="section blog">
+  
   <div class="container alt">
-    <h4>Stories From The Blog</h4>
-    <div class="grid padded-10">
 
+    <h4>Stories From The Blog</h4>
+
+    <!--Entries-->
+    <div class="grid padded-10">
 
       <!--Entry-->
       <% latest_posts(data.posts, 3).each do |post| %>
-
         <div class="col-4">
-
         <%= partial('blog/post', :locals => { :post => post }) %>
-
         </div>
-
       <% end %>
 
-
-
-      <!-- <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_1.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_2.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div>
-
-      <div class="col-4">
-        <div class="card">
-          <%= image_tag 'assets/thumb_3.png' %>
-          <div class="description">
-            <span>
-              Read Article
-              <span class="icon chevron-small-right"></span>
-            </span>
-          </div>
-        </div>
-        <span class="category">Branding</span>
-        <h5>Immersive Website for the Supersized Shows</h5>
-        <p>An open source library for cache invalidation of different resources</p>
-        <span class="date">Louse Dreier / June 17, 2015</span>
-      </div> -->
-
     </div>
+
   </div>
 
+  <!--Blog banner-->
   <div class="banner">
     <a href="<%= url_for('/blog') %>">
       View More Stories
       <span class="icon chevron-small-right"></span>
     </a>
   </div>
+
 </div>

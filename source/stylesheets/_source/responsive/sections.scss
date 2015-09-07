@@ -28,10 +28,33 @@
 
     // text elements
     p {
+
+      // padded block
       &.padded {
         padding-left: 0;
         padding-right: 0;
       }
+
+      // image wrapper
+      &.block-img {
+
+        // right float
+        &.right {
+          float: none;
+          max-width: 100%;
+          margin: 0 auto 45px auto;
+        }
+
+        // full width
+        &.full {
+          img {
+            max-width: 100%;
+            left: 0;
+            @include transform(none);
+          }
+        }
+      }
+
     }
 
     // headers
@@ -49,6 +72,32 @@
       }
     }
 
+    // body slices
+    .slice {
+      width: auto;
+
+      // testimonial slice
+      &[data-slicetype=testimonial] {
+        section {
+          width: auto;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+/**
+ * Work post
+ */
+.section.post.work {
+
+  .container.body {
+    .slice {
+      width: auto;
+    }
   }
 
 }
