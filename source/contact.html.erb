@@ -47,7 +47,9 @@ contact_banner: false
   </div>
 
   <!--Form-->
-  <form method="POST" action="<%= data.site.api %>/contact" data-button-message="Success! Your Project Has Been Submitted.">
+  <form method="POST" action="<%= data.site.api %>" data-button-message="Success! Your Project Has Been Submitted.">
+
+    <input type="hidden" name="action" value="contact">
 
     <div class="container">
 

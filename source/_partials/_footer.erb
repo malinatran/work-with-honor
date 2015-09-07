@@ -26,7 +26,9 @@
 
       <b>Subscribe and Receive the Latest in Business and Branding Advice</b>
 
-      <form action="<%= data.site.api %>/subscribe">
+      <form action="<%= data.site.api %>">
+
+        <input type="hidden" name="action" value="subscribe">
 
         <!--Name field-->
         <div class="field name">

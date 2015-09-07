@@ -110,18 +110,18 @@ $(function() {
       submitHandler: function(form, event) {
         event.preventDefault();
         var $form = $(form);
-        var action = $form.prop('action');
+        var action = $form.attr('action');
         var buttonMessage = $form.data('buttonMessage') || null;
         if($form.data('submitting')) {
           return;
         }
         $form.data('submitting', true);
         $.post(action, $form.serialize(), function() {
+          $form.data('submitting', false);
           if(buttonMessage) {
             $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
             $form.find('.success').removeClass('hidden');
           }
-          $form.data('submitting', false);
         });
       }
     });
