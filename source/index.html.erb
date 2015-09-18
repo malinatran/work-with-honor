@@ -5,14 +5,15 @@ section: home
 <% content_for :header do %>
   <h1>Building Better Brands</h1>
   <h2>Branding for forward-thinking companies and entrepreneurs</h2>
+  <a class="button" href="<%= url_for('/work') %>">View Our Work</a>
 <% end %>
 
 <div class="section blue-tint">
   <div class="container alt">
     <h3>We Are Honor Roll</h3>
-    <p>Honor Roll is a creative agency dedicated to helping forward-thinking clients jumpstart their brand’s presence and solve real business problems while addressing the needs of people, planet and profit.</p>
-    <button>See How We Can Help You</button>
+    <p>Honor Roll is a creative agency dedicated to helping <br/>forward-thinking clients jumpstart their brand’s presence <br/>and solve real business problems while addressing the <br/>needs of people, planet and profit.</p>
   </div>
+  <a class="button" href="<%= url_for('/contact') %>">See How We Can Help You</a>
 </div>
 
 <div class="section showcase">
@@ -30,7 +31,7 @@ section: home
         <%= image_tag 'assets/img_logo_2.png' %>
       </div>
     </div>
-    <button class>See How We Can Help You</button>
+    <a class="button" href="<%= url_for('/contact') %>">See How We Can Help You</a>
   </div>
 </div>
 

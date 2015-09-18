@@ -7,7 +7,7 @@
  */
 @media all and (max-width: $container-width) {
 
-  $global-padding: 20px;
+  $global-padding: 30px;
 
   // structure main blocks
   body {
@@ -34,6 +34,7 @@
     .nav {
       width: auto;
       height: auto !important;
+      padding-top: 20px;
     }
 
     .logo {

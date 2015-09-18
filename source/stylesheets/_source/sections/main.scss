@@ -36,14 +36,14 @@
     color: white;
     background: $blue-tint;
     .container {
-      padding-top: 60px;
+      padding: 60px 0 0 0;
     }
     @include headings() {
       border-width: 1px;
       padding-bottom: 20px;
     }
-    p {
-      max-width: 97%;
+    a.button {
+      margin-bottom: 90px;
     }
   }
 

@@ -18,6 +18,14 @@ section#home {
       margin: 150px 0 10px 0;
       text-shadow: 4px 5px 3px #BA3F1E;
     }
+    a.button {
+      display: none;
+      text-align: center;
+      height: 52px;
+      line-height: 62px;
+      max-width: 230px;
+      margin: 0 auto;
+    }
   }
 
   // blog entries

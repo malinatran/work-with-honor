@@ -1,4 +1,32 @@
 /**
+ * General section
+ */
+.section {
+  @include headings() {
+    font-size: 17px;
+    padding-bottom: 8px !important;
+  };
+  p {
+    font-size: 18px;
+    margin: 60px auto;
+    line-height: 2.2em;
+  }
+  .container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/**
+ * Showcase section
+ */
+.section.showcase {
+  .slide i {
+    font-size: 25px;
+  }
+}
+
+/**
  * Post section
  */
 .section.post {

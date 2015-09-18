@@ -5,21 +5,53 @@ section#home {
 
   header {
 
+    .content {
+      padding-bottom: 100px;
+    }
+
     h1 {
-      margin: 25px 0;
-      font-size: 60px;
+      margin: 80px 0 25px 0;
+      font-size: 48px;
+      line-height: 1.2em;
+      text-shadow: none;
     }
 
     h2 {
-      padding-bottom: 25px;
+      padding: 0 20px 30px 20px;
+      font-size: 16px;
     }
+
+    a.button {
+      display: block;
+    }
+
 
   }
 
   .section {
 
     .container {
-      padding: 35px $global-padding 50px $global-padding;
+      padding: 55px ($global-padding - 15px) 50px ($global-padding - 15px) !important;
+    }
+
+    &.blue-tint {
+      .container {
+        padding-bottom: 0 !important;
+      }
+      a.button {
+        width: 100%;
+        display: block;
+        margin-bottom: 0;
+        border-radius: 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.05);
+      }
+      p {
+        max-width: initial;
+        br {
+          display: none;
+        }
+      }
     }
 
     // work section
