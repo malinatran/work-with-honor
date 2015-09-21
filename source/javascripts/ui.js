@@ -137,11 +137,14 @@ $(function() {
     $parent.find('label.error').remove();
   });
 
+});
+
+$(window).load(function() {
+  $('.section.work').addClass('loaded');
   $('.section.work:not(.featured) .grid').isotope({
     itemSelector: '.entry',
     layoutMode: 'packery',
     percentPosition: true,
     isResizeBound: false
   });
-
 });

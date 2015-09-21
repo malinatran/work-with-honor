@@ -21,9 +21,36 @@
  * Showcase section
  */
 .section.showcase {
-  .slide i {
-    font-size: 25px;
+  .slide {
+    i {
+      font-size: 25px;
+    }
+    b {
+      font-size: 12px;
+    }
   }
+  .button {
+    display: none;
+  }
+}
+
+/**
+ * Work section
+ */
+.section {
+
+  .banner {
+    background: $yellow-tint;
+    height: 50px !important;
+    line-height: 60px;
+    font-size: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 0px 1px 1px rgba(0, 0, 0, 0.05);
+    .icon {
+      display: none;
+    }
+  }
+
 }
 
 /**

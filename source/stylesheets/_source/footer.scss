@@ -94,6 +94,25 @@ footer {
 
   }
 
+  // contact
+  .contact {
+    display: none;
+    text-align: center;
+    background: $blue-tint;
+    color: $footer-tint;
+    text-transform: uppercase;
+    font-family: $font-alt;
+    border-bottom: 1px solid #4C545C;
+    padding: 25px 0 15px 0;
+    a {
+    }
+    h3 {
+      color: white;
+      font-size: 16px;
+      letter-spacing: 0;
+    }
+  }
+
   // legend
   .legend {
     background: $blue-tint-dark;
@@ -141,14 +160,11 @@ footer {
     font-family: $font-alt;
     font-size: 48px;
     text-align: center;
-    a {
-      display: block;
-      @include transition(all 50ms ease-in);
-    }
+    display: block;
+    letter-spacing: -1px;
+    @include transition(font-size 50ms ease-in);
     &:hover {
-      a {
-        @include transform(scale(1.08));
-      }
+      font-size: 52px;
     }
     .icon {
       font-size: 70px;

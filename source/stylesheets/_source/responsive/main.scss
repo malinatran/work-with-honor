@@ -15,14 +15,14 @@
   }
   .container {
     width: auto !important;
-    padding-right: $global-padding !important;
-    padding-left: $global-padding !important;
+    padding-right: $global-padding;
+    padding-left: $global-padding;
   }
 
   // section containers
   .section .container {
-    padding-right: $global-padding !important;
-    padding-left: $global-padding !important;
+    padding-right: $global-padding;
+    padding-left: $global-padding;
   }
 
   // header
@@ -98,15 +98,13 @@
     }
 
     .banner {
-      padding-top: 5px;
+      padding: 30px 0 20px 0;
       height: auto;
-      font-size: 24px;
+      font-size: 22px;
       line-height: initial;
       .icon {
         font-size: 42px;
-      }
-      @media all and (max-width: 390px) {
-        padding: 16px $global-padding 0 $global-padding;
+        display: none;
       }
     }
 
@@ -135,19 +133,30 @@
       }
 
       .social {
-        margin-top: 30px;
         display: block;
       }
 
     }
 
     .legend {
+      font-size: 10px;
       padding: 11px 0;
       height: auto;
       .logo {
-        display: block;
-        margin: 5px auto 10px auto;
+        // display: block;
+        // margin: 5px auto 10px auto;
       }
+    }
+
+    .newsletter {
+      form,
+      b {
+        display: none;
+      }
+    }
+
+    .contact {
+      display: block;
     }
 
   }

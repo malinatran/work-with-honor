@@ -31,14 +31,16 @@ section#home {
   .section {
 
     .container {
-      padding: 55px ($global-padding - 15px) 50px ($global-padding - 15px) !important;
+      padding: 55px ($global-padding - 15px) 50px ($global-padding - 15px);
     }
 
     &.blue-tint {
       .container {
-        padding-bottom: 0 !important;
+        padding-bottom: 0;
       }
       a.button {
+        height: 50px;
+        line-height: 60px;
         width: 100%;
         display: block;
         margin-bottom: 0;
@@ -56,17 +58,19 @@ section#home {
 
     // work section
     &.work {
-      // img {
-      //   width: 100%;
-      //   height: auto;
-      // }
+      img {
+        width: 100%;
+        height: auto;
+      }
       .container {
-        padding-bottom: 0;
+        padding: 0;
       }
     }
 
     // blog entries
     &.blog {
+      padding: 0;
+
       .card {
         display: inline-block;
       }

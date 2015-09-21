@@ -25,6 +25,7 @@
 
     // work entry
     .entry {
+      opacity:  0;
       .description {
         color: $clear-border;
         text-align: center;
@@ -44,6 +45,13 @@
   // filter categories
   .categories {
     padding-bottom: 32px;
+  }
+
+  // loaded
+  &.loaded {
+    .entry {
+      opacity: 1;
+    }
   }
 
 }
