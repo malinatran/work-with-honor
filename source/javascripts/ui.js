@@ -137,9 +137,25 @@ $(function() {
     $parent.find('label.error').remove();
   });
 
+  // categories slidedown
+  $('.categories .value').on('click', function() {
+    var $parent = $(this).parents('.categories');
+    $parent.toggleClass('active');
+    if($parent.hasClass('active')) {
+      $parent.find('.values').slideDown('fast');
+    }
+    else {
+      $parent.find('.values').slideUp('fast');
+    }
+  });
+
 });
 
 $(window).load(function() {
+  if($('body').hasClass('work')) {
+    $('.section.work').addClass('loaded');
+    return;
+  }
   $('.section.work').addClass('loaded');
   $('.section.work:not(.featured) .grid').isotope({
     itemSelector: '.entry',

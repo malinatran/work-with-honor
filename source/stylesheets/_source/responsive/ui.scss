@@ -1,0 +1,43 @@
+/**
+ * Menu categories
+ */
+.categories {
+  display: block;
+
+  // opened
+  &.active {
+    .value {
+      &:before {
+        opacity: 1;
+      }
+    }
+  }
+
+  .value {
+    background: $yellow-tint;
+    display: block;
+    font-family: $font-alt;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    height: 50px;
+    line-height: 60px;
+  }
+  .values {
+    display: none;
+    padding-top: 25px;
+  }
+  a {
+    border: none;
+    margin: 0;
+    display: block;
+    padding: 0;
+    margin-bottom: 15px;
+    &.active,
+    &:hover {
+      background: none;
+      color: $yellow-tint;
+      border: none;
+    }
+  }
+}

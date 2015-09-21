@@ -22,7 +22,14 @@ section: blog
 
     <!--Categories-->
     <div class="categories">
-      <% data.site.blog_categories.each_with_index do |category, index| %><a href="#" class="<%= index == 0 ? 'active' : ''%>"><%= category %></a><% end %>
+      <div class="value">Recent Posts <span class="icon triangle-down"></span></div>
+      <div class="values">
+      <% data.site.blog_categories.each_with_index do |category, index| %>
+        <a href="#" class="<%= index == 0 ? 'active' : ''%>">
+          <%= category %>
+        </a>
+        <% end %>
+      </div>
     </div>
 
     <h4>Featured Articles</h4>

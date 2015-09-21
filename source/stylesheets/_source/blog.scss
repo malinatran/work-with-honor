@@ -4,7 +4,7 @@
 section#blog {
 
   header {
-    @include image('header_blog.png', no-repeat);
+    @include image('header_blog.png', no-repeat center);
     background-size: cover;
     .content {
       color: white;

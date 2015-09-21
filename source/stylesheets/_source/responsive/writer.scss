@@ -1,0 +1,56 @@
+/**
+ * Writer page
+ */
+section#writer {
+
+  // header
+  header {
+    @include image('header_writer.png', no-repeat);
+    background-size: cover;
+    height: 273px;
+    .content {
+      img {
+        display: block;
+        width: 100%;
+        height: auto;
+        opacity: 0;
+        visibility: hidden;
+        min-height: 140px;
+      }
+    }
+  }
+
+  // writer description
+  .section.author {
+    margin-top: -75px;
+    .container {
+      padding: 0 30px;
+    }
+    img {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto;
+      float: none;
+    }
+    h1 {
+      color: inherit;
+      font-size: 34px;
+      margin-left: 0;
+      text-align: center;
+    }
+    p {
+      clear: both;
+      margin-left: 0;
+    }
+  }
+
+  .section.blog {
+    .container {
+      padding-bottom: 0;
+      .grid > * {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+}

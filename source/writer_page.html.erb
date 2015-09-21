@@ -2,15 +2,15 @@
 section: writer
 ---
 
-<% content_for :header_logo do %>
-  <span>Blog</span>
+<% content_for :header do %>
+  <%= image_tag 'header_writer.png' %>
 <% end %>
 
 <div class="section author">
   <div class="container alt">
     <%= author.fragments['image'].as_html(nil) %>
     <h1><%= author.fragments['name'].value %></h1>
-    <p><%= author.fragments['description'].as_html(nil) %></p>
+    <%= author.fragments['description'].as_html(nil) %>
   </div>
 </div>
 

@@ -58,6 +58,16 @@
  */
 .section.post {
 
+  $side-padding: 20px;
+
+  // blog info
+  .container.info {
+    padding: 60px $side-padding 0 $side-padding;
+    h1 {
+      font-size: 48px;
+    }
+  }
+
   // body elements
   .container.body {
 
@@ -92,12 +102,13 @@
 
       // image wrapper
       &.block-img {
+        margin-left: -$side-padding;
+        margin-right: -$side-padding;
 
         // right float
         &.right {
           float: none;
-          max-width: 100%;
-          margin: 0 auto 45px auto;
+          margin: 0 (-$side-padding) 45px (-$side-padding);
         }
 
         // full width
@@ -112,8 +123,15 @@
 
     }
 
+     // pull quote
+    i,
+    .pull-quote {
+      font-size: 22px;
+    }
+
     // headers
     @include headings {
+      font-size: 24px;
       &.padded {
         padding-left: 0;
         padding-right: 0;
@@ -130,11 +148,25 @@
     // body slices
     .slice {
       width: auto;
+      &[data-slicetype=text] {
+        padding-left: $side-padding;
+        padding-right: $side-padding;
+      }
 
       // testimonial slice
       &[data-slicetype=testimonial] {
+        padding: 35px $side-padding;
         section {
           width: auto;
+          p {
+            font-size: 18px;
+          }
+          span {
+            font-size: 16px;
+          }
+        }
+        section[data-field=author] span {
+          font-size: 16px;
         }
       }
 

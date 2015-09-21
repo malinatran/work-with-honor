@@ -16,7 +16,14 @@ section: work
   <div class="container alt">
 
     <div class="categories">
-      <% data.site.categories.each_with_index do |category, index| %><a href="#" class="<%= index == 0 ? 'active' : ''%>"><%= category %></a><% end %>
+      <div class="value">Recent Work <span class="icon triangle-down"></span></div>
+      <div class="values">
+      <% data.site.categories.each_with_index do |category, index| %>
+        <a href="#" class="<%= index == 0 ? 'active' : ''%>">
+          <%= category %>
+        </a>
+        <% end %>
+      </div>
     </div>
 
     <div class="grid">

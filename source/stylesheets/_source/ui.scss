@@ -498,7 +498,30 @@ textarea {
  * Menu categories
  */
 .categories {
-  display: flex;
+  &.active {
+    .value {
+      .icon {
+        @extend .icon.triangle-up;
+      }
+    }
+  }
+  .value {
+    display: none;
+    position: relative;
+    &:before {
+      opacity: 0;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -12px;
+      content: " ";
+      @include triangle(24px 12px, $yellow-tint, down);
+      @include transition(all 120ms ease-in);
+    }
+  }
+  .values {
+    display: flex;
+  }
   a {
     display: inline-block;
     border: 1px solid $clear-border;

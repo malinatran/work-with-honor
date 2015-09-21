@@ -8,6 +8,11 @@ section#writer {
     @include image('header_writer.png', no-repeat);
     background-size: cover;
     height: 273px;
+    .content {
+      img {
+        display: none;
+      }
+    }
   }
 
   // writer description
