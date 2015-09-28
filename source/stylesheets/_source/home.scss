@@ -15,8 +15,12 @@ section#home {
       height: $header-height;
     }
     h1 {
-      margin: 150px 0 10px 0;
+      font-size: 68px;
+      margin: 145px 0 10px 0;
       text-shadow: 4px 5px 3px #BA3F1E;
+    }
+    h2 {
+      font-size: 26px;
     }
     a.button {
       display: none;

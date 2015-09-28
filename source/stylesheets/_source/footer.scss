@@ -161,10 +161,11 @@ footer {
     font-size: 48px;
     text-align: center;
     display: block;
-    letter-spacing: -1px;
-    @include transition(font-size 50ms ease-in);
+    letter-spacing: -2px;
+    overflow: hidden;
+    @include transition(all 50ms ease-in);
     &:hover {
-      font-size: 52px;
+      font-size: 50px;
     }
     .icon {
       font-size: 70px;

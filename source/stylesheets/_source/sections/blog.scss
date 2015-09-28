@@ -21,11 +21,7 @@
       margin-bottom: 74px;
 
       &:hover {
-        .category,
-        h5,
-        p {
-          color: $yellow-tint;
-        }
+        color: $yellow-tint;
         .card .description {
           opacity: 1;
           visibility: visible;

@@ -308,14 +308,10 @@ textarea {
   @include grid();
 
   // generate padding 10, 20, and 30
-  $paddings: 5 10 20 30;
+  $paddings: 5 10 15 20 30;
   @for $i from 1 through length($paddings) {
-    // $selector: '&.padded';
     $padding: nth($paddings, $i);
-    // @if($i > 0) {
-    //   $padding: 10px * $i;
     $selector: '&.padded-#{$padding}';
-    // }
     #{$selector} {
       z-index: $padding;
       margin: 0 (-$padding) * 1px;
@@ -337,7 +333,6 @@ textarea {
   margin: 0 auto;
   width: 100%;
   margin-bottom: 45px;
-  // padding-bottom: 45px;
 
   // white tinted
   &.white {
@@ -363,7 +358,7 @@ textarea {
   aside[id*="-breadcrumbs"] {
     padding: 0;
     left: 0;
-    bottom: -50px;
+    bottom: -60px;
     width: 100%;
     ul {
       display: inline-block;

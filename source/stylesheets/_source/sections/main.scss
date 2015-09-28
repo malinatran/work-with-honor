@@ -12,10 +12,11 @@
   // headings
   @include headings() {
     display: inline-block;
-    padding-bottom: 13px;
+    padding-bottom: 20px;
     border-bottom: 2px solid $yellow-border;
   }
   h4 {
+    letter-spacing: 0;
     margin-bottom: 35px;
   }
   p {
@@ -44,6 +45,9 @@
     }
     a.button {
       margin-bottom: 90px;
+    }
+    p {
+      font-size: 28px;
     }
   }
 
