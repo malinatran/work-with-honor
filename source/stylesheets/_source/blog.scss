@@ -16,16 +16,16 @@ section#blog {
       font-size: 18px;
       font-family: $font-alt;
       text-transform: uppercase;
-      padding: 0 0 10px 0;
+      padding: 0 0 20px 0;
     }
     h1 {
-      font-size: 60px;
+      font-size: 58px;
       text-transform: none;
-      line-height: 1.50em;
+      line-height: 1.1em;
     }
     h2 {
       font-size: 20px;
-      margin-top: -15px;
+      padding-top: 25px;
     }
     .author {
       padding: 30px 0 0 0;
@@ -37,6 +37,9 @@ section#blog {
         max-height: 40px;
         display: inline-block;
         vertical-align: middle;
+        position: relative;
+        top: -3px;
+        margin-right: 5px;
       }
     }
   }
@@ -46,23 +49,27 @@ section#blog {
       font-size: 24px;
     }
     &.blog {
+
       padding-top: 0;
       .container {
         padding-bottom: 0;
       }
       .banner {
-        font-size: 18px;
+        font-size: 16px;
         .icon {
           font-size: 27px;
           left: 0;
         }
       }
-    }
-    &.featured {
-      margin-bottom: 11px;
-      .container {
-        padding-bottom: 70px;
+
+      // post
+      .grid > * {
+        .date a,
+        .category {
+          color: $yellow-tint;
+        }
       }
+
     }
   }
 

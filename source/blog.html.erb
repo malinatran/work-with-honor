@@ -7,13 +7,16 @@ section: blog
 <% end %>
 
 <% content_for :header do %>
-  <b class="category">Inspiration</b>
-  <h1>A New Founder Q&A with <br/>Breather Founder Jake Figerman.</h1>
-  <h2>The founder of Breather shares his thoughts and ideas in our latest Q&A series.</h2>
-  <div class="author">
-    <%= image_tag 'assets/img_author.png' %>
-    Louse Dreier / June 17, 2015
-  </div>
+  <% latest_posts(1).each do |post| %>
+    <b class="category"><%= post.fragments['category'].value %></b>
+    <h1><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h1>
+    <h2><%= post.fragments['excerpt'].as_html(nil) %></h2>
+    <div class="author">
+      <%= post_author(post).fragments['image'].as_html(nil) %>
+      <a href="<%= author_link(post_author(post)) %>"><%= post_author(post).fragments['name'].value %></a> /
+      <%= pretty_date(post.fragments['date'].value) %>
+    </div>
+  <% end %>
 <% end %>
 
 <div class="section blog featured">
@@ -32,37 +35,14 @@ section: blog
       </div>
     </div>
 
-    <h4>Featured Articles</h4>
+    <h4>Recent Articles</h4>
 
     <!--Articles-->
     <div class="grid padded-10">
 
       <!--Entry-->
-      <% featured_posts().each do |post| %>
+      <% latest_posts(0).each do |post| %>
       <div class="col-6">
-        <%= partial('blog/post', :locals => { :post => post }) %>
-      </div>
-      <% end %>
-
-    </div>
-
-  </div>
-
-</div>
-
-<!--Blog-->
-<div class="section blog">
-
-  <div class="container alt">
-
-    <h4>Latest Articles</h4>
-
-    <!--Articles-->
-    <div class="grid padded-10">
-
-      <!--Entry-->
-      <% data.posts.each do |id, post| %>
-      <div class="col-4">
         <%= partial('blog/post', :locals => { :post => post }) %>
       </div>
       <% end %>

@@ -206,10 +206,20 @@
       }
     }
 
-    // embedded
-    div iframe {
-      max-width: 100%;
-      height: auto;
+    // oembed slice
+    div[data-oembed-provider] {
+      margin-bottom: 35px;
+      height: 0;
+      overflow: hidden;
+      padding-bottom: 50%;
+      position: relative;
+      iframe {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        left: 0;
+      }
     }
 
     // content slices

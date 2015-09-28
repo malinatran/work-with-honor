@@ -26,7 +26,7 @@ section: home
         <%= image_tag 'assets/img_logo_2.png' %>
       </div>
       <div class="slide" data-slidr="2">
-        <i>Who should our next million customers be lorem ipsum dolor sit?</i>
+        <i>Who should our next million customers be?</i>
         <b>Customer Appreciation Strategy</b>
         <%= image_tag 'assets/img_logo_2.png' %>
       </div>
@@ -67,7 +67,7 @@ section: home
 
 <!--Blog-->
 <div class="section blog">
-  
+
   <div class="container alt">
 
     <h4>Stories From The Blog</h4>
@@ -76,7 +76,7 @@ section: home
     <div class="grid padded-15">
 
       <!--Entry-->
-      <% latest_posts(data.posts, 3).each do |post| %>
+      <% latest_posts(3).each do |post| %>
         <div class="col-4">
         <%= partial('blog/post', :locals => { :post => post }) %>
         </div>

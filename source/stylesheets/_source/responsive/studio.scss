@@ -23,7 +23,31 @@ section#studio {
 
   }
 
+  .section.brand {
+    .slider {
+      .slide {
+        height: auto;
+        br {
+          display: none;
+        }
+        ul,
+        p {
+          font-size: 16px;
+          padding: 0 15px;
+          margin: 40px 0 20px 0;
+        }
+        h3 {
+          padding-top: 0px;
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
   .section.capabilities {
+    .container {
+      padding: 50px 0;
+    }
     // grid
     .col-4,
     .col-3 {
@@ -35,16 +59,22 @@ section#studio {
   .section.contacts {
     .container .grid {
       > * {
+        float: left;
+        width: 50%;
+        padding: 5px !important;
         text-align: center;
         padding-bottom: 20px;
+        font-size: 13px;
         &:last-of-type {
           padding-bottom: 0;
+        }
+        b {
+          font-size: 14px;
         }
       }
     }
     img {
-      width: 60%;
-      height: auto;
+      max-width: 420px;
       margin: 0 auto;
     }
   }

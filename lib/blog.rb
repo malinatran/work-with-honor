@@ -12,8 +12,12 @@ module BlogHelpers
     end
   end
 
-  def latest_posts(posts, count = 2)
-    (posts.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value }).slice(0, count)
+  def latest_posts(count = 2)
+    posts = (data.posts.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value })
+    if count != 0
+      return posts.slice(0, count)
+    end
+    return posts
   end
 
   def post_image(post, key = 'image')

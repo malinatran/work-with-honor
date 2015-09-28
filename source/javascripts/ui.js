@@ -34,7 +34,7 @@ $(function() {
       pause: false,
       theme: '#222',
       timing: { 'cube': '0.5s ease-in' },
-      touch: true,
+      touch: false,
       transition: 'fade'
     }).add('h', cycle).auto($slider.data('timer') || 5000);
   }

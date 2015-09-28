@@ -99,7 +99,7 @@ section: post
     <div class="grid padded-30">
 
       <!--Entry-->
-      <% latest_posts(data.posts).each do |latest_post| %>
+      <% latest_posts().each do |latest_post| %>
       <div class="col-6">
         <%= partial('blog/post', :locals => { :post => latest_post }) %>
       </div>

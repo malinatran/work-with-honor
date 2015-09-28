@@ -90,9 +90,6 @@
 
   // featured blog
   &.featured {
-    .container {
-      border-bottom: 1px solid $yellow-border;
-    }
     h5 {
       font-size: 30px;
     }
@@ -101,7 +98,9 @@
     }
     .grid {
       > * {
-        margin-bottom: 5px;
+        h5 {
+          padding-bottom: 5px;
+        }
         .category {
           padding-top: 31px;
           margin-bottom: 5px;
