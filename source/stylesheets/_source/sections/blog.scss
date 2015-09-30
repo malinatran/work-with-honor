@@ -26,6 +26,9 @@
           opacity: 1;
           visibility: visible;
         }
+        .category {
+          color: $yellow-tint !important;
+        }
       }
 
       // title
@@ -39,13 +42,23 @@
       }
 
       // metadata
+      .date a,
+      .category {
+        color: $yellow-tint;
+      }
       .date,
       .category {
         display: block;
-        a:hover {
-          color: $yellow-tint;
-        }
         text-transform: uppercase;
+        img {
+          display: none;
+          width: 40px;
+          height: 40px;
+          vertical-align: middle;
+          position: relative;
+          top: -3px;
+          margin: 0 5px;
+        }
       }
 
       .category {
@@ -69,6 +82,8 @@
 
       // hover card
       .card {
+        max-width: 460px;
+        margin: 0 auto;
         .description {
           color: white;
           font-size: 18px;

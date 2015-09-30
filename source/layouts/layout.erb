@@ -38,7 +38,7 @@
           </nav>
           <div class="links">
             <% data.site.pages.each do |page| %>
-            <%= link_to(page, "/#{page.downcase}") %>
+            <%= link_to(page, page != "Home" ? "/#{page.downcase}" : '/') %>
             <% end %>
           </div>
         </div>

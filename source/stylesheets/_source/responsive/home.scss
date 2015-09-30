@@ -5,6 +5,11 @@ section#home {
 
   header {
 
+    // normal logo
+    .logo {
+      width: $logo-width;
+    }
+
     .content {
       padding-bottom: 100px;
     }

@@ -37,16 +37,30 @@
       padding-top: 20px;
     }
 
+    // small logo on all pages
     .logo {
+      width: 32px;
       + span {
-        display: none;
+        @include ellipsis(50%);
       }
     }
 
+    // navigation menu
     .modal {
+      .logo {
+        width: $logo-width;
+      }
+      .container {
+        padding-top: 20px;
+      }
       .links {
+        padding-top: 50px;
         a {
+          margin-bottom: 35px;
           font-size: 32px;
+          &:last-child {
+            margin-bottom: 0;
+          }
         }
       }
     }
@@ -102,6 +116,7 @@
       height: auto;
       font-size: 22px;
       line-height: initial;
+      letter-spacing: -1px;
       .icon {
         font-size: 42px;
         display: none;

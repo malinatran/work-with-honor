@@ -16,6 +16,9 @@
 
 <span class="date">
   <a href="<%= author_link(post_author(post)) %>"><%= post_author(post).fragments['name'].value %></a>
-  /
+  <% if(defined?(with_author)) %>
+  <%= post_author(post).fragments['image'].as_html(nil) %>
+  <% end %>
+  <b>/</b>
   <%= pretty_date(post.fragments['date'].value) %>
 </span>

@@ -3,9 +3,54 @@
  */
 section#post {
 
+  $side-padding: 25px;
+
   // disqus vendor
   #disqus_thread {
+    display: none;
     padding: 35px 30px;
+  }
+
+  // featured posts
+  .section.blog.featured {
+
+    .container {
+      padding: 0 30px 30px 30px;
+    }
+
+    // first post
+    .col-6:first-of-type {
+      border-right: 0;
+    }
+
+    // section title
+    h4 {
+      font-size: 16px;
+      margin-bottom: 20px;
+      border-bottom-width: 1px;
+    }
+
+    // post title
+    .grid > * {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    .category {
+      font-size: 12px;
+      padding: 15px 0 5px 0;
+      margin: 0;
+    }
+
+    .banner {
+      font-size: 15px;
+      .icon {
+        display: inline-block;
+        font-size: 20px;
+      }
+    }
+
   }
 
 }

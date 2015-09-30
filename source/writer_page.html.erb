@@ -6,15 +6,22 @@ section: writer
   <%= image_tag 'header_writer.png' %>
 <% end %>
 
+<% content_for :header_logo do %>
+  <span>Blog</span>
+<% end %>
+
 <div class="section author">
   <div class="container alt">
-    <%= author.fragments['image'].as_html(nil) %>
+    <span class="avatar"><%= author.fragments['image'].as_html(nil) %></span>
     <h1><%= author.fragments['name'].value %></h1>
+    <div class="portrait">
+      <%= author.fragments['image'].as_html(nil) %>
+    </div>
     <%= author.fragments['description'].as_html(nil) %>
   </div>
 </div>
 
-<div class="section blog">
+<div class="section blog featured">
 
   <div class="container alt">
 
@@ -29,7 +36,6 @@ section: writer
           <%= partial('blog/post', :locals => { :post => post }) %>
         </div>
       <% end %>
-
 
     </div>
 

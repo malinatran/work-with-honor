@@ -515,7 +515,7 @@ textarea {
     }
   }
   .values {
-    display: flex;
+    @include display(flex);
   }
   a {
     display: inline-block;
@@ -526,8 +526,8 @@ textarea {
     font-family: $font-alt;
     text-transform: uppercase;
     box-sizing: border-box;
-    flex-grow: 1;
-    flex-wrap: wrap;
+    @include flex-wrap(wrap);
+    @include flex-grow(1);
     &.active,
     &:hover {
       background: $yellow-tint;

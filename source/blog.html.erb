@@ -12,8 +12,11 @@ section: blog
     <h1><a href="<%= post_link(post) %>"><%= post.fragments['smalltitle'].value %></a></h1>
     <h2><%= post.fragments['excerpt'].as_html(nil) %></h2>
     <div class="author">
-      <%= post_author(post).fragments['image'].as_html(nil) %>
-      <a href="<%= author_link(post_author(post)) %>"><%= post_author(post).fragments['name'].value %></a> /
+      <a href="<%= author_link(post_author(post)) %>">
+        <%= post_author(post).fragments['image'].as_html(nil) %>
+        <%= post_author(post).fragments['name'].value %>
+      </a>
+      <b>/</b>
       <%= pretty_date(post.fragments['date'].value) %>
     </div>
   <% end %>
@@ -43,7 +46,7 @@ section: blog
       <!--Entry-->
       <% latest_posts(0).each do |post| %>
       <div class="col-6">
-        <%= partial('blog/post', :locals => { :post => post }) %>
+        <%= partial('blog/post', :locals => { :post => post, :with_author => true }) %>
       </div>
       <% end %>
 

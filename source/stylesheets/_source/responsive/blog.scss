@@ -5,43 +5,90 @@ section#blog {
 
   header {
     h1 {
-      font-size: 42px;
+      font-size: 40px;
       br {
         display: none;
       }
     }
     h2 {
-      font-size: 16px;
+      font-size: 13px;
       margin-top: 0;
+      line-height: 1.5em;
+      padding-top: 10px;
     }
     .content {
-      padding: 55px 0;
+      padding: 20px 0 30px 0;
+
+      // post category
+      .category {
+        font-size: 13px;
+      }
+
+      // post author
+      .author {
+        font-size: 13px;
+        a {
+          display: inline-block;
+          color: $yellow-tint;
+          img {
+            float: right;
+            vertical-align: middle;
+            position: relative;
+            top: -12px;
+            margin: 0 2px 0 6px;;
+          }
+        }
+        b {
+          display: none;
+        }
+      }
+
     }
   }
 
-  .section {
-    h4 {
-      font-size: 18px;
-    }
-  }
-
+  // blog listing section
   .section.blog {
     padding: 0;
+
     .container {
       padding: 0;
     }
 
+    // categories
+    .categories {
+      padding-bottom: 0;
+    }
+
+    // section titles
+    h4 {
+      margin: 30px 0;
+      font-size: 16px;
+      border-bottom-width: 1px;
+    }
+
     // featured section
     &.featured {
+
       .container {
-        padding-bottom: 40px;
         border-bottom: 0;
+
+        // posts entries
         .grid {
           > * {
             padding-bottom: 20px;
+            .date {
+              padding-top: 5px;
+            }
           }
         }
+
       }
+
+      // footer banner
+      .banner {
+        display: none;
+      }
+
     }
 
   }

@@ -29,6 +29,9 @@
       line-height: 1.5em;
       padding-bottom: 8px;
       display: block;
+      br {
+        display: none;
+      }
     }
     .author {
       font-size: 18px;

@@ -79,26 +79,106 @@
 
 }
 
+// blog section
+.section.blog {
+
+  // blog entries
+  .grid > * {
+    margin-bottom: 20px;
+    .date {
+      img {
+        display: inline-block;
+      }
+      b {
+        display: none;
+      }
+    }
+
+    // post category
+    .category {
+      color: $font-color;
+      padding: 0;
+      margin: 0;
+    }
+
+    // body and title
+    p,
+    h5 {
+      max-width: 460px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+  }
+
+  // featured blog sections
+  &.featured {
+    .grid > * {
+      h5 {
+        font-size: 24px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      p {
+        font-size: 13px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+      .category {
+        color: $font-color;
+        padding: 20px 0 5px 0;
+        margin: 0;
+      }
+    }
+  }
+
+}
+
 /**
  * Post section
  */
 .section.post {
-
   $side-padding: 20px;
 
   // blog info
   .container.info {
-    padding: 60px $side-padding 0 $side-padding;
+    padding: 30px $side-padding 0 $side-padding;
     h1 {
-      font-size: 48px;
+      font-size: 40px;
+      line-height: 1.25em;
+    }
+    h2 {
+      font-size: 20px;
+    }
+    .category {
+      font-size: 13px;
+    }
+    .for {
+      font-size: 13px;
+    }
+    .author {
+      font-size: 13px;
+      padding-bottom: 25px;
+      img {
+        display: block;
+        margin: 0 auto 10px auto;
+        max-height: 55px;
+      }
     }
   }
 
   // body elements
   .container.body {
+    padding: 30px 0;
+
+    // titles
+    h3 {
+      font-size: 26px;
+    }
 
     // images
     img {
+      margin-bottom: 25px;
 
       // floated images
       &.right,
@@ -112,6 +192,8 @@
       &.full {
         max-width: 100%;
         left: 0;
+        margin-left: -$side-padding;
+        margin-right: -$side-padding;
         @include transform(none);
       }
 
@@ -119,6 +201,8 @@
 
     // text elements
     p {
+      margin-bottom: 25px;
+      font-size: 16px;
 
       // padded block
       &.padded {
@@ -128,17 +212,17 @@
 
       // image wrapper
       &.block-img {
-        margin-left: -$side-padding;
-        margin-right: -$side-padding;
 
         // right float
         &.right {
           float: none;
-          margin: 0 (-$side-padding) 45px (-$side-padding);
+          margin: 0 auto 45px auto;
         }
 
         // full width
         &.full {
+          margin-left: -$side-padding;
+          margin-right: -$side-padding;
           img {
             max-width: 100%;
             left: 0;
@@ -153,6 +237,15 @@
     i,
     .pull-quote {
       font-size: 22px;
+    }
+
+    // cite
+    p.cite,
+    cite {
+      font-size: 16px;
+      padding-left: 20px;
+      padding-right: 20px;
+      margin-bottom: 25px;
     }
 
     // headers
@@ -186,9 +279,12 @@
           width: auto;
           p {
             font-size: 18px;
+            br {
+              display: none;
+            }
           }
           span {
-            font-size: 16px;
+            font-size: 14px;
           }
         }
         section[data-field=author] span {
@@ -196,6 +292,45 @@
         }
       }
 
+    }
+
+    // post footer
+    .footer {
+      padding-top: 20px;
+      text-align: center;
+      .sharebar {
+        display: block;
+        padding-right: 0;
+        margin-right: 0;
+        border-right: 0;
+      }
+      .tags {
+        padding-top: 20px;
+        b {
+          display: none;
+        }
+      }
+      .author {
+        text-align: center;
+        margin-top: 20px;
+        padding: 20px $side-padding;
+        img {
+          display: block;
+          float: none;
+          width: 55px;
+          height: 55px;
+        }
+        h4 {
+          font-size: 14px;
+          margin: 0 auto;
+          text-align: center;
+        }
+        p {
+          font-size: 13px;
+          text-align: center;
+          margin: 0 auto;
+        }
+      }
     }
 
   }
@@ -207,10 +342,39 @@
  */
 .section.post.work {
 
+  // post info
+  .container.info {
+    .category {
+      padding: 10px 0;
+    }
+    .for {
+      padding-bottom: 30px;
+    }
+  }
+
   .container.body {
     .slice {
       width: auto;
     }
   }
 
+}
+
+/**
+ * Sharebar
+ */
+.sharebar {
+  b {
+    display: none;
+  }
+  a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 18px;
+    margin-left: 10px;
+    &:first-of-type {
+      margin-left: 0;
+    }
+  }
 }

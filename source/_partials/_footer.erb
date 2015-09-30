@@ -12,7 +12,7 @@
   <nav>
     <div class="container">
       <% data.site.pages.each do |page| %>
-      <%= link_to(page, "/#{page.downcase}") %>
+      <%= link_to(page, page != "Home" ? "/#{page.downcase}" : '/') %>
       <% end %>
     </div>
   </nav>
