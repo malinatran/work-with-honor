@@ -75,6 +75,7 @@
       display: block;
     };
     &.padded-5,
+    &.padded-15,
     &.padded-10,
     &.padded-20,
     &.padded-30 {
@@ -84,23 +85,6 @@
     > * {
       padding-left: 0 !important;
       padding-right: 0 !important;
-    }
-  }
-
-  // work section
-  .section.work {
-    .grid {
-      @include grid() {
-        img {
-          // width: 100%;
-          // height: auto;
-        }
-      };
-      @media all and (max-width: 400px) {
-        @include grid() {
-          // width: 100%;
-        };
-      }
     }
   }
 
@@ -157,12 +141,11 @@
     }
 
     .legend {
+      display: none;
       font-size: 10px;
       padding: 11px 0;
       height: auto;
       .logo {
-        // display: block;
-        // margin: 5px auto 10px auto;
       }
     }
 

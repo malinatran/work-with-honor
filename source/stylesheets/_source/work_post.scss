@@ -35,12 +35,19 @@ section#work-post {
   .section.featured {
     .container {
       width: $container-blogs-width;
-      padding-bottom: 75px;
+      padding-bottom: 65px;
+      padding-top: 20px;
     }
     .grid > * {
-      img {
-        width: 100%;
-        height: auto;
+      width: 50%;
+      float: left;
+      padding: 5px;
+      @include box-sizing(border-box);
+      .card {
+        height: 300px;
+        > img {
+          display: none;
+        }
       }
     }
   }

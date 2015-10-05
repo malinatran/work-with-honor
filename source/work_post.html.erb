@@ -72,9 +72,11 @@ header_class: dark
 
     <div class="grid padded-5">
 
+      <%= partial('work/works', :locals => { :works => data.works, :limit => 2 }) %>
+
       <!--Row 1-->
       <% latest_works().each do |latest_post| %>
-      <div class="entry col-6">
+      <!-- <div class="entry col-6">
         <a class="card" href="<%= work_link(latest_post) %>">
           <%= post_image(latest_post, 'thumbnail') %>
           <div class="description">
@@ -84,7 +86,7 @@ header_class: dark
             </span>
           </div>
         </a>
-      </div>
+      </div> -->
       <% end %>
 
     </div>
@@ -94,7 +96,7 @@ header_class: dark
   <div class="banner small">
     <a href="<%= url_for('/work') %>">
       <span class="icon grid"></span>
-      Back to All Work
+      See All Our Work
     </a>
   </div>
 

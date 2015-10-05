@@ -24,6 +24,10 @@ section#studio {
   }
 
   .section.brand {
+    .container {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
     .slider {
       .slide {
         height: auto;

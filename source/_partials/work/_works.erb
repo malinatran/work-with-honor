@@ -1,0 +1,69 @@
+
+<% if defined?(limit) %>
+
+  <% latest_works(limit).each do |post| %>
+  <div class="entry">
+    <a class="card" href="<%= work_link(post) %>" style="background-image: url(<%= post.fragments['image'].main.url %>);">
+      <div class="background" style="background-color: <%= work_color(post) %>;"></div>
+      <%= post.fragments['image'].as_html(nil) %>
+      <div class="description">
+        <span>
+          <%= post.fragments['card_image'].as_html(nil) %>
+          <%= post.fragments['card_text'].value %>
+        </span>
+      </div>
+    </a>
+  </div>
+  <% end %>
+
+<% else %>
+
+<% 12.downto(1) do |col| %>
+
+  <% colWorks = works.values.select { |post| post.fragments['column'].value.to_i == col } %>
+
+  <% if colWorks.length != 0 %>
+
+  <div class="col-<%= col %>">
+
+  <% colWorks.each do |post| %>
+  <div class="entry">
+    <a class="card" href="<%= work_link(post) %>" style="background-image: url(<%= post.fragments['image'].main.url %>);">
+      <div class="background" style="background-color: <%= work_color(post) %>;"></div>
+      <%= post.fragments['image'].as_html(nil) %>
+      <div class="description">
+        <span>
+          <%= post.fragments['card_image'].as_html(nil) %>
+          <%= post.fragments['card_text'].value %>
+        </span>
+      </div>
+    </a>
+  </div>
+  <% end %>
+
+  </div>
+
+  <% end %>
+
+<% end %>
+
+<div class="collapsed">
+
+<% works.each do |key, post| %>
+  <div class="entry">
+    <a class="card" href="<%= work_link(post) %>" style="background-image: url(<%= post.fragments['image'].main.url %>);">
+      <div class="background" style="background-color: <%= work_color(post) %>;"></div>
+      <%= post.fragments['image'].as_html(nil) %>
+      <div class="description">
+        <span>
+          <%= post.fragments['card_image'].as_html(nil) %>
+          <%= post.fragments['card_text'].value %>
+        </span>
+      </div>
+    </a>
+  </div>
+<% end %>
+
+</div>
+
+<% end %>

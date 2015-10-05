@@ -36,7 +36,7 @@ $(function() {
       timing: { 'cube': '0.5s ease-in' },
       touch: false,
       transition: 'fade'
-    }).add('h', cycle).auto($slider.data('timer') || 5000);
+    }).add('h', cycle).auto($slider.data('timer') || 10000);
   }
 
   /**
@@ -152,15 +152,14 @@ $(function() {
 });
 
 $(window).load(function() {
+  $('.section.work').addClass('loaded');
   if($('body').hasClass('work')) {
-    $('.section.work').addClass('loaded');
     return;
   }
-  $('.section.work').addClass('loaded');
-  $('.section.work:not(.featured) .grid').isotope({
-    itemSelector: '.entry',
-    layoutMode: 'packery',
-    percentPosition: true,
-    isResizeBound: false
-  });
+  // $('.section.work:not(.featured) .grid').isotope({
+  //   itemSelector: '.entry',
+  //   layoutMode: 'packery',
+  //   percentPosition: true,
+  //   isResizeBound: false
+  // });
 });

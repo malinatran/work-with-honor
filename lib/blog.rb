@@ -55,8 +55,16 @@ module BlogHelpers
     values.sort { |a, b| b.fragments['column'].value.to_i <=> a.fragments['column'].value.to_i }
   end
 
+  def work_color(work)
+    work.fragments.has_key?('tint') ? "##{work.fragments['tint'].value}" : 'black'
+  end
+
   def latest_works(count = 2)
-    (data.works.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value }).slice(0, count)
+    works = (data.works.values.sort { |a, b| b.fragments['date'].value <=> a.fragments['date'].value })
+    if count != 0
+      return works.slice(0, count)
+    end
+    return works
   end
 
 end

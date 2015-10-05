@@ -26,22 +26,9 @@ section: work
       </div>
     </div>
 
+    <!--Work items-->
     <div class="grid">
-
-      <% work_sorted().each do |post| %>
-      <div class="entry col-<%= post.fragments['column'].value %>">
-        <a class="card" href="<%= work_link(post) %>">
-          <%= post.fragments['image'].as_html(nil) %>
-          <div class="description">
-            <span>
-              <%= post.fragments['card_image'].as_html(nil) %>
-              <%= post.fragments['card_text'].value %>
-            </span>
-          </div>
-        </a>
-      </div>
-      <% end %>
-
+      <%= partial('work/works', :locals => { :works => data.works, :portfolio => true }) %>
     </div>
 
   </div>

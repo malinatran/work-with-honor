@@ -82,6 +82,34 @@
 // blog section
 .section.blog {
 
+  .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    padding-bottom: 20px !important;
+  }
+
+  // two-col grid view
+  @media all and (min-width: 650px) {
+    .grid {
+      // post entries grid view
+      padding-left: 10px;
+      padding-right: 10px;
+      > * {
+        width: 50%;
+        float: left;
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+        &:nth-child(3n) {
+          padding-right: 0;
+          clear: left;
+        }
+        h5 {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+
   // blog entries
   .grid > * {
     margin-bottom: 20px;
@@ -116,8 +144,9 @@
     .grid > * {
       h5 {
         font-size: 24px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 0px !important;
       }
       p {
         font-size: 13px;
@@ -216,7 +245,7 @@
         // right float
         &.right {
           float: none;
-          margin: 0 auto 45px auto;
+          margin: 0 auto 25px auto;
         }
 
         // full width
@@ -275,6 +304,7 @@
       // testimonial slice
       &[data-slicetype=testimonial] {
         padding: 35px $side-padding;
+        margin-bottom: 25px;
         section {
           width: auto;
           p {

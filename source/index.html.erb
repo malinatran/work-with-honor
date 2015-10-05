@@ -35,34 +35,27 @@ section: home
   </div>
 </div>
 
+<!--Work entries-->
 <div class="section work">
+
   <div class="container">
+
     <h4>Work We've Done</h4>
 
+    <!--Work items-->
     <div class="grid">
-
-      <% work_sorted().each do |post| %>
-      <div class="entry col-<%= post.fragments['column'].value %>">
-        <a class="card" href="<%= work_link(post) %>">
-          <%= post.fragments['image'].as_html(nil) %>
-          <div class="description">
-            <span>
-              <%= post.fragments['card_image'].as_html(nil) %>
-              <%= post.fragments['card_text'].value %>
-            </span>
-          </div>
-        </a>
-      </div>
-      <% end %>
-
+      <%= partial('work/works', :locals => { :works => data.works, :portfolio => true }) %>
     </div>
+
   </div>
+
   <div class="banner">
     <a href="<%= url_for('/work') %>">
       View More Work
       <span class="icon chevron-small-right"></span>
     </a>
   </div>
+
 </div>
 
 <!--Blog-->
