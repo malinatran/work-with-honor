@@ -76,6 +76,12 @@ $(function() {
     // bind click event
     $this.on('click', onSelectClick);
 
+    // bind select change event
+    $select.on('change', function(e) {
+      $(document.body).removeClass('nooverflow');
+      $this.find('.value').html($select.val());
+    });
+
   });
 
 });

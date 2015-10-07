@@ -9,7 +9,7 @@ section#contact {
         width: auto;
         padding-bottom: 10px;
         h1 {
-          font-size: 50px;
+          font-size: 42px;
         }
         // grid sections
         .grid {
@@ -23,9 +23,78 @@ section#contact {
 
   // planner
   .planner {
+    $button-height: 50px;
+    $side-padding: 25px;
+
+    .container {
+      padding: 0 $side-padding $button-height $side-padding;
+    }
+
+    // description banner
+    .banner {
+      padding: 25px 30px;
+      text-align: center;
+      .container {
+        padding: 0;
+      }
+      h2 {
+        display: inline-block;
+        font-size: 16px;
+        line-height: 1;
+        margin-bottom: 20px;
+        padding-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0;
+        border-bottom: 1px solid $yellow-border;
+      }
+      p {
+        font-size: 13px;
+        line-height: 2em;
+      }
+    }
 
     form {
+      padding-top: 40px;
       padding-bottom: 0;
+
+      // description sections
+      .desc,
+      h4 {
+        display: none;
+      }
+
+      .field.type {
+        padding-bottom: 20px;
+        .grid > * {
+          width: 50%;
+          float: left;
+          display: table;
+          min-height: 55px;
+          &:first-of-type {
+            .option {
+              border-right: 0 !important;
+            }
+          }
+        }
+        .option {
+          font-size: 11px;
+          padding: 5px 8px 0 8px;
+          line-height: 1.5em;
+          height: auto;
+          display: table-cell;
+          vertical-align: middle;
+        }
+      }
+
+      // services field
+      .field.services {
+        display: none;
+      }
+
+      // textarea fields
+      .field.description {
+        padding-bottom: 20px;
+      }
 
       // type select
       .field.type {
@@ -44,27 +113,11 @@ section#contact {
             padding-bottom: 20px;
           }
         }
-
-      }
-
-      // options select
-      .options {
-        .option {
-          border-bottom: 0;
-        }
-        .grid {
-          > * {
-            &:last-of-type {
-              .option {
-                border-bottom: 1px solid $clear-border;
-              }
-            }
-          }
-        }
       }
 
       // date fields
       .field.date {
+        padding-bottom: 20px;
         .select {
           width: 50%;
           &.year {
@@ -74,9 +127,34 @@ section#contact {
         }
       }
 
+      // budget field
+      .field.budget {
+        padding-bottom: 20px;
+        label {
+          display: none;
+        }
+        .grid {
+          display: none;
+        }
+      }
+
+      // submit button
       button {
-        font-size: 18px;
-        margin: 25px 0 50px 0;
+        position: absolute;
+        margin: 0;
+        height: 50px;
+        line-height: 56px;
+        font-size: 13px;
+        width: 100%;
+        left: 0;
+        right: 0;
+        .icon {
+          display: none;
+        }
+      }
+
+      .success {
+        display: none;
       }
 
     }

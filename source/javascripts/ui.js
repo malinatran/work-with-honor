@@ -98,12 +98,14 @@ $(function() {
     var $form = $(form);
     $form.attr('id', 'form-' + index);
     $form.find('input').addClass('empty');
-    $form.on('input', 'input', function() {
+    $form.on('input propertychange', 'input,textarea', function() {
       if($(this).val()) {
         $(this).removeClass('empty').addClass('filled');
+        $(this).parent().removeClass('empty').addClass('filled');
       }
       else {
-        $(this).addClass('empty');
+        $(this).removeClass('filled').addClass('empty');
+        $(this).parent().removeClass('filled').addClass('empty');
       }
     })
     $form.validate({
@@ -115,14 +117,23 @@ $(function() {
         if($form.data('submitting')) {
           return;
         }
+
         $form.data('submitting', true);
-        $.post(action, $form.serialize(), function() {
+        setTimeout(function() {
           $form.data('submitting', false);
           if(buttonMessage) {
             $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
             $form.find('.success').removeClass('hidden');
           }
-        });
+        }, 100);
+
+        // $.post(action, $form.serialize(), function() {
+        //   $form.data('submitting', false);
+        //   if(buttonMessage) {
+        //     $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
+        //     $form.find('.success').removeClass('hidden');
+        //   }
+        // });
       }
     });
   });

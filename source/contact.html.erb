@@ -10,26 +10,35 @@ contact_banner: false
 <% content_for :header do %>
   <h1>Ready to Work, Ready to Help</h1>
 
-  <div class="grid padded-10">
+  <div class="grid padded">
 
     <!--Social Links-->
-    <div class="col-3">
+    <div class="col-3 social">
       <b>Connect</b>
+      <span>If you like us here you'll love us <br/>over on these nifty sites. Follow us.</span>
       <%= partial('social', :locals => { :linkedin_alt => true, :faecbook_alt => true }) %>
     </div>
 
     <!--Contact-->
-    <div class="col-6">
+    <div class="col-3 contact">
       <b>General Inquiries</b>
-      <span>All general inquiries, pleasantries, cat pics and compliments, send this way.</span>
+      <span>All general inquiries, press, pleasantries,<br/> cat pics and compliments, send this way.</span>
       <a href="mailto:<%= data.site.email %>?subject=General Inquiry"><%= data.site.email %></a>
     </div>
 
     <!--Phone-->
     <div class="col-3">
       <b>Phone</b>
-      <span>Talk to us the old fashion way. Give us a ring.</span>
+      <span>Talk to us the old fashion way. <br/>Give us a ring.</span>
       <a>(862) 216-6506</a>
+    </div>
+
+    <!--Office-->
+    <div class="col-3 office">
+      <b>Office</b>
+      <span>Want to stop by, or send us a gift? Our office hours are 10am - 6pm M-F.</span>
+      <a href="https://goo.gl/maps/DNWJX3rkoy72">175 Varick St.</a>
+      <a href="https://goo.gl/maps/DNWJX3rkoy72">New York, NY 10014</a>
     </div>
 
   </div>
@@ -223,10 +232,9 @@ contact_banner: false
           <div class="select">
             <select name="start_month" required>
               <option value="">Month</option>
-              <option>August</option>
-              <option>September</option>
-              <option>November</option>
-              <option>December</option>
+              <% (1..12).each do |m| %>
+              <option><%= Date::MONTHNAMES[m] %></option>
+              <% end %>
             </select>
             <span class="value">Month</span>
             <span class="icon chevron-small-down"></span>
@@ -250,10 +258,9 @@ contact_banner: false
           <div class="select">
             <select name="end_month" required>
               <option value="">Month</option>
-              <option>August</option>
-              <option>September</option>
-              <option>November</option>
-              <option>December</option>
+              <% (1..12).each do |m| %>
+              <option><%= Date::MONTHNAMES[m] %></option>
+              <% end %>
             </select>
             <span class="value">Month</span>
             <span class="icon chevron-small-down"></span>
@@ -264,6 +271,19 @@ contact_banner: false
 
       <!--Budget-->
       <div class="field options budget required">
+
+        <div class="select year">
+          <select name="budget" required>
+            <option value="">Select a Budget</option>
+            <option>$2,500 - $5,000</option>
+            <option>$5,000 - $10,000</option>
+            <option>$10,000 -  $15,000</option>
+            <option>$20,000+</option>
+          </select>
+          <span class="value">Select a Budget</span>
+          <span class="icon chevron-small-down"></span>
+        </div>
+
         <label>Budget</label>
 
         <div class="grid padded-10">
@@ -311,7 +331,7 @@ contact_banner: false
         <span class="icon chevron-small-right"></span>
       </button>
 
-      <b class="success hidden">Please Expect a Reply from Us Within 1-2 Business Days.</b>
+      <b class="success hidden">A confirmation email is headed your way shortly.</b>
 
     </div>
 
