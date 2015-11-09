@@ -1,11 +1,15 @@
 <a class="card" href="<%= post_link(post) %>">
+
   <%= post_image(post) %>
+
   <div class="description">
+
     <span>
-      Read Article
-      <span class="icon chevron-small-right"></span>
+      <button>Read this Story</button>
     </span>
+
   </div>
+
 </a>
 
 <span class="category"><%= post.fragments['category'].value %></span>

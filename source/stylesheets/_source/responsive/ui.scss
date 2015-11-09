@@ -52,26 +52,16 @@ form {
   // text input
   .field {
     label {
-      position: absolute;
-      top: 24px;
-      left: 20px;
-      right: 20px;
-      margin: 0;
-      padding: 0;
-      opacity: 0.5;
     }
     label.error {
-      top: 40px;
-      right: 0;
-      bottom: initial !important;
-      opacity: 1;
-      visibility: visible;
-      padding: 0 !important;
+      // top: 40px;
+      // right: 0;
+      // bottom: initial !important;
+      // opacity: 1;
+      // visibility: visible;
+      // padding: 0 !important;
     }
     &.filled {
-      label {
-        visibility: hidden;
-      }
       label.error {
         visibility: visible;
       }

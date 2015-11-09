@@ -3,70 +3,52 @@ section: studio
 ---
 
 <% content_for :header do %>
-  <b>Branding + Design + Strategy</b>
-  <h1>Investing in the future by creating brands that improve the quality of life for all.</h1>
-  <h2>We partner with forward-thinking, brands, tastemakers, visionares and entrepreneurs struggling to find an identity that connects with their audience and stands out in a crowded market.</h2>
+  <b>Our Mission</b>
+  <h1>Creating impact through the lens of humanity.</h1>
+  <h2>Influencing the next generation of great businesses by creating brands that<br/> equally supports the needs of people, the planet, and profit.</h2>
 <% end %>
 
 <% content_for :header_logo do %>
   <span>Studio</span>
 <% end %>
 
-<div class="section brand">
-  <div class="container">
-    <h4>How We Support your Brand</h4>
-    <div class="slider">
+<div class="section about">
 
-      <!--First slide-->
-      <div class="slide" data-slidr="1" data-color="#FAF6F1" data-font-color="#4D494D">
-        <p>
-          Imagine your business is universally loved, with a <br/>devoted following and an influence that is felt amongst <br/>customers as well as your peers.
-          <br/>
-          <br/>
-          You’re solving customer problems and building a <br/>business that not only makes a difference, but also <br/>makes lives better.
-        </p>
-      </div>
+  <div class="container grid">
 
-      <!--Second slide-->
-      <div class="slide" data-slidr="2" data-color="#9AE6DA" data-font-color="black">
-        <p>
-          At Honor Roll, we believe in investing in the future by <br/>creating brands that improve the quality of life for all.
-        </p>
-        <p>
-          Using our design-centric approach to problem solving, <br/>we help clients share their stories, shape their <br/>products and otherwise create a world-class user-<br/>centric brand that expresses what they’re all about.
-        </p>
-      </div>
+    <div class="grid">
 
-      <!--Third slide-->
-      <div class="slide" data-slidr="3" data-color="#FF5E64" data-font-color="white">
+      <div class="col-6">
+        <h4>Your Business Problems</h4>
+        <p>Imagine your business is universally loved, with a devoted<br/>following and an influence that is felt amongst customers as<br/>well as your peers. You’re solving customer problems and<br/>building a business that not only makes a difference, but also<br/>makes lives better.</p>
+        <p>Sounds like some dream, right? Its not. This is what a business<br/>looks like with an amazing brand experience. Its memorable,<br/>inspiring and those who comes into contact with it, instantly<br/>feel like they are extension of the brands story.</p>
+        <p>In order to get there, you must:</p>
         <ul>
-          <li>The road to get there requires a bit of elbow grease.</li>
-          <li>• You must share your brand’s story in a unique and authentic way.</li>
-          <li>• You must become an indispensable resource in your customers lives.</li>
-          <li>• You must understand their hopes and desires and translate them <br/>into an experience that solves their problems.</li>
-          <li>(Did we mention you need to get their attention first?) <br/>Sounds tough? But dont worry, we can help you get there.</li>
+          <li>Share your brand’s story in a unique and authentic way.</li>
+          <li>Become an indispensable resource to your customers.</li>
+          <li>Turn their desires into problem-solving experiences.</li>
         </ul>
-      </div>
-
-      <!--Fourth slide-->
-      <div class="slide" data-slidr="4" data-color="#152038" data-font-color="#ED98B4">
-        <p>
-          Sounds like some dream, right? <br/>
-          Its not. This is what a business looks like with an <br/>amazing brand experience.<br/>
-          <br/>
-          Its memorable, inspiring and those who comes into <br/>contact with it, instantly feel like they are extension <br/>of the brands story.
+        <p>(Did we mention you need to earn their attention first?)<br/>
+        Sounds tough? But dont worry, we can help you get there.
         </p>
+
       </div>
 
-      <!--Fifth slide-->
-      <div class="slide" data-slidr="5" data-color="#FAF6F1" data-font-color="#4D494D">
-        <p>With our help, clients jumpstart their brand's presence <br/>and solve real business problems while addressing the <br/> needs of people planet and profit. </p>
-        <h3>Lets Make Great Work</h3>
-        <a href="<%= url_for('/contact') %>" class="button">Contact Us Now</a>
+      <div class="col-6 contact">
+        <h4>Our Brand Solutions</h4>
+        <p>At Honor Roll, we believe in investing in the future by creating<br/> brands that improve the quality of life for all.</p>
+        <p>Using our design-centric approach to problem solving, we help<br/>clients share their stories, shape their products and otherwise<br/>create a world-class user-centric brand that expresses what<br/>they’re all about.</p>
+        <p>With our help, clients jumpstart their brand's presence and<br/>solve real business problems while addressing the needs of<br/>people planet and profit.</p>
+
+        <b>Let's Make Great Work Together</b>
+        <a class="button" href="<%= url_for('/contact') %>">Contact Us Now</a>
+
       </div>
 
     </div>
+
   </div>
+
 </div>
 
 <div class="section capabilities">
@@ -85,7 +67,7 @@ section: studio
           <li>Brand Guidelines</li>
         </ul>
       </div>
-      <div class="col-4">
+      <div class="col-3">
         <span class="icon computer"></span>
         <h3>Digital Marketing & Design</h3>
         <ul>
@@ -144,26 +126,6 @@ section: studio
           <cite>David Rockwell</cite>
           <span>Founder and President of Rockwell Group</span>
         </blockquote>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="section contacts">
-  <div class="container">
-    <h4>A Team Dedicated To Your Success</h4>
-    <div class="grid padded-10">
-      <div class="col-6">
-        <%= image_tag 'james_pic.png' %>
-        <b>James Carter</b>
-        <span>Founder / Head Of Design</span>
-        <a href="https://twitter.com/jamescarterhr">@jamescarterhr</a>
-      </div>
-      <div class="col-6">
-        <%= image_tag 'denney_pic.png' %>
-        <b>Denney Pham</b>
-        <span>Lead Strategist</span>
-        <a href="https://twitter.com/Denney_theJets">@Denney_theJets</a>
       </div>
     </div>
   </div>

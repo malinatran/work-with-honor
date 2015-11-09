@@ -7,83 +7,141 @@ section#studio {
   header {
     @include image('header_studio.png', no-repeat);
     background-size: cover;
+
     h1 {
       font-size: 58px;
       text-transform: none;
-      padding: 0 40px;
       text-shadow: none;
       letter-spacing: -1px;
       line-height: 1.15em;
+      padding: 0 0 25px 0;
     }
+
     h2 {
       font-size: 20px;
-      padding: 30px 130px 60px 130px;
+      padding: 0;
       line-height: 1.6em;
     }
+
     b {
       color: white;
       text-transform: uppercase;
       font-size: 20px;
       text-align: center;
       display: block;
-      padding: 40px 0 15px 0;
+      padding: 85px 0 10px 0;
     }
+
+    .content {
+      padding: 0 0 145px 0;
+    }
+
+    // mobile view
+    @media all and (max-width: $container-width) {
+
+      .content {
+        padding: 30px 0;
+      }
+
+      h1 {
+        font-size: 24px;
+        line-height: 34px;
+        padding: 0 0 10px 0;
+      }
+
+      h2 {
+        font-size: 13px;
+        padding: 0;
+        br {
+          display: none;
+        }
+      }
+
+      b {
+        font-size: 13px;
+        padding: 0 0 15px 0;
+      }
+
+    }
+
   }
 
-  // brand section
-  .section.brand {
+  // about section
+  .section.about {
     background: $clear-tint;
-
-    h4 {
-      padding-bottom: 15px;
-      margin-bottom: 0;
-    }
+    text-align: left;
 
     .container {
-      padding: 60px 0;
+      width: $container-alt-width;
     }
 
-    // content slides
-    .slider {
-      .pagination {
-        padding-top: 50px;
+    h4 {
+      padding-bottom: 14px;
+      margin-bottom: 40px;
+    }
+
+    .contact {
+      padding-left: 40px;
+    }
+
+    p {
+      font-size: 13px;
+      line-height: 20px;
+      margin: 0 0 20px 0;
+    }
+
+    ul {
+      padding: 0 0 8px 0;
+      margin: 0;
+      list-style-position: inside;
+      line-height: 20px;
+      li {
+        margin: 0;
       }
-      aside[id*="-breadcrumbs"] {
-        bottom: -40px;
+    }
+
+    b {
+      font-size: 15px;
+      font-family: $font-alt;
+      display: block;
+      text-transform: uppercase;
+      padding-bottom: 8px;
+    }
+
+    // mobile view
+    @media all and (max-width: $container-width) {
+      text-align: center;
+
+      .container {
+        padding: 30px 30px;
       }
-      .slide {
-        height: 415px;
-        @include headings() {
-          display: block;
-          text-transform: uppercase;
-          border: none;
+
+      h4 {
+        margin-bottom: 30px;
+      }
+
+      // about columns
+      .grid > * {
+        padding-bottom: 20px;
+        br {
+          display: none;
         }
-        h3 {
-          padding-top: 40px;
-          font-size: 34px;
-        }
-        .button {
-          margin-bottom: 20px;
-        }
-        ul {
-          padding: 0;
-          margin: 0;
-          list-style: none;
-          font-size: 30px;
-          line-height: 45px;
-          margin: 52px auto 45px auto;
-          li {
-            padding: 0;
-            margin: 0;
-          }
+        &:last-child {
+          padding-bottom: 0;
         }
       }
+
     }
 
   }
 
   // capabilities section
   .section.capabilities {
+
+    .container {
+      width: $container-footer-width;
+      padding: 90px 0 70px 0;
+    }
 
     // brand icons
     .icon {
@@ -111,7 +169,7 @@ section#studio {
 
     }
     h3 {
-      font-size: 24px;
+      font-size: 21px;
       border: none;
       padding: 0;
     }
@@ -125,7 +183,7 @@ section#studio {
         font-family: $font-alt;
         font-size: 11px;
         text-transform: uppercase;
-        padding-bottom: 15px;
+        padding-bottom: 12px;
         &:last-child {
           padding-bottom: 0;
         }
@@ -133,11 +191,26 @@ section#studio {
     }
 
     // grid
-    .col-4 {
-      width: 35%;
-    }
-    .col-3 {
-      width: percentage(0.65 / 3);
+    // .col-4 {
+    //   width: 35%;
+    // }
+    // .col-3 {
+    //   width: percentage(0.65 / 3);
+    // }
+
+    // mobile view
+    @media all and (max-width: $container-width) {
+
+      h3 {
+        font-size: 16px;
+      }
+
+      ul {
+        li {
+          font-size: 10px;
+        }
+      }
+
     }
 
   }

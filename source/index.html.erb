@@ -3,36 +3,75 @@ section: home
 ---
 
 <% content_for :header do %>
-  <h1>Building Better Brands</h1>
-  <h2>Branding for forward-thinking companies and entrepreneurs</h2>
-  <a class="button" href="<%= url_for('/work') %>">View Our Work</a>
+
+  <!--Collapsed content-->
+  <div class="collapsed">
+    <h1>Building Better Brands</h1>
+    <h2>Branding for forward-thinking companies and entrepreneurs</h2>
+    <a class="button" href="<%= url_for('/work') %>">View Our Work</a>
+  </div>
+
+  <!--Work entries-->
+  <div class="slider controlsalt" data-controls="border" data-breadcrumbs="false">
+
+  <% latest_works(2).each_with_index do |post, index| %>
+
+  <div class="slide entry" style="background-image: url(<%= post.fragments['featured_image'].main.url %>);" data-slidr="<%= index %>">
+
+    <div class="body">
+      <%= post.fragments['title'].as_html(nil) %>
+      <%= post.fragments['subtitle'].as_html(nil) %>
+      <a class="button" href="<%= work_link(post) %>">View this Project</a>
+    </div>
+
+  </div>
+
+  <% end %>
+
+  </div>
+
 <% end %>
 
-<div class="section blue-tint">
+<!--Introduction-->
+<div class="section intro">
+
   <div class="container alt">
-    <h3>We Are Honor Roll</h3>
-    <p>Honor Roll is a creative agency dedicated to helping <br/>forward-thinking clients jumpstart their brand’s presence <br/>and solve real business problems while addressing the <br/>needs of people, planet and profit.</p>
+
+    <h4>We’re honor roll. <span>Happy to meet you</span></h4>
+    <p>We create brand experiences for clients having difficulty establishing a<br/>brand identity that connects with their audience and stands out in a<br/>crowded digital market.</p>
+    <a class="button" href="<%= url_for('/contact') %>">See How We Can Help You</a>
+
   </div>
-  <a class="button" href="<%= url_for('/contact') %>">See How We Can Help You</a>
+
 </div>
 
+<!--Showcase-->
 <div class="section showcase">
+
   <div class="container">
+
     <h4>Problems We've Solved</h4>
-    <div class="slider">
+
+    <div class="slider controlsalt" data-controls="border">
+
       <div class="slide" data-slidr="1">
-        <i>Who should our next million customers be?</i>
+        <i>Who should our next million customers?</i>
         <b>Customer Appreciation Strategy</b>
         <%= image_tag 'assets/img_logo_2.png' %>
       </div>
+
       <div class="slide" data-slidr="2">
-        <i>Who should our next million customers be?</i>
+        <i>Who should our next million customers?</i>
         <b>Customer Appreciation Strategy</b>
         <%= image_tag 'assets/img_logo_2.png' %>
       </div>
+
     </div>
+
     <a class="button" href="<%= url_for('/contact') %>">See How We Can Help You</a>
+
   </div>
+
 </div>
 
 <!--Work entries-->

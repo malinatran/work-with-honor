@@ -68,10 +68,15 @@ contact_banner: false
 
       <div class="grid padded-10">
 
+        <div class="field firstname required col-6">
+          <label>First Name</label>
+          <input id="firstname" name="firstname" type="text" required>
+        </div>
+
         <!--Name field-->
-        <div class="field name required col-6">
-          <label>Name</label>
-          <input id="name" name="name" type="text" required>
+        <div class="field lastname required col-6">
+          <label>Last Name</label>
+          <input id="lastname" name="lastname" type="text" required>
         </div>
 
         <!--Email field-->
@@ -80,15 +85,11 @@ contact_banner: false
           <input id="email" name="email" type="email" required>
         </div>
 
-      </div>
-
-      <!--Company name-->
-      <div class="field companyname">
-        <label>Company Name</label>
-        <input name="company_name" type="text">
-      </div>
-
-      <div class="grid padded-10">
+        <!--Website-->
+        <div class="field website required col-6">
+          <label>Website</label>
+          <input name="website" type="text" required>
+        </div>
 
         <!--Phone-->
         <div class="field phone required col-6">
@@ -96,10 +97,10 @@ contact_banner: false
           <input name="phone" type="text" required>
         </div>
 
-        <!--Website-->
-        <div class="field website required col-6">
-          <label>Website</label>
-          <input name="website" type="text" required>
+        <!--Company name-->
+        <div class="field companyname col-6">
+          <label>Company Name</label>
+          <input name="company_name" type="text">
         </div>
 
       </div>
@@ -206,7 +207,7 @@ contact_banner: false
 
       <div class="field description required textarea">
         <label>Project Details, Goals and Objectives</label>
-        <textarea name="description" required></textarea>
+        <textarea name="description" required placeholder="ANY ADDITIONAL INFORMATION YOU FEEL WILL HELP US UNDERSTAND YOUR PROJECT EVEN MORE."></textarea>
       </div>
 
       <!--Step 3-->
@@ -323,7 +324,10 @@ contact_banner: false
       <!--Subscribe-->
       <div class="field subscribe checkbox">
         <input type="checkbox" name="subscribe" id="subscribe_check">
-        <label for="subscribe_check">Yes, I’d Love to Receive Tips on Growing My Brand and Business. (Optional)</label>
+        <label for="subscribe_check">
+          <span>Yes, i’d love to subscribe to roll call and receive exclusive tips on growing my brand and business.</span>
+          <span class="collapsed">Yes, i’d love to receive tips on growing my brand and business.</span>
+        </label>
       </div>
 
       <button type="submit">

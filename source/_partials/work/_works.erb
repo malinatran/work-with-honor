@@ -28,17 +28,26 @@
 
   <% colWorks.each do |post| %>
   <div class="entry">
+
     <a class="card" href="<%= work_link(post) %>" style="background-image: url(<%= post.fragments['image'].main.url %>);">
+
       <div class="background" style="background-color: <%= work_color(post) %>;"></div>
+
       <%= post.fragments['image'].as_html(nil) %>
+
+      <!--Card content-->
       <div class="description">
-        <span>
+        <div>
           <%= post.fragments['card_image'].as_html(nil) %>
           <%= post.fragments['card_text'].value %>
-        </span>
+          <button>View this project</button>
+        </div>
       </div>
+
     </a>
+
   </div>
+
   <% end %>
 
   </div>
@@ -51,16 +60,22 @@
 
 <% works.each do |key, post| %>
   <div class="entry">
+
     <a class="card" href="<%= work_link(post) %>" style="background-image: url(<%= post.fragments['image'].main.url %>);">
+
       <div class="background" style="background-color: <%= work_color(post) %>;"></div>
+
       <%= post.fragments['image'].as_html(nil) %>
+
       <div class="description">
         <span>
           <%= post.fragments['card_image'].as_html(nil) %>
           <%= post.fragments['card_text'].value %>
         </span>
       </div>
+
     </a>
+
   </div>
 <% end %>
 

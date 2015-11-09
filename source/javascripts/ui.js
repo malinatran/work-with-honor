@@ -26,7 +26,7 @@ $(function() {
     slidr.create(id, {
       before: onSliderBefore,
       controls: $slider.data('controls') || 'none',
-      breadcrumbs: true,
+      breadcrumbs: $slider.data('breadcrumbs') === false ? false : true,
       direction: 'horizontal',
       fade: false,
       keyboard: true,
@@ -35,7 +35,7 @@ $(function() {
       theme: '#222',
       timing: { 'cube': '0.5s ease-in' },
       touch: false,
-      transition: 'fade'
+      transition: $slider.data('transition') || 'fade'
     }).add('h', cycle).auto($slider.data('timer') || 10000);
   }
 
@@ -93,11 +93,16 @@ $(function() {
     $(document.body).removeClass('noscroll');
   });
 
-  // form controls
+  /**
+   * Form controls
+   */
   $('form').each(function(index, form) {
+
     var $form = $(form);
     $form.attr('id', 'form-' + index);
     $form.find('input').addClass('empty');
+
+    // listen to input change
     $form.on('input propertychange', 'input,textarea', function() {
       if($(this).val()) {
         $(this).removeClass('empty').addClass('filled');
@@ -107,9 +112,22 @@ $(function() {
         $(this).removeClass('filled').addClass('empty');
         $(this).parent().removeClass('filled').addClass('empty');
       }
-    })
+    });
+
     $form.validate({
+
+      // error label placement
+      errorPlacement: function(error, element) {
+        if(element.prop('tagName') === 'SELECT') {
+          error.insertAfter(element);
+          return;
+        }
+        error.insertAfter(element.parents('.field').find('label:first-of-type'));
+      },
+
+      // on form submit
       submitHandler: function(form, event) {
+
         event.preventDefault();
         var $form = $(form);
         var action = $form.attr('action');
@@ -119,23 +137,18 @@ $(function() {
         }
 
         $form.data('submitting', true);
-        setTimeout(function() {
+        $.post(action, $form.serialize(), function() {
           $form.data('submitting', false);
           if(buttonMessage) {
             $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
             $form.find('.success').removeClass('hidden');
           }
-        }, 100);
+        });
 
-        // $.post(action, $form.serialize(), function() {
-        //   $form.data('submitting', false);
-        //   if(buttonMessage) {
-        //     $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
-        //     $form.find('.success').removeClass('hidden');
-        //   }
-        // });
       }
+
     });
+
   });
 
   // options form control

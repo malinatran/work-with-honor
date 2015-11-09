@@ -39,14 +39,15 @@ form {
   // input field
   .field {
     position: relative;
+
     &.required {
       label:after {
         content: "*";
-        color: $red-tint;
       }
     }
+
     label {
-      display: block;
+      display: inline-block;
       margin: 0;
       padding: 0;
       text-align: left;
@@ -56,32 +57,35 @@ form {
       padding: 0 0 6px 0;
     }
 
+    // filled input error
     input.filled:focus + label.error {
-      // bottom: 1px;
     }
 
+    // empty input error
     input.empty + label.error {
-      bottom: 24px;
     }
 
     label.error {
+      display: inline-block;
       color: $red-tint;
       font-size: 9px;
       text-transform: uppercase;
-      display: block;
       font-family: $font-alt;
-      position: absolute;
-      left: 30px;
-      bottom: 10px;
+      padding: 0 0 0 10px !important;
+      vertical-align: middle;
+      top: 1px;
+      position: relative;
       @include transition(all 80ms ease-in);
     }
 
     // select field
     .select {
       label.error {
+        position: absolute;
+        top: initial;
+        bottom: -20px;
         left: 0;
-        bottom: -23px;
-        display: none;
+        right: 0;
         padding: 0 !important;
       }
     }
@@ -130,6 +134,7 @@ textarea {
   &:hover {
     label:before {
       background: white;
+      box-shadow: 0 0 0 1px $yellow-border;
     }
   }
   label {
@@ -140,17 +145,18 @@ textarea {
       @extend .icon;
       content: "";
       background: white;
-      border: 1px solid #C5B989;
-      width: 17px;
-      height: 17px;
+      border: 1px solid $yellow-border;
+      width: 15px;
+      height: 15px;
       display: inline-block;
       vertical-align: middle;
       text-align: center;
-      line-height: 19px;
+      line-height: 16px;
       margin-right: 8px;
       position: relative;
       top: -3px;
       font-size: 0;
+      border-radius: 1px;
       @include transition(all 80ms ease-in);
     }
   }
@@ -162,6 +168,8 @@ textarea {
   }
   input:checked + label:before {
     @extend .icon.check:before;
+    background: $yellow-border;
+    color: white;
     font-size: 12px;
   }
 }
@@ -201,7 +209,11 @@ textarea {
     padding-top: 10px;
   }
   label.error {
-    position: initial;
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    right: 0;
+    top: initial;
   }
 }
 
@@ -210,10 +222,12 @@ textarea {
  */
 .field.textarea {
   label.error {
-    position: initial;
-    display: block;
+    position: absolute;
+    bottom: -19px;
+    left: 0;
+    right: 0;
+    top: initial;
     text-align: center;
-    padding-top: 10px;
   }
 }
 
@@ -297,6 +311,7 @@ textarea {
       opacity: 1;
     }
   }
+
 }
 
 /**
@@ -333,7 +348,7 @@ textarea {
 .slider {
   margin: 0 auto;
   width: 100%;
-  margin-bottom: 45px;
+  padding-bottom: 50px;
 
   // white tinted
   &.white {
@@ -359,7 +374,7 @@ textarea {
   aside[id*="-breadcrumbs"] {
     padding: 0;
     left: 0;
-    bottom: -60px;
+    bottom: 0;
     width: 100%;
     ul {
       display: inline-block;
@@ -422,6 +437,45 @@ textarea {
     }
   }
 
+  // alt arrow
+  &.controlsalt {
+
+    aside[id*="-control"].border .slidr-control {
+      border-radius: 4px;
+      border: 2px solid $yellow-border;
+      width: 42px;
+      height: 44px;
+      font-size: 44px;
+      line-height: 46px;
+      color: $yellow-border;
+
+      &:before {
+        position: relative;
+      }
+
+      &.left,
+      &.right {
+        margin-top: -22px;
+      }
+
+      &.left {
+        left: -70px;
+        &:before {
+          left: -2px;
+        }
+      }
+
+      &.right {
+        right: -70px;
+        &:before {
+          right: -1px;
+        }
+      }
+
+    }
+
+  }
+
 }
 
 /**
@@ -450,7 +504,9 @@ textarea {
     visibility: hidden;
     opacity: 0;
     @include transition(all 120ms ease-in);
-    > span {
+
+    > span,
+    > div {
       display: block;
       text-align: center;
       position: absolute;
@@ -462,7 +518,17 @@ textarea {
       white-space: nowrap;
       overflow: hidden;
       @include transform(translateY(-50%));
+
+      button,
+      .button {
+        display: block;
+        margin: 0 auto;
+        box-shadow: none;
+        font-size: 13px;
+      }
+
     }
+
   }
 
 }

@@ -4,19 +4,38 @@
 section#contact {
 
   header {
+
+    // main container
     .container {
+
       .content {
         width: auto;
-        padding-bottom: 10px;
+        padding: 0 30px 0 30px;
+
         h1 {
-          font-size: 42px;
+          font-size: 32px;
+          padding-top: 20px;
         }
+
         // grid sections
         .grid {
           > * {
-            padding-bottom: 30px;
+            padding-bottom: 20px;
+            b {
+              font-size: 13px;
+            }
+            span {
+              display: none;
+            }
+            a {
+              font-size: 14px;
+            }
+            &:last-child {
+              display: none;
+            }
           }
         }
+
       }
     }
   }
@@ -50,11 +69,14 @@ section#contact {
       p {
         font-size: 13px;
         line-height: 2em;
+        br {
+          display: none;
+        }
       }
     }
 
     form {
-      padding-top: 40px;
+      padding-top: 15px;
       padding-bottom: 0;
 
       // description sections
@@ -63,8 +85,32 @@ section#contact {
         display: none;
       }
 
+      // form field
+      .field {
+        margin-bottom: 15px !important;
+        label {
+          padding-bottom: 5px;
+        }
+      }
+
+      .field.options,
+      .field.textarea {
+        margin-bottom: 30px !important;
+      }
+
+      // contact checkbox
+      .field.contact {
+        padding-bottom: 25px;
+      }
+
+      // checkbox
+      .field.checkbox {
+        label {
+          font-size: 9px !important;
+        }
+      }
+
       .field.type {
-        padding-bottom: 20px;
         .grid > * {
           width: 50%;
           float: left;
@@ -91,9 +137,9 @@ section#contact {
         display: none;
       }
 
-      // textarea fields
-      .field.description {
-        padding-bottom: 20px;
+      // comments field
+      .field.comments {
+        display: none;
       }
 
       // type select
@@ -117,7 +163,7 @@ section#contact {
 
       // date fields
       .field.date {
-        padding-bottom: 20px;
+        padding-bottom: 0;
         .select {
           width: 50%;
           &.year {
@@ -129,7 +175,9 @@ section#contact {
 
       // budget field
       .field.budget {
-        padding-bottom: 20px;
+        .select {
+          display: block;
+        }
         label {
           display: none;
         }
@@ -153,8 +201,19 @@ section#contact {
         }
       }
 
+      // success form message
       .success {
         display: none;
+      }
+
+      // subscribe checkbox
+      .field.subscribe {
+        span {
+          display: none;
+          &.collapsed {
+            display: inline;
+          }
+        }
       }
 
     }

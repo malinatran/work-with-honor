@@ -143,12 +143,17 @@ footer {
     font-family: $font-alt;
     text-transform: uppercase;
     padding: 24px 0 12px 0;
+
     a {
       margin-right: 24px;
       &:last-child {
         margin-right: 0;
       }
+      &:hover {
+        color: $yellow-tint;
+      }
     }
+
   }
 
   // contact banner

@@ -1,3 +1,6 @@
+/**
+ * Main header
+ */
 header {
   background-color: $orange-tint;
 
@@ -7,6 +10,7 @@ header {
     display: inline-block;
     width: 167px;
     height: 32px;
+
     + span {
       color: white;
       font-family: $font-alt;
@@ -17,6 +21,7 @@ header {
       top: 12px;
       left: 6px;
     }
+
   }
 
   .nav {
@@ -29,17 +34,21 @@ header {
     display: inline-block;
     float: right;
     padding-top: 3px;
+
     a {
       color: white;
       font-family: $font-alt;
       font-size: 18px;
       text-transform: uppercase;
+
       .icon {
         font-size: 24px;
         position: relative;
         top: 4px;
       }
+
     }
+
   }
 
   h1 {
@@ -66,15 +75,18 @@ header {
     height: 100%;
     bottom: 0;
     z-index: 999;
+
     .container {
       background-image: none !important;
       padding-top: 40px;
       width: $container-alt-width;
     }
+
     .links {
       padding: 25px 0 0 0;
       text-align: center;
       clear: both;
+
       a {
         font-family: $font-alt;
         display: block;
@@ -86,29 +98,40 @@ header {
           color: $yellow-tint;
         }
       }
+
     }
+
   }
 
   // white/dark header
   &.dark {
     background: white;
     min-height: auto;
+
     .container {
+
       > .nav {
+
         > .logo {
           @include image('logo_black.png', no-repeat left top);
           background-size: 167px 32px;
+
           + span {
             color: $font-color;
           }
+
         }
+
         > nav {
           > a {
             color: $font-color;
           }
         }
+
       }
+
     }
+
   }
 
   // float menu
@@ -122,12 +145,15 @@ header {
     z-index: 100;
     opacity: 0;
     @include transition(all 80ms ease-in);
+
     .nav {
+      position: initial !important;
       padding: 20px;
       .logo + span {
         display: none;
       }
     }
+
   }
 
   &.sticky {
