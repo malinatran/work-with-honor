@@ -36,18 +36,18 @@
 
 @font-face {
     font-family: 'CaeciliaLTPro-55Roman';
-    src: url('fonts/2EE11F_0_0.eot');
-    src: url('fonts/2EE11F_0_0.eot?#iefix') format('embedded-opentype'), url('fonts/2EE11F_0_0.woff2') format('woff2'), url('fonts/2EE11F_0_0.woff') format('woff'), url('fonts/2EE11F_0_0.ttf') format('truetype');
+    src: url(font_path('2EE11F_0_0.eot'));
+    src: url(font_path('2EE11F_0_0.eot?#iefix')) format('embedded-opentype'), url(font_path('2EE11F_0_0.woff2')) format('woff2'), url(font_path('2EE11F_0_0.woff')) format('woff'), url(font_path('2EE11F_0_0.ttf')) format('truetype');
 }
 @font-face {
     font-family: 'BrandonGrotesque-Bold';
     font-weight: normal;
     font-style: normal;
-    letter-spacingsrc: url('fonts/2EE11F_1_0.eot');
-    src: url('fonts/2EE11F_1_0.eot?#iefix') format('embedded-opentype'), url('fonts/2EE11F_1_0.woff2') format('woff2'), url('fonts/2EE11F_1_0.woff') format('woff'), url('fonts/2EE11F_1_0.ttf') format('truetype');
+    letter-spacingsrc: url(font_path('2EE11F_1_0.eot'));
+    src: url(font_path('2EE11F_1_0.eot?#iefix')) format('embedded-opentype'), url(font_path('2EE11F_1_0.woff2')) format('woff2'), url(font_path('2EE11F_1_0.woff')) format('woff'), url(font_path('2EE11F_1_0.ttf')) format('truetype');
 }
 @font-face {
     font-family: 'CaeciliaLTPro-56Italic';
-    src: url('fonts/2EE11F_2_0.eot');
-    src: url('fonts/2EE11F_2_0.eot?#iefix') format('embedded-opentype'), url('fonts/2EE11F_2_0.woff2') format('woff2'), url('fonts/2EE11F_2_0.woff') format('woff'), url('fonts/2EE11F_2_0.ttf') format('truetype');
+    src: url(font_path('2EE11F_2_0.eot'));
+    src: url(font_path('2EE11F_2_0.eot?#iefix')) format('embedded-opentype'), url(font_path('2EE11F_2_0.woff2')) format('woff2'), url(font_path('2EE11F_2_0.woff')) format('woff'), url(font_path('2EE11F_2_0.ttf')) format('truetype');
 }
