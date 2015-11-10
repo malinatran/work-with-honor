@@ -74,21 +74,6 @@ header_class: dark
 
       <%= partial('work/works', :locals => { :works => data.works, :limit => 2 }) %>
 
-      <!--Row 1-->
-      <% latest_works().each do |latest_post| %>
-      <!-- <div class="entry col-6">
-        <a class="card" href="<%= work_link(latest_post) %>">
-          <%= post_image(latest_post, 'thumbnail') %>
-          <div class="description">
-            <span>
-              <%= post.fragments['card_image'].as_html(nil) %>
-              <%= post.fragments['card_text'].value %>
-            </span>
-          </div>
-        </a>
-      </div> -->
-      <% end %>
-
     </div>
 
   </div>

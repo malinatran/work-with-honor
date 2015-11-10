@@ -4,29 +4,36 @@
 .section.testimonials {
   color: white;
   background: $yellow-tint;
+
   @include headings() {
     border-color: white;
     padding-bottom: 20px;
     margin-bottom: 15px;
   }
+
   .container {
     padding: 45px 0;
   }
+
   .pagination {
     padding-top: 40px;
   }
+
 }
 
 /**
  * Recognition
  */
 .section.recognition {
+
   .container {
     padding-bottom: 40px;
   }
+
   p {
     font-size: 20px;
     margin: 0;
     line-height: 1.75em;
   }
+
 }

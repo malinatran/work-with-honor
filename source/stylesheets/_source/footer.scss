@@ -43,12 +43,15 @@ footer {
     .field {
       display: inline-block;
       margin-right: 15px;
+
       &.name {
         width: 170px;
       }
+
       &.lastname {
         width: 220px;
       }
+
       &.email {
         width: 320px;
       }
@@ -61,6 +64,7 @@ footer {
         border: 1px solid #2C353F;
         box-shadow: 0 1px 1px rgba(0, 0, 0, 0.17);
       }
+
     }
 
     button {
@@ -73,6 +77,7 @@ footer {
       height: 40px;
       display: inline-block;
       vertical-align: bottom;
+
       a {
         @include transition(all 70ms linear);
         display: inline-block;
@@ -90,6 +95,7 @@ footer {
           color: white;
         }
       }
+
     }
 
   }
@@ -104,13 +110,16 @@ footer {
     font-family: $font-alt;
     border-bottom: 1px solid #4C545C;
     padding: 25px 0 15px 0;
+
     a {
     }
+
     h3 {
       color: white;
       font-size: 16px;
       letter-spacing: 0;
     }
+
   }
 
   // legend
@@ -123,6 +132,7 @@ footer {
     text-align: center;
     text-transform: uppercase;
     box-sizing: border-box;
+
     .logo {
       @include image('logo_small.png', no-repeat top left);
       background-size: 31px 32px;
@@ -132,6 +142,7 @@ footer {
       vertical-align: middle;
       margin: 0 15px;
     }
+
   }
 
   // menu
@@ -146,12 +157,15 @@ footer {
 
     a {
       margin-right: 24px;
+
       &:last-child {
         margin-right: 0;
       }
+
       &:hover {
         color: $yellow-tint;
       }
+
     }
 
   }

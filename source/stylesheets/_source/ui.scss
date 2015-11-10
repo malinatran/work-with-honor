@@ -411,65 +411,46 @@ textarea {
   // arrow controls
   aside[id*="-control"].border .slidr-control {
     @extend .icon;
+    border: 2px solid $yellow-border;
+    width: 42px;
+    height: 44px;
+    font-size: 44px;
+    line-height: 46px;
+    border-radius: 4px;
     color: $yellow-border;
-    height: 56px;
-    font-size: 56px;
+
     &.left,
     &.right {
-      width: auto;
-      height: 56px;
+      height: 44px;
       top: 50%;
-      margin-top: -28px;
+      margin-top: -22px;
       &:after {
         display: none;
       }
     }
+
     &.disabled {
       display: none;
     }
+
+    &:before {
+      position: relative;
+    }
+
     &.left {
       left: -70px;
       @extend .icon.chevron-small-left;
+      &:before {
+        left: -2px;
+      }
     }
+
     &.right {
       right: -70px;
       @extend .icon.chevron-small-right;
-    }
-  }
-
-  // alt arrow
-  &.controlsalt {
-
-    aside[id*="-control"].border .slidr-control {
-      border-radius: 4px;
-      border: 2px solid $yellow-border;
-      width: 42px;
-      height: 44px;
-      font-size: 44px;
-      line-height: 46px;
-      color: $yellow-border;
 
       &:before {
-        position: relative;
-      }
-
-      &.left,
-      &.right {
-        margin-top: -22px;
-      }
-
-      &.left {
-        left: -70px;
-        &:before {
-          left: -2px;
-        }
-      }
-
-      &.right {
-        right: -70px;
-        &:before {
-          right: -1px;
-        }
+        right: -1px;
       }
 
     }

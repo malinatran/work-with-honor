@@ -5,7 +5,9 @@
 
   // blog info
   .container.info {
+    color: $font-color-dark;
     padding: 45px 0 15px 0;
+
     .category {
       color: $yellow-tint;
       font-size: 18px;
@@ -14,6 +16,7 @@
       padding-bottom: 12px;
       display: block;
     }
+
     h1 {
       font-size: 56px;
       text-transform: none;
@@ -21,6 +24,7 @@
       padding-bottom: 5px;
       display: block;
     }
+
     h2 {
       font-size: 30px;
       border: none;
@@ -29,15 +33,19 @@
       line-height: 1.5em;
       padding-bottom: 8px;
       display: block;
+
       br {
         display: none;
       }
+
     }
+
     .author {
       font-size: 18px;
       font-family: $font-alt;
       text-transform: uppercase;
       padding: 18px 0 50px 0;
+
       img {
         display: inline-block;
         width: auto;
@@ -47,11 +55,15 @@
         top: -4px;
         margin-right: 5px;
       }
+
       span {
         color: $yellow-tint;
       }
+
     }
+
     .footer {
+
       .sharebar {
         display: inline-block;
         border-right: 1px solid $clear-border;
@@ -61,6 +73,7 @@
           padding-right: 0;
         }
       }
+
       .comments {
         display: inline-block;
         padding-left: 20px;
@@ -69,25 +82,30 @@
         text-transform: uppercase;
         font-size: 12px;
       }
+
     }
+
   }
 
   // post body
   .container.body {
     @include clearfix;
+    color: $font-color-dark;
     width: auto;
     padding: 60px 0;
 
     // standard text
     p {
       text-align: left;
-      font-size: 20px;
-      line-height: 1.80em;
+      font-size: 16px;
+      line-height: 2.2em;
       margin: 0 0 35px 0;
+
       &.padded {
         padding-left: 85px;
         padding-right: 85px;
       }
+
       b, strong {
         font-family: $font-main;
         font-size: 18px;
@@ -99,9 +117,11 @@
         margin-bottom: 0;
         line-height: initial;
         font-size: initial;
+
         img {
           display: block;
         }
+
         // float right
         &.right {
           float: right;
@@ -111,6 +131,7 @@
             margin-bottom: 0;
           }
         }
+
         // full image
         &.full {
           img {
@@ -133,11 +154,14 @@
       text-align: left;
       text-transform: none;
       padding-bottom: 15px;
+
       &.padded {
         padding-left: 85px;
         padding-right: 85px;
       }
+
     };
+
     h2 {
       font-size: 48px;
     }
@@ -146,7 +170,7 @@
     i,
     .pull-quote {
       display: block;
-      font-size: 40px;
+      font-size: 30px;
       font-family: $font-main-italic;
       padding-bottom: 45px;
       text-align: center;
@@ -158,28 +182,35 @@
       max-width: 100%;
       height: auto;
       margin: 0 auto 55px auto;
+
       &.right {
         width: auto;
         float: right;
         margin: 10px 0 20px 15px;
       }
+
       &.padded {
         margin-left: 75px;
       }
+
       &.full {
         max-width: initial;
         position: relative;
         left: 50%;
         @include transform(translateX(-50%));
       }
+
     }
+
     .slider {
       margin-bottom: 75px;
+
       .slide {
         img {
           margin: 0 auto;
         }
       }
+
     }
 
     // cite
@@ -194,6 +225,7 @@
       font-family: $font-main-italic;
       position: relative;
       line-height: 1.8em;
+
       &:before {
         background: white;
         font-family: $font-alt;
@@ -207,6 +239,7 @@
         left: -10px;
         padding-top: 8px;
       }
+
     }
 
     // oembed slice
@@ -216,6 +249,7 @@
       overflow: hidden;
       padding-bottom: 50%;
       position: relative;
+
       iframe {
         height: 100%;
         position: absolute;
@@ -223,6 +257,7 @@
         width: 100%;
         left: 0;
       }
+
     }
 
     // content slices
@@ -237,9 +272,11 @@
         color: white;
         padding: 60px 0 50px 0;
         margin-bottom: 35px;
+
         section {
           width: $container-blogs-width;
           margin: 0 auto;
+
           p {
             font-family: $font-main-italic;
             font-size: 40px;
@@ -247,10 +284,13 @@
             text-align: center;
             margin-bottom: 15px;
           }
+
           span {
             font-size: 17px;
           }
+
         }
+
         section[data-field=author] span {
           text-transform: uppercase;
           display: block;
@@ -259,11 +299,12 @@
           font-size: 20px;
           padding: 0 0 5px 0;
         }
+
       }
 
       // slider slice
       &[data-slicetype=slides] {
-        margin-bottom: 75px;
+        margin-bottom: 35px;
       }
 
     }
@@ -273,38 +314,48 @@
       border-top: 1px solid $clear-border;
       text-align: left;
       padding-top: 27px;
+
       .sharebar {
         display: inline-block;
         border-right: 1px solid $clear-border;
         padding-right: 10px;
         margin-right: 10px;
       }
+
       .tags {
         font-family: $font-alt;
         text-transform: uppercase;
         display: inline-block;
+
         a {
           color: $yellow-tint;
+
           &:after {
             content: ",";
           }
+
           &:last-child {
             &:after {
               content: "";
             }
           }
+
         }
+
       }
+
       .author {
         margin-top: 27px;
         padding: 40px 0;
         border-top: 1px solid $clear-border;
         border-bottom: 1px solid $clear-border;
+
         img {
           float: left;
           width: 138px;
           height: 138px;
         }
+
         h4 {
           display: block;
           font-size: 18px;
@@ -312,23 +363,29 @@
           margin: 0 0 3px 160px;
           text-transform: uppercase;
         }
+
         p {
           display: block;
           font-size: 16px;
           margin: 0 0 0 160px;
           line-height: 2em;
         }
+
         a {
           display: inline-block;
           color: $yellow-tint;
         }
+
         .viewmore {
           font-family: $font-alt;
           text-transform: uppercase;
           font-size: 12px;
         }
+
       }
+
     }
+
   }
 
 }
@@ -343,16 +400,21 @@
     // categories
     .category {
       padding: 25px 0 35px 0;
+
       a {
+
         &:after {
           content: ",";
         }
+
         &:last-child {
           &:after {
             content: "";
           }
         }
+
       }
+
     }
 
     // client
@@ -361,6 +423,7 @@
       font-size: 18px;
       text-transform: uppercase;
       padding-bottom: 50px;
+
       span {
         font-family: $font-main-italic;
         display: inline-block;
@@ -368,6 +431,7 @@
         color: $clear-border;
         padding-right: 5px;
       }
+
     }
 
   }
@@ -375,9 +439,11 @@
   // post body
   .container.body {
     width: auto;
+
     .slice {
       width: $container-blogs-width;
     }
+
   }
 
 }

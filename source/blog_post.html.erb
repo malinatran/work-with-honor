@@ -76,10 +76,17 @@ section: post
 
       <!--Author-->
       <div class="author">
+
         <%= image_tag(author.fragments['image'].main.url) %>
+
         <h4><a href="<%= author_link(author) %>"><%= author.fragments['name'].value %></a></h4>
+
         <%= author.fragments['description'].as_html(nil) %>
-        <p><a class="viewmore">See More Articles By <%= author.fragments['name'].value %></a></p>
+
+        <p>
+          <a class="viewmore" href="<%= author_link(author) %>">See More Articles By <%= author.fragments['name'].value %></a>
+        </p>
+
       </div>
 
     </div>
@@ -106,14 +113,17 @@ section: post
       <% end %>
 
     </div>
+
   </div>
 
   <!--Back banner-->
   <div class="banner">
+
     <a href="<%= url_for('/blog') %>">
       <span class="icon grid"></span>
       Back to Blog
     </a>
+
   </div>
 
 </div>

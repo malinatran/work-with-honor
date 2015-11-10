@@ -33,14 +33,11 @@
  * Testimonials section
  */
 .section.testimonials {
+
   .container {
     padding: 40px 0;
-    .slider {
-      aside[id*="-breadcrumbs"] {
-        bottom: -55px;
-      }
-    }
   }
+
 }
 
 /**
@@ -172,28 +169,37 @@
   // blog info
   .container.info {
     padding: 30px $side-padding 0 $side-padding;
+
     h1 {
       font-size: 40px;
       line-height: 1.25em;
     }
+
     h2 {
       font-size: 20px;
+      line-height: 1.8em;
     }
+
     .category {
       font-size: 13px;
     }
+
     .for {
       font-size: 13px;
     }
+
     .author {
       font-size: 13px;
       padding-bottom: 25px;
+
       img {
         display: block;
         margin: 0 auto 10px auto;
         max-height: 55px;
       }
+
     }
+
   }
 
   // body elements
