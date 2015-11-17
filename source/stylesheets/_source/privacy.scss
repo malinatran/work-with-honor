@@ -1,0 +1,39 @@
+/**
+ * Privacy page
+ */
+section#privacy {
+
+  header {
+
+    h1 {
+      font-size: 60px;
+      color: $font-color-dark;
+      text-transform: none;
+      padding: 60px 0 20px 0;
+    }
+
+  }
+
+  .section.privacy .container {
+    padding: 0;
+  }
+
+  // mobile view
+  @media all and (max-width: $container-width) {
+
+    header {
+
+      h1 {
+        font-size: 40px;
+        padding: 45px 0;
+      }
+
+    }
+
+    .section.privacy .container {
+      padding: 0 20px;
+    }
+
+  }
+
+}

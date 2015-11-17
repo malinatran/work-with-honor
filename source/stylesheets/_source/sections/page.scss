@@ -1,0 +1,61 @@
+/**
+ * Page section
+ */
+.section.page {
+  color: $font-color-dark;
+
+  .container {
+    text-align: left;
+    width: 780px;
+  }
+
+  p {
+    font-size: 16px;
+    margin: 0;
+    line-height: 2.25em;
+    padding: 0 0 50px 0;
+    word-break: break-word;
+  }
+
+  a {
+    word-break: break-word;
+  }
+
+  ul {
+    list-style-position: inside;
+    margin: 0 0 0 0;
+    padding: 0;
+
+    li {
+      font-size: 16px;
+      line-height: 2.25em;
+      margin: 0;
+      padding: 0;
+    }
+
+  }
+
+  @include headings() {
+    font-size: 30px;
+    text-transform: none;
+    border: none;
+    margin: 0;
+    padding: 0 0 10px 0;
+  };
+
+
+  // mobile view
+  @media all and (max-width: $container-width) {
+
+    .container {
+      text-align: center;
+
+      br {
+        // display: none;
+      }
+
+    }
+
+  }
+
+}

@@ -67,4 +67,8 @@ module BlogHelpers
     return works
   end
 
+  def get_page_by_name(name)
+    data.pages.select { |id, page| page.fragments['page_name'].value == name }.values[0]
+  end
+
 end
