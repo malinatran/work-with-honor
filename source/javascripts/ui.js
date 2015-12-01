@@ -180,10 +180,4 @@ $(window).load(function() {
   if($('body').hasClass('work')) {
     return;
   }
-  // $('.section.work:not(.featured) .grid').isotope({
-  //   itemSelector: '.entry',
-  //   layoutMode: 'packery',
-  //   percentPosition: true,
-  //   isResizeBound: false
-  // });
 });

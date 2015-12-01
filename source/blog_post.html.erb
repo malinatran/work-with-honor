@@ -36,13 +36,7 @@ section: post
     <div class="footer">
 
       <!--Sharebar-->
-      <div class="sharebar">
-        <b>Share</b>
-        <a href="" class="icon mail"></a>
-        <a href="" class="icon facebook"></a>
-        <a href="" class="icon twitter"></a>
-        <a href="" class="icon linkedin"></a>
-      </div>
+      <%= partial('sharebar', :locals => current_page.data.merge({:title => post.fragments['title'].blocks[0].text})) %>
 
     </div>
 
@@ -58,13 +52,7 @@ section: post
     <div class="footer slice">
 
       <!--Sharebar-->
-      <div class="sharebar">
-        <b>Share</b>
-        <a href="" class="icon mail"></a>
-        <a href="" class="icon facebook"></a>
-        <a href="" class="icon twitter"></a>
-        <a href="" class="icon linkedin"></a>
-      </div>
+      <%= partial('sharebar', :locals => current_page.data.merge({:title => post.fragments['title'].blocks[0].text})) %>
 
       <!--Tags-->
       <div class="tags">

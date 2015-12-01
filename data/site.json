@@ -1,6 +1,7 @@
 {
   "default_title": "Honor Roll | A Creative Agency",
   "title": "Honor Roll",
+  "domain": "www.workwithhonor.com",
   "api": "http://localhost/work/workwithhonor.com_api/api.php",
   "pages": [
     "Home",

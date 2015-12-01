@@ -1,0 +1,7 @@
+<div class="sharebar">
+  <b>Share</b>
+  <a href="mailto:?&body=Check <%= title %> on <%= "#{data.site.domain}#{current_page.url}" %>" class="icon mail"></a>
+  <a data-width="500" data-height="250" href="https://www.facebook.com/sharer/sharer.php?u=<%= "#{data.site.domain}#{current_page.url}" %>" target="_blank" class="icon facebook"></a>
+  <a data-width="500" data-height="250" href="https://twitter.com/intent/tweet?text=<%= "#{data.site.domain}#{current_page.url}" %>" class="icon twitter"></a>
+  <a data-width="500" data-height="500" href="https://www.linkedin.com/shareArticle?mini=true&url=<%= "#{data.site.domain}#{current_page.url}" %>&title=<%= title %>&summary=&source=" class="icon linkedin"></a>
+</div>

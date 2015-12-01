@@ -1,5 +1,5 @@
 /**
- * Sliders
+ * Select
  */
 $(function() {
 

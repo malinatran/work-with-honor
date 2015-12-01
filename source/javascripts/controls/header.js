@@ -1,5 +1,5 @@
 /**
- * Sliders
+ * Header
  */
 $(function() {
 
@@ -30,6 +30,7 @@ $(function() {
       $header.removeClass('sticky');
     }
   }
+
   $(document).on('scroll', onScroll);
 
 });
