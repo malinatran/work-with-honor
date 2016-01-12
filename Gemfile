@@ -18,3 +18,7 @@ gem 'thin'
 gem 'rack-contrib'
 gem 'bourbon'
 gem 'middleman-prismic', :path => './middleman-prismic'
+
+gem 'sinatra'
+gem 'sinatra-base'
+gem 'sinatra-contrib'

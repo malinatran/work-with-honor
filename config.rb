@@ -11,7 +11,8 @@ ignore "/work_post.html"
 activate :prismic do |f|
   f.path = 'data'
   f.api_url = 'https://workwithhonor.prismic.io/api'
-  f.release = 'master'
+  f.release = ENV['PRISMIC_RELEASE'] || 'master'
+  f.token = 'MC5WcFNheVI4QUFId05IVDM5.N--_ve-_ve-_ve-_ve-_vQh7YjXvv70teFrvv70cQO-_vXjvv73vv70qUe-_vQDvv73vv73vv70cD--_ve-_vQ'
   f.link_resolver = ->(link) { binding.pry; "#{link.type.pluralize}/#{link.slug}"}
 end
 

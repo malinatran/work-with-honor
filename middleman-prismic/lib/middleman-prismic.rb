@@ -12,6 +12,7 @@ module MiddlemanPrismic
     option :path, 'data', 'Storeage path'
     option :api_url, nil, 'The prismic api url'
     option :release, 'master', 'Content release'
+    option :token, '', 'Access token'
     option(
       :link_resolver,
       ->(link) {"http://www.example.com/#{link.type.pluralize}/#{link.slug}"},

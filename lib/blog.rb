@@ -30,7 +30,7 @@ module BlogHelpers
   end
 
   def post_link(post)
-    url_for("/blog/#{post.slugs[0]}.html")
+    url_for("/blog/#{post.slugs[0]}")
   end
 
   def featured_posts(count = 2)
@@ -43,11 +43,11 @@ module BlogHelpers
   end
 
   def author_link(author)
-    url_for("/author/#{author.slugs[0]}.html")
+    url_for("/author/#{author.slugs[0]}")
   end
 
   def work_link(work)
-    url_for("/work/#{work.slugs[0]}.html")
+    url_for("/work/#{work.slugs[0]}")
   end
 
   def work_sorted()

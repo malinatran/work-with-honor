@@ -4,7 +4,7 @@ header_class: dark
 ---
 
 <% content_for :header_logo do %>
-  <span>Work / Doggyloot</span>
+  <span>Work / <%= post.fragments['client'].value %></span>
 <% end %>
 
 <% content_for :header do %>

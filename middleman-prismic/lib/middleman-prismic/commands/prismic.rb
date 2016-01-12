@@ -23,6 +23,7 @@ module Middleman
       def prismic
         ::Middleman::Application.server.inst
         reference = MiddlemanPrismic.options.release
+        token = MiddlemanPrismic.options.token
 
         # middleman data path
         path = MiddlemanPrismic.options.path
@@ -32,7 +33,7 @@ module Middleman
 
         # FileUtils.rm_rf(Dir.glob('data/prismic_*'))
 
-        api = ::Prismic.api(MiddlemanPrismic.options.api_url)
+        api = ::Prismic.api(MiddlemanPrismic.options.api_url, token)
         response = api.form('everything').submit(api.ref(reference))
 
         # get documents
