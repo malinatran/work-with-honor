@@ -28,7 +28,11 @@
 
     <div class="container">
 
-      <b>Subscribe and Receive the Latest in Business and Branding Advice</b>
+      <b class="is-newsletter_header">Subscribe and Receive the Latest in Business and Branding Advice</b>
+
+      <div class="collapsed">
+        <b>Subscribe to our Newsletter</b>
+      </div>
 
       <form action="<%= data.site.api %>">
 
@@ -38,12 +42,6 @@
         <div class="field name">
           <label>First Name</label>
           <input id="first_name" name="first_name" type="text" required>
-        </div>
-
-        <!--Name field-->
-        <div class="field lastname">
-          <label>Last Name</label>
-          <input id="last_name" name="last_name" type="text" required>
         </div>
 
         <!--Email field-->
@@ -65,9 +63,12 @@
 
   <!--Legend-->
   <div class="legend">
-    &copy;<%= Time.now.year %> Honor Roll L.L.C.
-    <span class="logo"></span>
-    All Rights Reserved.
+    <div class="container">
+      &copy;<%= Time.now.year %> Honor Roll L.L.C.
+      <span class="logo"></span>
+      All Rights Reserved.
+      <a class="privacy" href="<%= url_for('/privacy') %>">Privacy Policy</a>
+    </div>
   </div>
 
 </footer>

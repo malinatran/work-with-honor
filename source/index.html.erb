@@ -12,11 +12,11 @@ section: home
   </div>
 
   <!--Work entries-->
-  <div class="slider controlsalt" data-controls="border" data-breadcrumbs="false">
+  <div class="slider controlsalt is-smallbreadcrumbs" data-controls="border" data-breadcrumbs="true">
 
   <% latest_works(2).each_with_index do |post, index| %>
 
-  <div class="slide entry" style="background-image: url(<%= post.fragments['featured_image'].main.url %>);" data-slidr="<%= index %>">
+  <div class="slide entry" style="background-image: url(<%= resource_image_url(post, 'featured_image') %>);" data-slidr="<%= index %>">
 
     <div class="body">
       <%= post.fragments['title'].as_html(nil) %>

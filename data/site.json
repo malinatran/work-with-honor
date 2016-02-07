@@ -2,6 +2,7 @@
   "default_title": "Honor Roll | A Creative Agency",
   "title": "Honor Roll",
   "domain": "www.workwithhonor.com",
+  "analytics_tracking": "UA-27517862-1",
   "api": "http://localhost/work/workwithhonor.com_api/api.php",
   "pages": [
     "Home",

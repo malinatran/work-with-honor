@@ -45,15 +45,12 @@ footer {
       margin-right: 15px;
 
       &.name {
-        width: 170px;
-      }
-
-      &.lastname {
-        width: 220px;
+        width: 270px;
       }
 
       &.email {
         width: 320px;
+        margin-right: 10px;
       }
 
       label {
@@ -71,6 +68,7 @@ footer {
       display: inline-block;
       vertical-align: bottom;
       margin-right: 15px;
+      width: 120px;
     }
 
     .social {
@@ -98,6 +96,10 @@ footer {
 
     }
 
+  }
+
+  .collapsed {
+    display: none;
   }
 
   // contact
@@ -140,7 +142,22 @@ footer {
       height: 32px;
       display: inline-block;
       vertical-align: middle;
-      margin: 0 15px;
+      margin: 0 10px;
+    }
+
+    .container {
+      width: $container-footer-width;
+      position: relative;
+    }
+
+    a:hover {
+      color: white;
+    }
+
+    a.privacy {
+      position: absolute;
+      right: 15px;
+      top: 10px;
     }
 
   }

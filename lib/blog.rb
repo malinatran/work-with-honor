@@ -25,6 +25,11 @@ module BlogHelpers
     post.fragments[key].nil? ? '' : post.fragments[key].as_html(nil)
   end
 
+  def resource_image_url(resource, key = 'image')
+    return '' if resource.fragments[key].nil?
+    resource.fragments[key].main.url
+  end
+
   def post_author(post)
     data.authors.select {|key, item| item.id == post.fragments['author'].id}.values[0]
   end

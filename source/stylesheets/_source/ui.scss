@@ -376,6 +376,7 @@ textarea {
     left: 0;
     bottom: 0;
     width: 100%;
+    transform: translateZ(0);
     ul {
       display: inline-block;
       padding: 0 13px 0 0;
@@ -400,12 +401,23 @@ textarea {
         }
         &.active,
         &:hover {
-          width: 16px;
-          height: 16px;
           background: $clear-border;
         }
       }
     }
+  }
+
+  // small breadcrumbs
+  &.is-smallbreadcrumbs {
+
+    aside[id*="-breadcrumbs"] {
+      ul li,
+      ul li.normal {
+        width: 10px;
+        height: 10px;
+      }
+    }
+
   }
 
   // arrow controls

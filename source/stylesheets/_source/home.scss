@@ -99,23 +99,78 @@ section#home {
     @media all and (max-width: $container-width) {
       @include radial-gradient(circle at 50% 30%, $orange-tint-light 0%, $orange-tint 50%, $orange-tint);
 
-      .container {
+      > .container {
         @include image('crest.png', no-repeat center bottom);
         background-size: 801px 422px;
         height: $header-height;
         min-height: 1px;
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .collapsed {
-        display: block;
+        // display: block;
       }
 
-      .nav {
-        position: initial;
+      .container > .nav {
+        position: absolute;
+        padding: 20px $responsive-global-padding 0 $responsive-global-padding;
       }
 
       .slider {
-        display: none !important;
+        padding-bottom: 0;
+        margin-bottom: 50px;
+
+        .entry {
+          height: auto;
+          padding: 100px 0 0 0;
+
+          h1 {
+            max-width: initial;
+            padding: 0;
+            font-size: 45px;
+            line-height: 52px;
+            text-align: center;
+            margin: 0;
+          }
+
+          h2 {
+            text-align: center;
+            font-size: 18px;
+            padding: 15px 0 90px 0;
+
+            br {
+              display: none;
+            }
+
+          }
+
+          .body {
+            width: auto;
+            padding: 0 $responsive-global-padding;
+          }
+
+          .button {
+            position: absolute;
+            max-width: initial;
+            left: 0;
+            right: 0;
+            height: 50px;
+            line-height: 60px;
+          }
+
+        }
+
+        aside[id*="-control"].border {
+          display: none;
+        }
+
+        aside[id*="-breadcrumbs"] {
+          display: block;
+          text-align: center;
+          bottom: 35px;
+        }
+
       }
 
       // normal logo
@@ -124,7 +179,7 @@ section#home {
     }
 
     .content {
-      padding-bottom: 100px;
+      padding-bottom: 0;
     }
 
     h1 {

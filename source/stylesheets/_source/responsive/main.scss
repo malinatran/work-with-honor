@@ -92,7 +92,13 @@
   footer {
 
     nav {
-      display: none;
+      // display: none;
+      font-size: 12px;
+
+      a {
+        margin-right: 10px;
+      }
+
     }
 
     .banner {
@@ -118,25 +124,29 @@
     .newsletter {
 
       b {
-        padding-bottom: 20px;
+        padding-bottom: 10px;
       }
 
       form {
-        text-align: right;
+        text-align: left;
+        border-bottom: 1px solid #6E7377;
+        margin-bottom: 20px;
 
         .field {
           width: 100% !important;
-          padding: 0 0 12px 0;
+          padding: 0 0 5px 0;
           margin-right: 0;
         }
 
         button {
           margin-right: 0;
+          width: 100%;
+          margin: 5px 0 15px 0;
         }
 
         label.error {
           left: initial;
-          top: 0;
+          top: 2px;
           right: 0;
         }
 
@@ -149,23 +159,36 @@
     }
 
     .legend {
-      display: none;
+      // display: none;
       font-size: 10px;
       padding: 11px 0;
       height: auto;
       .logo {
       }
+
+      a.privacy {
+        display: none;
+      }
+
+    }
+
+    .collapsed {
+      display: block;
+    }
+
+    b.is-newsletter_header {
+      display: none;
     }
 
     .newsletter {
       form,
       b {
-        display: none;
+        // display: none;
       }
     }
 
     .contact {
-      display: block;
+      // display: block;
     }
 
   }
