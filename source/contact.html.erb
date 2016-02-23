@@ -12,6 +12,10 @@ contact_banner: false
 
   <div class="grid padded">
 
+    <div class="col-12 subheadline">
+      <span>We partner with a community with designers, planners, developers and strategists and would love to add you to our network.</span>
+    </div>
+
     <!--Social Links-->
     <div class="col-3 social">
       <b>Connect</b>
@@ -22,12 +26,12 @@ contact_banner: false
     <!--Contact-->
     <div class="col-3 contact">
       <b>General Inquiries</b>
-      <span>All general inquiries, press, pleasantries,<br/> cat pics and compliments, send this way.</span>
+      <span>To say hi, employment opportunities, speaking engagements, or to work with us on a consulting basis.</span>
       <a href="mailto:<%= data.site.email %>?subject=General Inquiry"><%= data.site.email %></a>
     </div>
 
     <!--Phone-->
-    <div class="col-3">
+    <div class="col-3 phone">
       <b>Phone</b>
       <span>Talk to us the old fashion way. <br/>Give us a ring.</span>
       <a>(862) 216-6506</a>
@@ -51,16 +55,18 @@ contact_banner: false
   <div class="banner">
     <div class="container">
       <h2>Project Planner</h2>
-      <p>We’re now accepting awesome new clients. Filling out the information below will help us <br/> determine your needs. We look forward to hearing from you. ets get started.</p>
+      <p>We’re now accepting awesome new clients. Filling out the information below will help us <br/> determine your needs. We look forward to hearing from you. Let's get started.</p>
     </div>
   </div>
 
   <!--Form-->
-  <form method="POST" action="<%= data.site.api %>" data-button-message="Success! Your Project Has Been Submitted.">
+  <form method="POST" action="https://script.google.com/macros/s/AKfycbzhT0AB1EBfvlor_auRHEeEnIIgg3oP_2Fq1PXGbHpzFO7vwD-z/exec" data-button-message="Success! Your Project Has Been Submitted." target="form_submit">
 
     <input type="hidden" name="action" value="contact">
 
     <div class="container">
+
+    <p class="asterisk-text">FIELDS WITH AN ASTERISK (*) ARE MANDATORY.</p>
 
       <!--Step 1-->
       <h4>Step 1 of 3: About You</h4>
@@ -222,7 +228,6 @@ contact_banner: false
           <div class="select year">
             <select name="start_year" required>
               <option value="">Year</option>
-              <option>2015</option>
               <option>2016</option>
               <option>2017</option>
               <option>2018</option>
@@ -248,7 +253,6 @@ contact_banner: false
           <div class="select year">
             <select name="end_year" required>
               <option value="">Year</option>
-              <option>2015</option>
               <option>2016</option>
               <option>2017</option>
               <option>2018</option>
@@ -274,12 +278,12 @@ contact_banner: false
       <div class="field options budget required">
 
         <div class="select year">
-          <select name="budget" required>
+          <select id="budget-select" required>
             <option value="">Select a Budget</option>
-            <option>$2,500 - $5,000</option>
-            <option>$5,000 - $10,000</option>
-            <option>$10,000 -  $15,000</option>
-            <option>$20,000+</option>
+            <option value="2500-5000">$2,500 - $5,000</option>
+            <option value="5000-10000">$5,000 - $10,000</option>
+            <option value="10000-15000">$10,000 -  $15,000</option>
+            <option value="20000+">$20,000+</option>
           </select>
           <span class="value">Select a Budget</span>
           <span class="icon chevron-small-down"></span>
@@ -301,17 +305,17 @@ contact_banner: false
 
           <!--Option 3-->
           <div class="col-3" data-name="budget">
-            <span class="option" data-value="10000-15000">$10,000 -  $15,000</span>
+            <span class="option" data-value="10000-15000">$10,000 - $15,000</span>
           </div>
 
           <!--Option 4-->
-          <div class="col-3">
+          <div class="col-3" data-name="budget">
             <span class="option" data-value="20000+">$20,000+</span>
           </div>
 
         </div>
 
-        <input name="budget" required>
+        <input name="budget" type="hidden" required>
 
       </div>
 
@@ -325,20 +329,21 @@ contact_banner: false
       <div class="field subscribe checkbox">
         <input type="checkbox" name="subscribe" id="subscribe_check">
         <label for="subscribe_check">
-          <span>Yes, i’d love to subscribe to roll call and receive exclusive tips on growing my brand and business.</span>
-          <span class="collapsed">Yes, i’d love to receive tips on growing my brand and business.</span>
+          <span>Yes, I’d love to subscribe to roll call and receive exclusive tips on growing my brand and business.</span>
+          <span class="collapsed">Yes, I’d love to receive tips on growing my brand and business.</span>
         </label>
       </div>
+
+      <b class="success hidden">Success! Your Project Has Been Submitted.</b>
 
       <button type="submit">
         Submit Your Project
         <span class="icon chevron-small-right"></span>
       </button>
 
-      <b class="success hidden">A confirmation email is headed your way shortly.</b>
-
     </div>
 
   </form>
+  <iframe name="form_submit" class="hidden"></iframe>
 
 </div>

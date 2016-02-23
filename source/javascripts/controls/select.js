@@ -79,7 +79,7 @@ $(function() {
     // bind select change event
     $select.on('change', function(e) {
       $(document.body).removeClass('nooverflow');
-      $this.find('.value').html($select.val());
+      $this.find('.value').html($select.children('option:selected').text());
     });
 
   });

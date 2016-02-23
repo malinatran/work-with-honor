@@ -188,7 +188,6 @@ section#contact {
 
       // submit button
       button {
-        position: absolute;
         margin: 0;
         height: 50px;
         line-height: 56px;
@@ -199,11 +198,6 @@ section#contact {
         .icon {
           display: none;
         }
-      }
-
-      // success form message
-      .success {
-        display: none;
       }
 
       // subscribe checkbox

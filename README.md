@@ -23,3 +23,11 @@ Run the test server
 ```
 bundle exec middleman server
 ```
+
+Building and deploying
+
+To build the site run the following command:
+```
+bundle exec middleman build
+```
+and deploy the contents of ./build to the http server.

@@ -14,6 +14,13 @@ footer {
     background: $blue-tint;
     text-align: center;
     padding: 26px 0 30px 0;
+    #mce-responses {
+      padding-top: 20px;
+      text-align: center;
+    }
+    div.mce_inline_error {
+      display: none !important;
+    }
 
     .container {
       width: $container-footer-width;
@@ -84,6 +91,7 @@ footer {
         height: 40px;
         width: 40px;
         margin-right: 4px;
+        padding-left: 10px;
         vertical-align: top;
         font-size: 18px;
         line-height: 40px;
@@ -146,6 +154,7 @@ footer {
     }
 
     .container {
+      display: flex;
       width: $container-footer-width;
       position: relative;
     }
@@ -154,10 +163,14 @@ footer {
       color: white;
     }
 
-    a.privacy {
-      position: absolute;
-      right: 15px;
-      top: 10px;
+    .center-text {
+      margin: 0 15px;
+    }
+
+    .text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center
     }
 
   }

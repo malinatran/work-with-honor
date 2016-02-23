@@ -1,0 +1,25 @@
+---
+section: terms
+header_class: dark
+contact_banner: false
+---
+
+<% content_for :header do %>
+  <h1>Terms of Service</h1>
+<% end %>
+
+<% content_for :header_logo do %>
+  <span>Terms of Service</span>
+<% end %>
+
+<% page = get_page_by_name('privacy') %>
+
+<div class="section page privacy">
+
+  <div class="container alt">
+
+    <%= page.fragments['text'].as_html(nil) %>
+
+  </div>
+
+</div>

@@ -3,6 +3,16 @@
  */
 $(function() {
 
+  $.validator.addMethod('greaterThan', function(value, element, params) {
+    var startYear = $(params.start_year).val();
+    var endYear = $(params.end_year).val();
+    var endMonth = element.selectedIndex;
+    var startMonth = $(params.start_month).prop('selectedIndex');
+
+    return (startYear < endYear)
+        || (startYear === endYear && startMonth <= endMonth);
+  });
+
   /**
    * Adapt each slider to defined styles
    */
@@ -116,6 +126,22 @@ $(function() {
 
     $form.validate({
 
+      rules: {
+        end_month: {
+          greaterThan: {
+            start_year: 'select[name=start_year]',
+            start_month: 'select[name=start_month]',
+            end_year: 'select[name=end_year]',
+          }
+        }
+      },
+
+      messages: {
+        end_month: {
+          greaterThan: 'End date must come after start date.'
+        }
+      },
+
       // error label placement
       errorPlacement: function(error, element) {
         if(element.prop('tagName') === 'SELECT') {
@@ -125,27 +151,18 @@ $(function() {
         error.insertAfter(element.parents('.field').find('label:first-of-type'));
       },
 
-      // on form submit
-      submitHandler: function(form, event) {
+      submitHandler: function(form) {
+        form.submit();
+        $('b.success').removeClass('hidden');
 
-        event.preventDefault();
-        var $form = $(form);
-        var action = $form.attr('action');
-        var buttonMessage = $form.data('buttonMessage') || null;
-        if($form.data('submitting')) {
-          return;
-        }
-
-        $form.data('submitting', true);
-        $.post(action, $form.serialize(), function() {
-          $form.data('submitting', false);
-          if(buttonMessage) {
-            $form.find('button[type=submit]').addClass('aqua').html(buttonMessage);
-            $form.find('.success').removeClass('hidden');
-          }
-        });
-
-      }
+        // reset form
+        // form.reset();
+        // $('option').val('');
+        // $('input').val('');
+        // $('input[type=checkbox]').attr('checked', false);
+        // $('textarea').val('');
+        // $('.active').removeClass('active');
+     }
 
     });
 
@@ -155,9 +172,21 @@ $(function() {
   $('.options').on('click', '.option', function() {
     var $this = $(this);
     var $parent = $(this).parents('.options');
+    var value = $this.data('value');
     $parent.find('.option').removeClass('active');
     $this.addClass('active');
-    $parent.find('input').val($this.data('value'));
+    $parent.find('select').val(value).trigger('change');
+    $parent.find('input').val(value);
+    $parent.find('label.error').remove();
+  });
+
+  $('.options').on('change', 'select', function() {
+    var $this = $(this);
+    var value = $this.val();
+    var $parent = $(this).parents('.options');
+    $parent.find('.option').removeClass('active');
+    $parent.find('.option[data-value="' + value + '"]').addClass('active');
+    $parent.find('input').val(value);
     $parent.find('label.error').remove();
   });
 

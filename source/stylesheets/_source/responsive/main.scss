@@ -118,7 +118,6 @@
       &:hover {
         font-size: 23px;
       }
-
     }
 
     .newsletter {
@@ -166,8 +165,12 @@
       .logo {
       }
 
-      a.privacy {
+      .text {
         display: none;
+      }
+
+      .center-text {
+        margin: 0 auto;
       }
 
     }
