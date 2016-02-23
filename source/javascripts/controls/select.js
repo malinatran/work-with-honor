@@ -81,7 +81,6 @@ $(function() {
       $(document.body).removeClass('nooverflow');
       $this.find('.value').html($select.children('option:selected').text());
     });
-
   });
 
 });

@@ -156,12 +156,18 @@ $(function() {
         $('b.success').removeClass('hidden');
 
         // reset form
-        // form.reset();
-        // $('option').val('');
-        // $('input').val('');
-        // $('input[type=checkbox]').attr('checked', false);
-        // $('textarea').val('');
-        // $('.active').removeClass('active');
+        // For some reason, without the timeout,
+        // it submits an empty form. If it still
+        // sends an empty form, an alternative may
+        // just be to disable the submit button rather
+        // than attempt to clear the form inputs.
+        setTimeout(function() {
+          form.reset();
+          $('form .active').removeClass('active');
+          $('form select').trigger('change');
+        }, 1);
+
+        return false;
      }
 
     });
