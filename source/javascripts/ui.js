@@ -10,8 +10,7 @@ $(function() {
     var startMonth = $(params.start_month).prop('selectedIndex');
 
     return (startYear < endYear)
-        || (startYear === endYear && startMonth <= endMonth) 
-        || (endYear === null && endMonth === null);
+        || (startYear === endYear && startMonth <= endMonth);
   });
 
   /**
