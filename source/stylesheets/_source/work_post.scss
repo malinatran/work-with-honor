@@ -21,8 +21,12 @@ section#work-post {
 
   // general section
   .section {
+    h2 {
+      font-size: 17px;
+    }
     @include headings {
       border-bottom-width: 1px;
+      letter-spacing: 0px;
     };
   }
 
