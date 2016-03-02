@@ -46,6 +46,10 @@ section#contact {
       }
       .subheadline {
         padding-bottom: 20px;
+        span {
+          font-size: 20px;
+          line-height: 34px;
+        }
       }
       .social {
         span {
@@ -135,6 +139,7 @@ section#contact {
         margin-bottom: 25px;
         input,
         textarea {
+          font-size: 15px;
           border: 1px solid $clear-border;
           border-radius: 0;
           height: 57px;

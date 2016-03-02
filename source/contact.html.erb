@@ -94,7 +94,7 @@ contact_banner: false
         <!--Website-->
         <div class="field website required col-6">
           <label>Website</label>
-          <input name="website" type="text" required>
+          <input name="website" type="text">
         </div>
 
         <!--Phone-->
@@ -213,7 +213,7 @@ contact_banner: false
 
       <div class="field description required textarea">
         <label>Project Details, Goals and Objectives</label>
-        <textarea name="description" required placeholder="ANY ADDITIONAL INFORMATION YOU FEEL WILL HELP US UNDERSTAND YOUR PROJECT EVEN MORE."></textarea>
+        <textarea name="description" required placeholder="DESCRIBE THE PROJECT AND WHAT YOU’RE LOOKING TO DO."></textarea>
       </div>
 
       <!--Step 3-->
@@ -248,10 +248,10 @@ contact_banner: false
         </div>
 
         <!--End date field-->
-        <div class="field date end required col-6">
+        <div class="field date end col-6">
           <label>Project End Date</label>
           <div class="select year">
-            <select name="end_year" required>
+            <select name="end_year">
               <option value="">Year</option>
               <option>2016</option>
               <option>2017</option>
@@ -261,7 +261,7 @@ contact_banner: false
             <span class="icon chevron-small-down"></span>
           </div>
           <div class="select">
-            <select name="end_month" required>
+            <select name="end_month">
               <option value="">Month</option>
               <% (1..12).each do |m| %>
               <option><%= Date::MONTHNAMES[m] %></option>
