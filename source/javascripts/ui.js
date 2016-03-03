@@ -8,9 +8,9 @@ $(function() {
     var endYear = $(params.end_year).val();
     var endMonth = element.selectedIndex;
     var startMonth = $(params.start_month).prop('selectedIndex');
-
     return (startYear < endYear)
-        || (startYear === endYear && startMonth <= endMonth);
+        || (startYear === endYear && startMonth <= endMonth)
+        || (!endMonth && !endYear);
   });
 
   /**
