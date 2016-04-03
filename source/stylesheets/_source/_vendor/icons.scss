@@ -9,6 +9,17 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'pe-icon-social';
+  src:url('fonts/pe-icon-social.eot');
+  src:url('fonts/pe-icon-social.eot') format('embedded-opentype'),
+    url('fonts/pe-icon-social.ttf') format('truetype'),
+    url('fonts/pe-icon-social.woff') format('woff'),
+    url('fonts/pe-icon-social.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .icon {
   font-family: 'workwithhonor';
   speak: none;
@@ -86,8 +97,9 @@
 .icon.twitter:before {
   content: "\e60b";
 }
-.icon.medium:before {
-  content: "\e60c";
+.icon.instagram:before {
+  content: "\e626";
+  font-family: 'pe-icon-social';
 }
 .icon.facebook:before {
   content: "\e60d";
