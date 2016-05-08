@@ -16,6 +16,13 @@ activate :prismic do |f|
   f.link_resolver = ->(link) { binding.pry; "#{link.type.pluralize}/#{link.slug}"}
 end
 
+activate :deploy do |deploy|
+  deploy.method = :rsync
+  deploy.user = 'root'
+  deploy.host = '107.170.245.80'
+  deploy.path = '/home/wwh/workwithhonor.com'
+end
+
 # generate blog posts pages
 if data.has_key?('posts')
   data.posts.each do |id, post|
