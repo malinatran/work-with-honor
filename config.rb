@@ -19,7 +19,7 @@ end
 activate :deploy do |deploy|
   deploy.method = :rsync
   deploy.user = 'root'
-  deploy.host = '107.170.245.80'
+  deploy.host = 'workwithhonor.com'
   deploy.path = '/home/wwh/workwithhonor.com'
 end
 
@@ -116,3 +116,4 @@ configure :build do
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
 end
+

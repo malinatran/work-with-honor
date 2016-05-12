@@ -31,7 +31,14 @@ module BlogHelpers
   end
 
   def post_author(post)
-    data.authors.select {|key, item| item.id == post.fragments['author'].id}.values[0]
+    authors = data.authors.select do |key, item|
+      !post.fragments['author'].nil? && item.id == post.fragments['author'].id
+    end
+    if authors.values.empty?
+      nil
+    else
+      authors.values[0]
+    end
   end
 
   def post_link(post)
@@ -44,7 +51,7 @@ module BlogHelpers
   end
 
   def author_posts(author)
-    data.posts.select { |id, post| post.fragments['author'].id == author.id }
+    data.posts.select { |id, post| !post.fragments['author'].nil? && post.fragments['author'].id == author.id }
   end
 
   def author_link(author)
